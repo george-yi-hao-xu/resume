@@ -1,4 +1,4 @@
-import { ResumeMaker as ResumeTemplateMaker } from "./components.js";
+import { ResumeMaker as ResumeTemplateMaker } from "./components/index.js";
 import { resume_data } from "./resume-data.js";
 import "./style.scss";
 

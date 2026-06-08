@@ -4,10 +4,10 @@ export const resume_data = {
   contacts: [
     { label: "www.georgeyxu.com", href: "https://www.georgeyxu.com/" },
     { label: "xuyihao342@gmail.com", href: "mailto:xuyihao342@gmail.com" },
-    { label: "+1.401.743.7680", href: "tel:+14017437680" },
+    // { label: "+1.401.743.7680", href: "tel:+14017437680" },
     { label: "Software Engineering | Experience Design" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
-    { label: "Portfolio", href: "https://www.georgeyxu.com/" },
+    // { label: "Portfolio", href: "https://www.georgeyxu.com/" },
   ],
   education: [
     {
@@ -31,11 +31,7 @@ export const resume_data = {
   skillGroups: [
     {
       title: "Web Development",
-      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Py/Flask node.js"],
-    },
-    {
-      title: "DB Management",
-      items: ["GraphQl REST_API", "PostgreSQL"],
+      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Py/Flask Node.js", "GraphQl REST_API", "PostgreSQL"],
     },
     {
       title: "3D Development",
@@ -52,7 +48,7 @@ export const resume_data = {
       details: ["Web & Native App"],
       links: [
         {
-          label: "GitHub Page",
+          label: "Source Code",
           href: "https://github.com/george-yi-hao-xu/mesh3d",
         },
       ],
@@ -61,16 +57,25 @@ export const resume_data = {
   studioProjects: [
     {
       title: "Shekon",
-      details: ["Oculus VR Experience Development"],
+      details: ["Oculus VR Development"],
       links: [
         {
-          label: "youtu.be/iQuNsEEnoFI",
-          href: "https://youtu.be/iQuNsEEnoFI",
+          label: "Source Code",
+          href: "https://github.com/george-yi-hao-xu/shekon",
         },
+        {
+          label: "Project Video",
+          href: "https://www.georgeyxu.com/shekon",
+        }
       ],
     },
   ],
-  languages: ["English (Fluent)", "Mandarin Wu (Native)", "German (Intermediate)", "French (Intermediate)"],
+  languages: [
+    { name: "English", level: "Fluent" },
+    { name: "Mandarin & Wu", level: "Native" },
+    { name: "German", level: "Intermediate" },
+    { name: "French", level: "Intermediate" },
+  ],
   experience: [
     {
       title: "Software Engineer",
@@ -83,7 +88,7 @@ export const resume_data = {
         "Handle other design-related duties.",
       ],
       links: [
-        { label: "Company Employee Page", href: "https://www.sasaki.com/people/george-xu/" },
+        { label: "Employee Info", href: "https://www.sasaki.com/people/george-xu/" },
       ],
     },
     {
