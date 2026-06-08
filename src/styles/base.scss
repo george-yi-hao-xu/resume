@@ -1,0 +1,43 @@
+@use "tokens" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: $page;
+  color: $ink;
+  font-family:
+    Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: $accent;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $accent-dark;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+p,
+ul,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.2;
+}

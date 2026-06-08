@@ -1,4 +1,5 @@
 import { escapeHtml } from "./utils.js";
+import "./Header.scss";
 
 const ContactItem = (item) => {
   if (!item.href) {

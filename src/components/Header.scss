@@ -1,0 +1,37 @@
+@use "../styles/tokens" as *;
+
+.resume__header {
+  border-bottom: 2px solid $ink;
+  padding-bottom: 16px;
+}
+
+.resume__header h1 {
+  font-family:
+    Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.contact-list {
+  color: $muted;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  gap: 6px 12px;
+  line-height: 1.35;
+  margin-top: 14px;
+}
+
+.contact-list > *:not(:last-child)::after {
+  color: $rule;
+  content: "/";
+  margin-left: 12px;
+}
+
+@media print {
+  .resume__header h1 {
+    font-size: 3.15rem;
+  }
+}

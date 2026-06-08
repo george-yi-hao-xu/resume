@@ -1,4 +1,5 @@
 import { escapeHtml, links, paragraphs } from "./utils.js";
+import "./Entry.scss";
 
 export const Entry = ({ title, meta, details = [], note, links: entryLinks = [] }) => `
   <article class="entry">

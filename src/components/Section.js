@@ -1,4 +1,5 @@
 import { escapeHtml } from "./utils.js";
+import "./Section.scss";
 
 export const Section = ({ title, children }) => `
   <section class="section">

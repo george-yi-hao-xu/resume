@@ -1,4 +1,5 @@
 import { escapeHtml, links } from "./utils.js";
+import "./Experience.scss";
 
 const LinkRow = (items = []) => {
   if (!items.length) {

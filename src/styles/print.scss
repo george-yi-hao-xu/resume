@@ -1,0 +1,17 @@
+@use "tokens" as *;
+
+@media print {
+  @page {
+    margin: 0.35in;
+    size: letter;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  a {
+    color: $ink;
+  }
+}
