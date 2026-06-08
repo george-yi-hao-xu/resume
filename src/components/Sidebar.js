@@ -8,23 +8,23 @@ import { Section } from "./Section.js";
 export const Sidebar = (resume) => `
   <aside class="resume__sidebar" aria-label="Resume details">
     ${Section({
-      title: "Education",
+      title: resume.labels.education,
       children: resume.education.map(Entry).join(""),
     })}
     ${Section({
-      title: "Skills",
+      title: resume.labels.skills,
       children: resume.skillGroups.map(SkillGroup).join(""),
     })}
     ${Section({
-      title: "Indie Projects",
+      title: resume.labels.indieProjects,
       children: resume.indieProjects.map(Entry).join(""),
     })}
     ${Section({
-      title: "Studio Projects",
+      title: resume.labels.studioProjects,
       children: resume.studioProjects.map(Entry).join(""),
     })}
     ${Section({
-      title: "Languages",
+      title: resume.labels.languages,
       children: LanguageList(resume.languages),
     })}
   </aside>

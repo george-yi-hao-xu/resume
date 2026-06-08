@@ -7,7 +7,16 @@
  * @typedef {{ title: string, company: string, meta?: string[], bullets?: string[], links?: Link[] }} JobData
  * @typedef {{
  *   name: string,
+ *   pageTitle: string,
  *   description: string,
+ *   labels: {
+ *     education: string,
+ *     skills: string,
+ *     indieProjects: string,
+ *     studioProjects: string,
+ *     languages: string,
+ *     experience: string,
+ *   },
  *   contacts: Contact[],
  *   education: EntryData[],
  *   skillGroups: SkillGroupData[],
@@ -21,7 +30,16 @@
 /** @type {ResumeData} */
 export const resume_data = {
   name: "George Yihao Xu",
+  pageTitle: "George Yihao Xu Resume",
   description: "Resume of George Yihao Xu, UI/UX designer and frontend developer.",
+  labels: {
+    education: "Education",
+    skills: "Skills",
+    indieProjects: "Indie Projects",
+    studioProjects: "Studio Projects",
+    languages: "Languages",
+    experience: "Professional Experience",
+  },
   contacts: [
     { label: "www.georgeyxu.com", href: "https://www.georgeyxu.com/" },
     { label: "xuyihao342@gmail.com", href: "mailto:xuyihao342@gmail.com" },

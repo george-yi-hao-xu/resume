@@ -36,12 +36,12 @@ const Job = ({ title, company, meta = [], bullets = [], links: jobLinks = [] }) 
 `;
 
 /**
- * @param {import("../resume-data.js").JobData[]} jobs
+ * @param {{ title: string, jobs: import("../resume-data.js").JobData[] }} props
  * @returns {string}
  */
-export const Experience = (jobs) => `
+export const Experience = ({ title, jobs }) => `
   <section class="resume__main" aria-label="Professional experience">
-    <h2>Professional Experience</h2>
+    <h2>${escapeHtml(title)}</h2>
     ${jobs.map(Job).join("")}
   </section>
 `;

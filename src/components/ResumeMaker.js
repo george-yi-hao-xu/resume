@@ -9,10 +9,13 @@ import "./ResumeMaker.scss";
  */
 export const ResumeMaker = (resume) => `
   <main class="resume">
-    ${Header(resume)}
+      ${Header(resume)}
     <div class="resume__grid">
       ${Sidebar(resume)}
-      ${Experience(resume.experience)}
+      ${Experience({
+        title: resume.labels.experience,
+        jobs: resume.experience,
+      })}
     </div>
   </main>
 `;
