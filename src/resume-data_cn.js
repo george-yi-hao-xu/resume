@@ -102,15 +102,15 @@ export const resume_data_cn = {
     {
       title: "软件工程师",
       company: "Sasaki Associates",
-      meta: ["全职 -> 远程合同", "2023 年 11 月 - 2025 年 11 月 -> 至今", "Boston, US"],
+      meta: ["全职 -> 远程合同", "2023 年 11 月 - 2025 年 11 月 -> 至今", "波士顿, 美国"],
       bullets: [
-        "升级 React UI 与 tokens design system，加入 js/ts 支持；通过 Node.js build scripts 提升构建效率，并配置 GitHub CI/CD pipelines，覆盖 Jest test、Chromatic 在线 UI review 平台与 UI demo webpage 自动部署。",
+        "升级 React UI 与 tokens 设计系统，加入对js/ts的支持；通过 Node.js build scripts 提升构建效率，并配置 GitHub CI/CD pipelines，覆盖 Jest test、Chromatic 在线 UI review 平台与 UI demo webpage 自动部署。",
         "将 legacy REST API 迁移至 GraphQL，加快新 client apps 搭建；配置 Google Cloud PostgreSQL database，增强代码 type safety，实现 cloud functions 并基于 Google Firebase 搭建 GraphQL server。",
         "通过优化 MobX state management，并实现 code-splitting 与 caching 技术提升 web app performance，使数据计算时间至少减少 30%。",
         "与 design 和 development 团队协作，实现高质量 d3.js data visualization components，在多个项目中提升用户参与度与数据理解效率。",
       ],
       links: [
-        { label: "Employee Info", href: "https://www.sasaki.com/people/george-xu/" },
+        { label: "员工信息", href: "https://www.sasaki.com/people/george-xu/" },
       ],
     },
     {

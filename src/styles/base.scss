@@ -41,3 +41,23 @@ h3 {
   font-weight: 750;
   line-height: 1.2;
 }
+
+// only in cn version, it has a selfie
+#selfie {
+  position: absolute;
+  border-radius: 50%;
+  height: 104px;
+  object-fit: cover;
+  right: var(--gap-page);
+  top: var(--gap-xl);
+  width: 104px;
+}
+
+@media print {
+  #selfie {
+    top: 0;
+    right: 0;
+    height: 15mm;
+    width: 15mm;
+  }
+}

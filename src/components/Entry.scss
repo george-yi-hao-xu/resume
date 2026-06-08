@@ -8,21 +8,21 @@
 
 .entry + .entry,
 .skill-group + .skill-group {
-  margin-top: 12px;
+  margin-top: var(--gap-m);
 }
 
 .entry p,
 .skill-group p {
   color: $muted;
-  margin-top: 2px;
+  margin-top: var(--gap-2xs);
 }
 
 .entry a {
   // display: block;
   font-size: 0.72rem;
   line-height: 1.3;
-  margin-top: 4px;
-  margin-right: 8px;
+  margin-top: var(--gap-s);
+  margin-right: var(--gap-sm);
 }
 
 .entry__meta,

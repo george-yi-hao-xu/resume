@@ -1,7 +1,7 @@
 @use "../styles/tokens" as *;
 
 .section + .section {
-  margin-top: 22px;
+  margin-top: var(--gap-l);
 }
 
 h2 {
@@ -10,16 +10,12 @@ h2 {
   font-size: 0.82rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 11px;
-  padding-bottom: 5px;
+  margin-bottom: var(--gap-m);
+  padding-bottom: var(--gap-s);
   text-transform: uppercase;
 }
 
 @media print {
-  .section + .section {
-    margin-top: 15px;
-  }
-
   .section {
     break-inside: avoid;
   }

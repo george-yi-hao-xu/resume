@@ -2,7 +2,7 @@
 
 .resume__header {
   border-bottom: 2px solid $ink;
-  padding-bottom: 16px;
+  padding-bottom: var(--gap-ml);
 }
 
 .resume__header h1 {
@@ -19,19 +19,13 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 0.78rem;
-  gap: 6px 12px;
+  gap: var(--gap-sm) var(--gap-m);
   line-height: 1.35;
-  margin-top: 14px;
+  margin-top: var(--gap-m);
 }
 
 .contact-list > *:not(:last-child)::after {
   color: $rule;
   content: "/";
-  margin-left: 12px;
-}
-
-@media print {
-  .resume__header h1 {
-    font-size: 3.15rem;
-  }
+  margin-left: var(--gap-m);
 }
