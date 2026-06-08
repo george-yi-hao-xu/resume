@@ -100,8 +100,8 @@ const Sidebar = (resume) => `
       children: resume.skillGroups.map(SkillGroup).join(""),
     })}
     ${Section({
-      title: "Freelance Projects",
-      children: resume.freelanceProjects.map(Entry).join(""),
+      title: "Indie Projects",
+      children: resume.indieProjects.map(Entry).join(""),
     })}
     ${Section({
       title: "Studio Projects",

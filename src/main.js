@@ -1,4 +1,4 @@
-import { ResumeMaker } from "./components.js";
+import { ResumeMaker as ResumeTemplateMaker } from "./components.js";
 import { resume_data } from "./resume-data.js";
 import "./style.scss";
 
@@ -9,4 +9,4 @@ document
   ?.setAttribute("content", resume_data.description);
 
 // real stuff
-document.querySelector("#app").innerHTML = ResumeMaker(resume_data);
+document.querySelector("#app").innerHTML = ResumeTemplateMaker(resume_data);

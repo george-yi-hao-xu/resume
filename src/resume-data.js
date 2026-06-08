@@ -3,9 +3,9 @@ export const resume_data = {
   description: "Resume of George Yihao Xu, UI/UX designer and frontend developer.",
   contacts: [
     { label: "www.georgeyxu.com", href: "https://www.georgeyxu.com/" },
-    { label: "yihao_xu@brown.edu", href: "mailto:yihao_xu@brown.edu" },
+    { label: "xuyihao342@gmail.com", href: "mailto:xuyihao342@gmail.com" },
     { label: "+1.401.743.7680", href: "tel:+14017437680" },
-    { label: "Web Dev | UI/UX | XR" },
+    { label: "Software Engineering | Experience Design" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
     { label: "Portfolio", href: "https://www.georgeyxu.com/" },
   ],
@@ -30,67 +30,35 @@ export const resume_data = {
   ],
   skillGroups: [
     {
-      title: "Front-end Development",
-      items: ["HTML CSS-SCSS Js-Ts", "React React-Native", "MobX JQuery"],
+      title: "Web Development",
+      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Py/Flask node.js"],
     },
     {
-      title: "Back-end Development",
-      items: ["MongoDB-Express-NodeJS", "Firebase"],
+      title: "DB Management",
+      items: ["GraphQl REST_API", "PostgreSQL"],
     },
     {
-      title: "Game Development",
-      items: ["Unity C#"],
+      title: "3D Development",
+      items: ["Unity_C#  RayLib_C++_WASM", "Rhino/Grasshopper_Python/AutoCAD"],
     },
     {
-      title: "UI/UX Design",
-      items: ["Figma-AdobeXD", "Photoshop-Illustrator-InDesign-Premier"],
-    },
-    {
-      title: "3D Modeling",
-      items: ["Rhino-Grasshopper-AutoCAD"],
+      title: "UI/UX",
+      items: ["Figma/AdobeXD", "PS/AI/ID/PR"],
     },
   ],
-  freelanceProjects: [
+  indieProjects: [
     {
-      title: "Ocean State Bioactives",
-      details: ["Front-end Development"],
+      title: "Mesh3d",
+      details: ["Web & Native App"],
       links: [
         {
-          label: "osb-react-ts-project.vercel.app",
-          href: "https://osb-react-ts-project.vercel.app/",
+          label: "GitHub Page",
+          href: "https://github.com/george-yi-hao-xu/mesh3d",
         },
       ],
-    },
-    {
-      title: "OPT Unemployment Time Calculator",
-      details: ["MERN Web Development"],
-      links: [
-        {
-          label: "opt-unemployment-time-calculator.online",
-          href: "https://www.opt-unemployment-time-calculator.online/",
-        },
-      ],
-    },
+    }
   ],
   studioProjects: [
-    {
-      title: "Thesis",
-      details: ["Interactive Design & Web Development"],
-      links: [
-        {
-          label: "thesis-screen-table-react.vercel.app",
-          href: "https://thesis-screen-table-react.vercel.app/",
-        },
-        {
-          label: "thesis-app-kkx8.vercel.app",
-          href: "https://thesis-app-kkx8.vercel.app/",
-        },
-        {
-          label: "youtu.be/q8MaGWrrcKg",
-          href: "https://youtu.be/q8MaGWrrcKg",
-        },
-      ],
-    },
     {
       title: "Shekon",
       details: ["Oculus VR Experience Development"],
@@ -102,12 +70,12 @@ export const resume_data = {
       ],
     },
   ],
-  languages: ["English (Fluent)", "Mandarin Wu (Native)", "German (Intermediate)"],
+  languages: ["English (Fluent)", "Mandarin Wu (Native)", "German (Intermediate)", "French (Intermediate)"],
   experience: [
     {
-      title: "UI/UX Designer, Frontend Developer",
-      company: "ActEarn",
-      meta: ["Internship", "Aug 2023 - Present", "Remote Menlo Park, CA"],
+      title: "Software Engineer",
+      company: "Sasaki Associates",
+      meta: ["Full Time -> Remote Contractor", "Nov 2023 - Nov 2025 -> Present", "Hybrid Boston US"],
       bullets: [
         "Support the UI/UX design of the product, structure and conduct user interviews, create Figma mocks, and implement designs via front-end coding.",
         "Design and implement company websites.",
@@ -115,32 +83,11 @@ export const resume_data = {
         "Handle other design-related duties.",
       ],
       links: [
-        { label: "wanderflow.co", href: "https://www.wanderflow.co/" },
-        {
-          label: "wandeflowv19.vercel.app",
-          href: "https://wandeflowv19.vercel.app/",
-        },
+        { label: "Company Employee Page", href: "https://www.sasaki.com/people/george-xu/" },
       ],
     },
     {
-      title: "Founding Member, Frontend Developer, Designer",
-      company: "Welight Tech",
-      meta: ["Part-time", "Feb 2023 - Present", "Remote London UK"],
-      bullets: [
-        "Founding member of WeLight Tech, an edtech startup using AI to streamline the study abroad application process for high school and undergraduate students.",
-        "Led front-end development using HTML, CSS, JS, and React, focusing on enhancing web application UI.",
-        "Coordinated weekly engineering team meetings and oversaw hiring.",
-        "Aligned design and development across the project.",
-      ],
-      links: [
-        {
-          label: "welightpreview.vercel.app",
-          href: "https://welightpreview.vercel.app/",
-        },
-      ],
-    },
-    {
-      title: "UI Developer",
+      title: "XR Developer",
       company: "RISD",
       meta: ["Part-time", "Oct 2022 - Jun 2023", "Hybrid in RI"],
       bullets: [
