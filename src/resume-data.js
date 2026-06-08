@@ -52,7 +52,11 @@ export const resume_data = {
   skillGroups: [
     {
       title: "Web Development",
-      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Py/Flask Node.js", "GraphQl REST_API", "PostgreSQL"],
+      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Python/Flask Node.js", "GraphQl/Firebase REST_API", "PostgreSQL/GCloud MongoDB"],
+    },
+    {
+      title: "AI Dev Tools",
+      items: ["Codex", "GitHub Copilot"]
     },
     {
       title: "3D Development",
@@ -69,9 +73,13 @@ export const resume_data = {
       details: ["Web & Native App"],
       links: [
         {
+          label: "Live Demo",
+          href: "https://george-yi-hao-xu.github.io/mesh3d",
+        },
+        {
           label: "Source Code",
           href: "https://github.com/george-yi-hao-xu/mesh3d",
-        },
+        }
       ],
     }
   ],
@@ -81,12 +89,12 @@ export const resume_data = {
       details: ["Oculus VR Development"],
       links: [
         {
-          label: "Source Code",
-          href: "https://github.com/george-yi-hao-xu/shekon",
+          label: "Demo Video",
+          href: "https://vimeo.com/1199347000?share=copy&fl=sv&fe=ci",
         },
         {
-          label: "Project Video",
-          href: "https://www.georgeyxu.com/shekon",
+          label: "Source Code",
+          href: "https://github.com/george-yi-hao-xu/shekon",
         }
       ],
     },
@@ -101,12 +109,12 @@ export const resume_data = {
     {
       title: "Software Engineer",
       company: "Sasaki Associates",
-      meta: ["Full Time -> Remote Contractor", "Nov 2023 - Nov 2025 -> Present", "Hybrid Boston US"],
+      meta: ["Full Time -> Remote Contractor", "Nov 2023 - Nov 2025 -> Present", "Boston, US"],
       bullets: [
-        "Support the UI/UX design of the product, structure and conduct user interviews, create Figma mocks, and implement designs via front-end coding.",
-        "Design and implement company websites.",
-        "Design and create marketing assets, including posters, movie clips, animations, GIFs, SVGs, Lotties, and other relevant formats.",
-        "Handle other design-related duties.",
+        "Upgrade React UI and tokens design system, implement js/ts support. Improve build efficiency by implementing Node.js build scripts and set up GitHub CI/CD pipelines, including Jest test, chromatic online ui review platform, and auto deploy ui demo webpage.",
+        "Migrate legacy REST API to GraphQL, speed up new client apps establishment. Set up Google cloud PostgreSQL database, enhance code type safety, implement cloud functions and set up GraphQL server with Google Firebase.",
+        "Improve web app performance by optimizing MobX state management and implementing code-splitting caching techniques, resulting in a at least 30% reduction in data calculation times.",
+        "Collaborate with design and development teams to implement high-quality d3.js data visualization components, enhancing user engagement and data comprehension across multiple projects.",
       ],
       links: [
         { label: "Employee Info", href: "https://www.sasaki.com/people/george-xu/" },
@@ -114,20 +122,21 @@ export const resume_data = {
     },
     {
       title: "XR Developer",
-      company: "RISD",
-      meta: ["Part-time", "Oct 2022 - Jun 2023", "Hybrid in RI"],
+      company: "RISD Rover Club - NASA Spacesuit UI Challenge",
+      meta: ["Part-time", "Oct 2022 - Jun 2023", "Rhode Island, US"],
       bullets: [
-        "Participated in a nationwide challenge sponsored by NASA, involving universities across the U.S.",
-        "Served as a liaison between designers and developers, helping Computer Science students from Brown University understand user flow and helping developers articulate technical issues to designers.",
-        "Developed the user interface within Unity for HoloLens, with a primary focus on icon development.",
+        "Developed the user interface within Unity for HoloLens, with a primary focus on UI development.",
+        "Closing working with industrial design students to implement their designs, and iterating based on user feedback.",
+      ],
+      links: [
+        { label: "Detailed Timeline", href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },
       ],
     },
     {
       title: "Graphic Designer",
-      company: "RISD",
-      meta: ["Part-time", "Jul 2022 - Dec 2022", "Hybrid in RI"],
+      company: "RISD ISSA Office",
+      meta: ["Part-time", "Jul 2022 - Dec 2022", "Rhode Island, US"],
       bullets: [
-        "Graphic designer at RISD, partnered with the ISSA office.",
         "Designed and distributed online graphics, improving student comprehension of school events and policies.",
         "Roles encompassed data visualization, poster design, and review of slides and web design.",
       ],
@@ -135,11 +144,9 @@ export const resume_data = {
     {
       title: "Computational Designer",
       company: "ECADI",
-      meta: ["Full-time", "Aug 2020 - May 2021", "Shanghai"],
+      meta: ["Full-time", "Aug 2020 - May 2021", "Shanghai, CN"],
       bullets: [
-        "Specialized in parametric design, using Grasshopper complemented by Python and C#.",
-        "This combination boosted code efficiency.",
-        "Focused on scripting for building facade designs.",
+        "Specialized in parametric design across teams' projects, using Rhino Grasshopper complemented by Python and C#. Greatly improved design efficiency and quality, and contributed to multiple large-scale projects.",
       ],
     },
   ],
