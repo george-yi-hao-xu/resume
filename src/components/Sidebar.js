@@ -1,6 +1,10 @@
 import { Entry, LanguageList, SkillGroup } from "./Entry.js";
 import { Section } from "./Section.js";
 
+/**
+ * @param {import("../resume-data.js").ResumeData} resume
+ * @returns {string}
+ */
 export const Sidebar = (resume) => `
   <aside class="resume__sidebar" aria-label="Resume details">
     ${Section({

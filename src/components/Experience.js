@@ -1,6 +1,10 @@
 import { escapeHtml, links } from "./utils.js";
 import "./Experience.scss";
 
+/**
+ * @param {import("../resume-data.js").Link[]} [items]
+ * @returns {string}
+ */
 const LinkRow = (items = []) => {
   if (!items.length) {
     return "";
@@ -9,6 +13,10 @@ const LinkRow = (items = []) => {
   return `<p class="link-row">${links(items)}</p>`;
 };
 
+/**
+ * @param {import("../resume-data.js").JobData} props
+ * @returns {string}
+ */
 const Job = ({ title, company, meta = [], bullets = [], links: jobLinks = [] }) => `
   <article class="job">
     <header class="job__header">
@@ -27,6 +35,10 @@ const Job = ({ title, company, meta = [], bullets = [], links: jobLinks = [] }) 
   </article>
 `;
 
+/**
+ * @param {import("../resume-data.js").JobData[]} jobs
+ * @returns {string}
+ */
 export const Experience = (jobs) => `
   <section class="resume__main" aria-label="Professional experience">
     <h2>Professional Experience</h2>

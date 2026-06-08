@@ -3,6 +3,10 @@ import { Header } from "./Header.js";
 import { Sidebar } from "./Sidebar.js";
 import "./ResumeMaker.scss";
 
+/**
+ * @param {import("../resume-data.js").ResumeData} resume
+ * @returns {string}
+ */
 export const ResumeMaker = (resume) => `
   <main class="resume">
     ${Header(resume)}
