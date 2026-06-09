@@ -1,0 +1,22 @@
+@use "../styles/tokens" as *;
+
+.section + .section {
+  margin-top: var(--gap-l);
+}
+
+h2 {
+  border-bottom: 1px solid $rule;
+  color: $accent-dark;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--gap-m);
+  padding-bottom: var(--gap-s);
+  text-transform: uppercase;
+}
+
+@media print {
+  .section {
+    break-inside: avoid;
+  }
+}

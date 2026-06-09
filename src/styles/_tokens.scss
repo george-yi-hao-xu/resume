@@ -1,0 +1,37 @@
+$ink: #22211f;
+$muted: #6b6761;
+$rule: #d9d4cb;
+$paper: #fffdf8;
+$page: #f3f5f2;
+$accent: #22645a;
+$accent-dark: #163f39;
+
+$print-page-width: 215.9mm;
+$print-page-height: 279.4mm;
+
+// set this in the print preview dialog!
+$print-page-margin: 0.35in;
+
+:root {
+  --gap-2xs: 2px;
+  --gap-s: 4px;
+  --gap-sm: 8px;
+  --gap-m: 12px;
+  --gap-ml: 16px;
+  --gap-l: 24px;
+  --gap-xl: 32px;
+  --gap-page: 48px;
+}
+
+@media print {
+  :root {
+    --gap-2xs: 1px;
+    --gap-s: 2px;
+    --gap-sm: 4px;
+    --gap-m: 6px;
+    --gap-ml: 8px;
+    --gap-l: 12px;
+    --gap-xl: 16px;
+    --gap-page: 24px;
+  }
+}

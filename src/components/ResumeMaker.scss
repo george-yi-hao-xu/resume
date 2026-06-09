@@ -1,0 +1,52 @@
+@use "../styles/tokens" as *;
+
+.resume {
+  background: $paper;
+  box-shadow: 0 24px 70px rgba(31, 39, 37, 0.14);
+  margin: var(--gap-xl) auto;
+  max-width: 980px;
+  min-height: 11in;
+  padding: var(--gap-page);
+  position: relative;
+}
+
+.resume__grid {
+  display: grid;
+  gap: var(--gap-xl);
+  grid-template-columns: minmax(210px, 0.82fr) minmax(0, 1.65fr);
+  padding-top: var(--gap-l);
+}
+
+.resume__sidebar {
+  border-right: 1px solid $rule;
+  padding-right: var(--gap-l);
+}
+
+@media (max-width: 760px) {
+  .resume {
+    margin: 0;
+    min-height: 0;
+    padding: var(--gap-l);
+  }
+
+  .resume__grid {
+    gap: var(--gap-l);
+    grid-template-columns: 1fr;
+  }
+
+  .resume__sidebar {
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+@media print {
+  .resume {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    background: none;
+  }
+}

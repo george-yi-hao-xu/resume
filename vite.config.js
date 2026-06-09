@@ -1,21 +1,16 @@
+import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'src',
-  publicDir: false,
+  base: './',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
-    assetsDir: '',
     rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'style.css';
-          }
-
-          return '[name][extname]';
-        },
+      input: {
+        main: resolve(__dirname, 'src/index.html'),
+        cn: resolve(__dirname, 'src/index_cn.html'),
       },
     },
   },
