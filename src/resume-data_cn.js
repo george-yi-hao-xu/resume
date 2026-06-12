@@ -38,22 +38,18 @@ export const resume_data_cn = {
   ],
   skillGroups: [
     {
-      title: "网络前后端开发",
+      title: "网络开发",
       items: [
         "HTML CSS/SCSS Js/Ts",
         "React/RN",
-        "Go Python/Flask Node.js",
+        "Go Python Node.js",
         "GraphQl/Firebase REST_API",
         "PostgreSQL/GCloud MongoDB",
       ],
     },
     {
-      title: "AI 辅助工具",
-      items: ["Codex", "GitHub Copilot"],
-    },
-    {
-      title: "交互与计算设计",
-      items: ["Unity_C#  RayLib_C++_WASM", "Rhino/Grasshopper_Python/AutoCAD"],
+      title: "交互与计算",
+      items: ["Unity_C#  RayLib_C++_WASM", "Rhino_Python/AutoCAD/Inventor"],
     },
     {
       title: "UI/UX",
@@ -104,10 +100,10 @@ export const resume_data_cn = {
       company: "Sasaki Associates",
       meta: ["全职 -> 远程合同", "2023 年 11 月 - 2025 年 11 月 -> 至今", "波士顿, 美国"],
       bullets: [
-        "升级 React UI 与 tokens 设计系统，加入对js/ts的支持；通过 Node.js build scripts 提升构建效率，并配置 GitHub CI/CD pipelines，覆盖 Jest test、Chromatic 在线 UI review 平台与 UI demo webpage 自动部署。",
-        "将 legacy REST API 迁移至 GraphQL，加快新 client apps 搭建；配置 Google Cloud PostgreSQL database，增强代码 type safety，实现 cloud functions 并基于 Google Firebase 搭建 GraphQL server。",
-        "通过优化 MobX state management，并实现 code-splitting 与 caching 技术提升 web app performance，使数据计算时间至少减少 30%。",
-        "与 design 和 development 团队协作，实现高质量 d3.js data visualization components，在多个项目中提升用户参与度与数据理解效率。",
+        "升级 React UI 与 tokens 设计系统；通过 Node.js build scripts 提升构建效率，并配置 GitHub CI/CD pipelines，覆盖 Jest test、Chromatic 在线 UI review 平台与 UI demo webpage 自动部署。",
+        "将 legacy REST API 迁移至 GraphQL，加速部署客户端与服务端；配置 Google Cloud PostgreSQL 数据库，实现 cloud functions 并基于 Google Firebase 搭建 GraphQL server。",
+        "通过优化 MobX 状态管理，并实现缓存，使数据计算时间至少减少 30%。",
+        "与设计和开发团队协作，实现高质量 d3.js 数据可视化组件，在多个项目中提升用户参与度与数据理解效率。",
       ],
       links: [
         { label: "员工信息", href: "https://www.sasaki.com/people/george-xu/" },
@@ -118,7 +114,7 @@ export const resume_data_cn = {
       company: "RISD Rover Club - NASA Spacesuit UI Challenge",
       meta: ["兼职", "2022 年 10 月 - 2023 年 6 月", "罗德岛, 美国"],
       bullets: [
-        "在 Unity 中为 HoloLens 开发用户界面，重点负责 UI 开发。",
+        "在 Unity 中为 HoloLens 开发用户界面，为宇航员开发视觉系统",
         "与工业设计学生紧密协作，将设计方案落地，并根据用户反馈持续迭代。",
       ],
       links: [
@@ -130,7 +126,7 @@ export const resume_data_cn = {
       company: "RISD ISSA Office",
       meta: ["兼职", "2022 年 7 月 - 2022 年 12 月", "罗德岛, 美国"],
       bullets: [
-        "设计并发布线上图形，帮助学生更清晰地理解学校活动与政策信息。",
+        "设计并发布设计稿，帮助学生更清晰地理解学校活动与政策信息。",
         "工作内容覆盖数据可视化、海报设计，以及幻灯片与网页设计的审阅。",
       ],
     },
@@ -139,7 +135,7 @@ export const resume_data_cn = {
       company: "ECADI",
       meta: ["全职", "2020 年 8 月 - 2021 年 5 月", "上海, 中国"],
       bullets: [
-        "在跨团队项目中负责参数化设计，使用 Rhino Grasshopper 并结合 Python 与 C#，显著提升设计效率和质量，并参与多个大型项目。",
+        "在跨团队项目中负责参数化设计，使用 Rhino Grasshopper 并结合 Python 与 C#，显著提升设计效率和质量，并参与多个大型基建项目。",
       ],
     },
   ],
