@@ -12,7 +12,7 @@ export const resume_data_cn = {
     experience: "专业经历",
   },
   contacts: [
-    { label: "www.georgeyxu.com", href: "https://www.georgeyxu.com/" },
+    // { label: "www.georgeyxu.com", href: "https://www.georgeyxu.com/" },
     { label: "xuyihao342@gmail.com", href: "mailto:xuyihao342@gmail.com" },
     { label: "软件工程 | 体验设计" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
