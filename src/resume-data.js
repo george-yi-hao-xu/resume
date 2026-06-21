@@ -70,11 +70,11 @@ export const resume_data = {
   skillGroups: [
     {
       title: "Web Development",
-      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Python/Flask Node.js", "GraphQl/Firebase REST_API", "PostgreSQL/GCloud MongoDB"],
+      items: ["HTML CSS/SCSS Js/Ts", "React/RN", "Go Python/Flask Node.js", "Docker GraphQl/Firebase REST_API", "PostgreSQL/GCloud MongoDB"],
     },
     {
-      title: "AI Dev Tools",
-      items: ["Codex", "GitHub Copilot"]
+      title: "AI/Dev Tools",
+      items: ["Codex", "ComfyUI"]
     },
     {
       title: "3D Development",

@@ -5,33 +5,34 @@ $paper: #fffdf8;
 $page: #f3f5f2;
 $accent: #22645a;
 $accent-dark: #163f39;
+$china-red: #9d1f1e;
 
-$print-page-width: 215.9mm;
-$print-page-height: 279.4mm;
+$print-page-width: 210mm;
+$print-page-height: 297mm;
 
 // set this in the print preview dialog!
-$print-page-margin: 0.35in;
+$print-page-margin: 8mm;
 
 :root {
-  --gap-2xs: 2px;
-  --gap-s: 4px;
-  --gap-sm: 8px;
-  --gap-m: 12px;
-  --gap-ml: 16px;
-  --gap-l: 24px;
-  --gap-xl: 32px;
-  --gap-page: 48px;
+  --gap-2xs: 0.53mm;
+  --gap-s: 1.06mm;
+  --gap-sm: 2.12mm;
+  --gap-m: 3.18mm;
+  --gap-ml: 4.23mm;
+  --gap-l: 6.35mm;
+  --gap-xl: 8.47mm;
+  --gap-page: 12.7mm;
 }
 
 @media print {
   :root {
-    --gap-2xs: 1px;
-    --gap-s: 2px;
-    --gap-sm: 4px;
-    --gap-m: 6px;
-    --gap-ml: 8px;
-    --gap-l: 12px;
-    --gap-xl: 16px;
-    --gap-page: 24px;
+    --gap-2xs: 0.26mm;
+    --gap-s: 0.53mm;
+    --gap-sm: 1.06mm;
+    --gap-m: 1.59mm;
+    --gap-ml: 2.12mm;
+    --gap-l: 3.18mm;
+    --gap-xl: 4.23mm;
+    --gap-page: 6.35mm;
   }
 }

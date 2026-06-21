@@ -1,14 +1,14 @@
 @use "../styles/tokens" as *;
 
 .resume__header {
-  border-bottom: 2px solid $ink;
+  border-bottom: 0.53mm solid $ink;
   padding-bottom: var(--gap-ml);
 }
 
 .resume__header h1 {
   font-family:
     Georgia, "Times New Roman", serif;
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: 15mm;
   font-weight: 500;
   line-height: 0.95;
   text-transform: uppercase;
@@ -18,7 +18,7 @@
   color: $muted;
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.78rem;
+  font-size: 3.3mm;
   gap: var(--gap-sm) var(--gap-m);
   line-height: 1.35;
   margin-top: var(--gap-m);

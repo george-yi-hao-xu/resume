@@ -8,8 +8,8 @@ html {
   background: $page;
   color: $ink;
   font-family:
-    Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+    Inter, "Segoe UI", "Microsoft YaHei", "PingFang SC", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 4.23mm;
 }
 
 body {
@@ -25,7 +25,7 @@ a {
 a:hover {
   color: $accent-dark;
   text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.76mm;
 }
 
 p,
@@ -37,7 +37,7 @@ h3 {
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: 3.81mm;
   font-weight: 750;
   line-height: 1.2;
 }
@@ -46,11 +46,11 @@ h3 {
 #selfie {
   position: absolute;
   border-radius: 50%;
-  height: 104px;
+  height: 27.52mm;
   object-fit: cover;
   right: var(--gap-page);
   top: var(--gap-xl);
-  width: 104px;
+  width: 27.52mm;
 }
 
 @media print {
