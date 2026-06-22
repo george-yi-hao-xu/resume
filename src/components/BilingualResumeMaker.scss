@@ -15,9 +15,9 @@
   align-items: center;
   border-bottom: 0.45mm solid $ink;
   display: grid;
-  gap: 4mm;
+  gap: 2mm;
   grid-template-columns: minmax(0, 1fr) minmax(52mm, auto) 19mm;
-  padding-bottom: 4.5mm;
+  padding-bottom: 2mm;
 }
 
 .bi-header h1 {
@@ -90,8 +90,8 @@
 .bi-grid {
   display: grid;
   gap: 6mm;
-  grid-template-columns: minmax(48mm, 0.82fr) minmax(0, 1.58fr);
-  padding-top: 4.5mm;
+  grid-template-columns: minmax(48mm, 0.5fr) minmax(0, 1fr);
+  padding-top: 4mm;
 }
 
 .bi-sidebar {
@@ -105,7 +105,7 @@
 }
 
 .bi-profile-section {
-  margin-top: 4.2mm;
+  margin-top: 2mm;
 }
 
 .bi-main-projects {

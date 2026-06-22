@@ -30,13 +30,13 @@ export const resume_data_bilingual = {
   },
   profile: [
     {
-      zh: "todo",
-      en: "todo",
+      zh: "拥有设计背景与国际工作经验的软件工程师，熟悉 Web 开发生态、前后端协作流程与数据可视化实践，并持续探索深度学习在产品与设计工具中的应用。具备较强的自驱学习能力，沟通清晰，能够在跨职能团队中稳定推进复杂任务。",
+      en: "Software engineer with a design background and international work experience, familiar with the Web development ecosystem, frontend-backend collaboration, and data visualization. Actively exploring deep learning applications in products and design tools, with strong self-driven learning, clear communication, and the ability to move complex tasks forward in cross-functional teams.",
     },
-    {
-      zh: "todo",
-      en: "todo",
-    },
+    // {
+    //   zh: "todo",
+    //   en: "todo",
+    // },
   ],
   experience: [
     {
@@ -48,51 +48,54 @@ export const resume_data_bilingual = {
       ],
       bullets: [
         {
-          zh: "主导基于Adobe-Aria无样式UI库重构UI设计系统 参考 中心化设计Token，通过Node.js脚本实现编译，以同时支持scss和ts，并基于lerna/changset快速版本迭代。",
-          en: "Upgraded React UI and token systems with JS/TS support and CI/CD automation.",
+          zh: "主导基于 Adobe React Aria 无样式组件库重构 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，同时支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代。",
+          en: "Led a UI design system refactor with Adobe React Aria, centralized design tokens, Node.js build scripts, SCSS/TypeScript output, and Lerna/Changesets versioning.",
         },
         {
-          zh: "参与将主力项目Dashi从1.0前端静态网站，基于GraphQl、Google Data Connect和云函数，升级为完善的2.0Web前后端项目。" 
-            + "并借助Changset技术，完善了核心库的迭代维护，增强了Monorepo的健壮性。并且大幅度新客户网站的部署速度。",
-          en: "Migrated REST workflows to GraphQL with Firebase functions and Google Cloud PostgreSQL.",
+          zh: "参与将主力项目 Dashi 从 1.0 前端静态网站，升级为基于 GraphQL、Google Data Connect 和云函数的 2.0 Web 前后端项目。"
+            + "借助 Changesets 完善核心库的迭代维护，增强 Monorepo 的健壮性，并大幅提升新客户网站的部署速度。",
+          en: "Helped upgrade Dashi from a static 1.0 frontend into a full 2.0 web app using GraphQL, Google Data Connect, and cloud functions; improved package maintenance and client-site deployment speed with Changesets.",
         },
         {
-          zh: "通过浏览器Profile工具以及打时间点，定位前端计算瓶颈，优化js数组计算。在后端，参与对计算结果进行快照，以减轻前端计算工作量。并参与基于Google Analytics，借助设计师对用户行为等进行分析。",
-          en: "Improved MobX state and caching, reducing key calculation time by at least 30%.",
+          zh: "通过浏览器 Profile 工具定位前端计算瓶颈并优化 JavaScript 数组计算；在后端参与计算结果快照，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。",
+          en: "Used browser profiling to find frontend bottlenecks, optimized JavaScript array processing, reduced client computation through backend result snapshots, and supported Google Analytics-based user behavior analysis.",
         },
         {
-          zh: "主导基于d3.js的图表库开发。通过解耦的store，统一数据结构，简化了多种带动画和 Tooltips 浮动解释文字框 的图表实现",
-          en: "Built d3.js visualizations with design and engineering teams.",
+          zh: "主导基于 d3.js 的图表库开发，解耦数据与缓存逻辑，统一数据结构，简化多种带动画与 Tooltip 解释浮层的图表实现。",
+          en: "Led a d3.js charting library, decoupling data/cache logic and standardizing data structures for animated charts and tooltip overlays.",
         },
         {
-          zh: "多次编写Rhino Python脚本，帮助建筑师根据csv数据生成AutoCAD dwg点云文件，并实现属性标注。",
-          en: "todo"
+          zh: "多次编写 Rhino Python 脚本，帮助建筑师根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注，助力城市规划设计项目推进。",
+          en: "Wrote Rhino Python scripts to generate AutoCAD DWG point clouds from CSV data, annotate CAD geometry, and support urban planning workflows."
         }
       ],
     },
     {
-      title: { zh: "Hololens XR 开发工程师", en: "Hololens XR Developer" },
-      company: "RISD Rover Club - NASA Spacesuit UI Challenge",
+      title: { zh: "HoloLens XR 开发工程师", en: "Hololens XR Developer" },
+      company: "罗德岛设计学院 月球车社团 RISD Rover Club",
       meta: ["2022.10 - 2023.06", "罗德岛", "学术项目"],
       bullets: [
         {
-          zh: "全流程深度参与基于微软Hololens的NASA竞赛项目，熟练使用Unity和C#进行UI开发。与设计师深度合作，完善了包括模拟采样抓取、地图打点引导、宇航员定位等等功能。参与野外模拟测试，并完成了最终的交付汇报。",
-          en: "todo",
+          zh: "全流程深度参与基于微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#。完善模拟采样抓取、地图打点引导、宇航员定位等功能。",
+          en: "Built Microsoft HoloLens UI features in Unity and C# for a NASA competition project, including sample collection, waypoint guidance, and astronaut positioning;"
         },
         // {
         //   zh: "todo",
         //   en: "todo",
         // },
       ],
+      links: [
+        { label: { zh: "具体信息", en: "Detailed Timeline"}, href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },
+      ],
     },
     {
       title: { zh: "参数化设计师", en: "Computational Designer" },
-      company: "ECADI",
+      company: "华东建筑设计研究院 ECADI",
       meta: ["2020.08 - 2021.05", "上海", "全职"],
       bullets: [
         {
-          zh: "todo",
-          en: "todo",
+          zh: "参与大型机场项目室内设计，运用 Rhino Grasshopper 参数化工具，对中庭等核心公共空间进行建模与设计。并使用InDesign等工具完成文本编排工作。",
+          en: "Contributed to interior design for a large-scale airport project, using Rhino Grasshopper parametric tools to model and design core public spaces such as atriums.",
         },
       ],
     },
@@ -119,7 +122,7 @@ export const resume_data_bilingual = {
   ],
   skillGroups: [
     {
-      title: { zh: "Web前端工程化", en: "Web Frontend" },
+      title: { zh: "Web 前端工程化", en: "Web Frontend" },
       items: [
         { zh: "HTML CSS/SCSS JavaScript/TypeScript" },
         { zh: "React/ReactNative Node.js" },
@@ -127,7 +130,7 @@ export const resume_data_bilingual = {
       ],
     },
     {
-      title: { zh: "Web后端", en: "Web Backend & DB" },
+      title: { zh: "Web 后端与数据库", en: "Web Backend & DB" },
       items: [
         { zh: "Go Python/Flask GraphQL RESTAPI" },
         { zh: "Firebase  Google_Cloud" },
@@ -135,7 +138,7 @@ export const resume_data_bilingual = {
       ],
     },
     {
-      title: { zh: "游戏与3D空间设计开发", en: "Design & 3D" },
+      title: { zh: "游戏与 3D 空间设计开发", en: "Design & 3D" },
       items: [
         { zh: "Figma / Adobe XD / PS / AI / ID / PR" },
         { zh: "Unity C# / RayLib C++ WASM / Rhino Grasshopper" },
@@ -150,7 +153,7 @@ export const resume_data_bilingual = {
     {
       title: { zh: "Mesh3d", en: "Web WASM & Native C++ App" },
       meta: { 
-        zh: "基于力学模拟，辅助设计师在空间上进行找形设计，分别部署于win客户端和网页前端。在win端，使用C++以及cuda技术，配合Raylib实现计算可视化。且借助WASM技术在GitHub Page部署1.0版本。目前，存储与管理、基于PyTorch的深度学习功能的2.0版本，尚在本地docker环境中开发。", 
+        zh: "基于力学模拟，辅助设计师进行空间找形设计，并分别部署于 Windows 客户端和网页前端。在 Windows 端，使用 C++ 与 CUDA 技术，配合 Raylib 实现计算可视化；同时借助 WASM 技术在 GitHub Pages 部署 1.0 版本。目前，包含存储与管理、基于 PyTorch 的深度学习功能的 2.0 版本仍在本地 Docker 环境中开发。", 
         en: "A mechanics-simulation tool that helps designers explore spatial form-finding, deployed as both a Windows client and a web frontend. The Windows version uses C++ and CUDA with Raylib for computational visualization, while version 1.0 is deployed to GitHub Pages through WASM. Version 2.0, with storage, management, and PyTorch-based deep learning features, is currently under development in a local Docker environment." },
       links: [
         {

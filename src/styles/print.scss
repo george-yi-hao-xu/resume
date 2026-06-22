@@ -4,10 +4,12 @@
   @page {
     margin: $print-page-margin;
     size: A4;
+    background: none;
   }
 
   html,
-  body {
+  body, 
+  main {
     background: #fff;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
@@ -18,6 +20,10 @@
 
     // if a scrollbar shows up, it means the content overflows the page size, 
     // then if u wanna print, one page will not be enough.
-    overflow: auto;
+    overflow: hidden;
+  }
+
+  .bi-resume {
+    background: none;
   }
 }
