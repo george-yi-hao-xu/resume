@@ -4,7 +4,7 @@
  * @typedef {{ label: string, value?: string, href?: string }} BilingualContact
  * @typedef {{ title: BilingualText, meta?: BilingualText, details?: BilingualText[], note?: BilingualText, links?: BilingualLink[] }} BilingualEntry
  * @typedef {{ title: BilingualText, items: BilingualText[] }} BilingualSkillGroup
- * @typedef {{ title: BilingualText, company: string, meta: string[], bullets: BilingualText[] }} BilingualJob
+ * @typedef {{ title: BilingualText, company: string, meta: string[], bullets: BilingualText[], links?: BilingualLink[] }} BilingualJob
  */
 
 export const resume_data_bilingual = {
@@ -15,51 +15,59 @@ export const resume_data_bilingual = {
   contacts: [
     { label: "电话", value: "" },
     { label: "微信", value: "" },
-    { label: "所在地", value: "中国上海" },
-    { label: "邮箱", value: "xuyihao342@gmail.com", href: "mailto:xuyihao342@outlook.com" },
+    { label: "所在地", value: "中国 上海" },
+    { label: "邮箱", value: "xuyihao342@outlook.com", href: "mailto:xuyihao342@outlook.com" },
     { label: "GitHub", value: "github.com/george-yi-hao-xu", href: "https://github.com/george-yi-hao-xu" },
     // { label: "LinkedIn", value: "linkedin.com/in/george-xu", href: "https://www.linkedin.com/" },
   ],
   labels: {
     profile: "个人优势 Profile",
-    experience: "工作经历 Experience",
+    experience: "职业经历 Job Experience",
     education: "教育背景 Education",
     skills: "技能 Skills",
-    projects: "项目 Projects",
+    projects: "独立项目 Indie Projects",
     languages: "语言 Languages",
   },
   profile: [
     {
-      zh: "软件工程与体验设计复合背景，擅长把设计系统、前端工程和数据可视化落地为稳定产品。",
-      en: "Hybrid software and experience-design background across design systems, frontend engineering, and data visualization.",
+      zh: "todo",
+      en: "todo",
     },
     {
-      zh: "熟悉 React、TypeScript、GraphQL、Firebase、PostgreSQL 与云端部署流程，能独立推进从原型到上线的工程闭环。",
-      en: "Hands-on with React, TypeScript, GraphQL, Firebase, PostgreSQL, and cloud delivery workflows.",
+      zh: "todo",
+      en: "todo",
     },
   ],
   experience: [
     {
       title: { zh: "软件工程师", en: "Software Engineer" },
-      company: "Sasaki Associates.Inc",
+      company: "Sasaki Associates, Inc.",
       meta: ["2023.11 - 至今", "波士顿 / 远程"],
+      links: [
+        { label: { zh: "员工信息", en: "Employee Info" }, href: "https://www.sasaki.com/people/george-xu/" },
+      ],
       bullets: [
         {
-          zh: "基于Abode-Aria 无样式组件库升级UI设计系统，中心化设计Token，并强化多语种支持，通过 Node.js脚本和GitHub CI/CD提升迭代发布效率。",
+          zh: "主导基于Adobe-Aria无样式UI库重构UI设计系统 参考 中心化设计Token，通过Node.js脚本实现编译，以同时支持scss和ts，并基于lerna/changset快速版本迭代。",
           en: "Upgraded React UI and token systems with JS/TS support and CI/CD automation.",
         },
         {
-          zh: "将 legacy REST API 迁移至 GraphQL，搭建 Firebase cloud functions 与 Google Cloud PostgreSQL 数据链路。",
+          zh: "参与将主力项目Dashi从1.0前端静态网站，基于GraphQl、Google Data Connect和云函数，升级为完善的2.0Web前后端项目。" 
+            + "并借助Changset技术，完善了核心库的迭代维护，增强了Monorepo的健壮性。并且大幅度新客户网站的部署速度。",
           en: "Migrated REST workflows to GraphQL with Firebase functions and Google Cloud PostgreSQL.",
         },
         {
-          zh: "优化 MobX 状态管理与缓存策略，使核心数据计算耗时降低至少 30%。",
+          zh: "通过浏览器Profile工具以及打时间点，定位前端计算瓶颈，优化js数组计算。在后端，参与对计算结果进行快照，以减轻前端计算工作量。并参与基于Google Analytics，借助设计师对用户行为等进行分析。",
           en: "Improved MobX state and caching, reducing key calculation time by at least 30%.",
         },
         {
-          zh: "与设计和开发团队协作实现 d3.js 数据可视化组件，提高复杂数据的可读性和产品体验。",
+          zh: "主导基于d3.js的图表库开发。通过解耦的store，统一数据结构，简化了多种带动画和 Tooltips 浮动解释文字框 的图表实现",
           en: "Built d3.js visualizations with design and engineering teams.",
         },
+        {
+          zh: "多次编写Rhino Python脚本，帮助建筑师根据csv数据生成AutoCAD dwg点云文件，并实现属性标注。",
+          en: "todo"
+        }
       ],
     },
     {
@@ -68,13 +76,13 @@ export const resume_data_bilingual = {
       meta: ["2022.10 - 2023.06", "罗德岛", "学术项目"],
       bullets: [
         {
-          zh: "在 Unity 中开发 HoloLens 界面，支持宇航服视觉系统的信息展示与交互验证。",
-          en: "Built HoloLens UI in Unity for spacesuit interface validation.",
+          zh: "全流程深度参与基于微软Hololens的NASA竞赛项目，熟练使用Unity和C#进行UI开发。与设计师深度合作，完善了包括模拟采样抓取、地图打点引导、宇航员定位等等功能。参与野外模拟测试，并完成了最终的交付汇报。",
+          en: "todo",
         },
-        {
-          zh: "与工业设计学生协作，将概念方案转化为可测试界面，并根据反馈迭代。",
-          en: "Translated industrial-design concepts into testable interfaces.",
-        },
+        // {
+        //   zh: "todo",
+        //   en: "todo",
+        // },
       ],
     },
     {
@@ -83,8 +91,8 @@ export const resume_data_bilingual = {
       meta: ["2020.08 - 2021.05", "上海", "全职"],
       bullets: [
         {
-          zh: "使用 Rhino Grasshopper、Python 与 C# 参与跨团队参数化设计，提高大型项目的设计效率与质量。",
-          en: "Applied Rhino Grasshopper, Python, and C# to improve design workflows.",
+          zh: "todo",
+          en: "todo",
         },
       ],
     },
@@ -111,7 +119,7 @@ export const resume_data_bilingual = {
   ],
   skillGroups: [
     {
-      title: { zh: "前端与工程化", en: "Frontend" },
+      title: { zh: "Web前端工程化", en: "Web Frontend" },
       items: [
         { zh: "HTML CSS/SCSS JavaScript/TypeScript" },
         { zh: "React/ReactNative Node.js" },
@@ -119,7 +127,7 @@ export const resume_data_bilingual = {
       ],
     },
     {
-      title: { zh: "服务端与数据库", en: "Backend & Data" },
+      title: { zh: "Web后端", en: "Web Backend & DB" },
       items: [
         { zh: "Go Python/Flask GraphQL RESTAPI" },
         { zh: "Firebase  Google_Cloud" },
@@ -127,7 +135,7 @@ export const resume_data_bilingual = {
       ],
     },
     {
-      title: { zh: "设计与三维", en: "Design & 3D" },
+      title: { zh: "游戏与3D空间设计开发", en: "Design & 3D" },
       items: [
         { zh: "Figma / Adobe XD / PS / AI / ID / PR" },
         { zh: "Unity C# / RayLib C++ WASM / Rhino Grasshopper" },
@@ -140,8 +148,10 @@ export const resume_data_bilingual = {
   ],
   projects: [
     {
-      title: { zh: "Mesh3d", en: "Web & Native App" },
-      meta: { zh: "Web 与 Native 三维应用；在线演示与源码已发布。", en: "3D web/native app with live demo and source code." },
+      title: { zh: "Mesh3d", en: "Web WASM & Native C++ App" },
+      meta: { 
+        zh: "基于力学模拟，辅助设计师在空间上进行找形设计，分别部署于win客户端和网页前端。在win端，使用C++以及cuda技术，配合Raylib实现计算可视化。且借助WASM技术在GitHub Page部署1.0版本。目前，存储与管理、基于PyTorch的深度学习功能的2.0版本，尚在本地docker环境中开发。", 
+        en: "A mechanics-simulation tool that helps designers explore spatial form-finding, deployed as both a Windows client and a web frontend. The Windows version uses C++ and CUDA with Raylib for computational visualization, while version 1.0 is deployed to GitHub Pages through WASM. Version 2.0, with storage, management, and PyTorch-based deep learning features, is currently under development in a local Docker environment." },
       links: [
         {
           label: { zh: "在线演示", en: "Live Demo" },
@@ -153,24 +163,24 @@ export const resume_data_bilingual = {
         },
       ],
     },
-    {
-      title: { zh: "Shekon", en: "Oculus VR Development" },
-      meta: { zh: "Oculus VR 开发项目；覆盖演示视频与源码。", en: "Oculus VR project with demo video and source code." },
-      links: [
-        {
-          label: { zh: "演示视频", en: "Demo Video" },
-          href: "https://vimeo.com/1199347000?share=copy&fl=sv&fe=ci",
-        },
-        {
-          label: { zh: "源代码", en: "Source Code" },
-          href: "https://github.com/george-yi-hao-xu/shekon",
-        },
-      ],
-    },
+    // {
+    //   title: { zh: "Shekon", en: "Oculus VR Development" },
+    //   meta: { zh: "TODO", en: "Oculus VR project with demo video and source code." },
+    //   links: [
+    //     {
+    //       label: { zh: "演示视频", en: "Demo Video" },
+    //       href: "https://vimeo.com/1199347000?share=copy&fl=sv&fe=ci",
+    //     },
+    //     {
+    //       label: { zh: "源代码", en: "Source Code" },
+    //       href: "https://github.com/george-yi-hao-xu/shekon",
+    //     },
+    //   ],
+    // },
   ],
   languages: [
     {
-      name: { zh: "汉语", en: "Mandarin & Wu" },
+      name: { zh: "汉语", en: "Mandarin" },
       level: { zh: "母语", en: "Native" },
     },
     {

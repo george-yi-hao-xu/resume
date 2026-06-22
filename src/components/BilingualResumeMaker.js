@@ -30,13 +30,13 @@ const section = (title, children, className = "") => `
   </section>
 `;
 
-const entryLinks = (items = []) => {
+const entryLinks = (items = [], className = "") => {
   if (!items.length) {
     return "";
   }
 
   return `
-    <p class="bi-link-row">
+    <p class="bi-link-row ${escapeHtml(className)}">
       ${items
         .map(
           (item) =>
@@ -76,9 +76,17 @@ const job = (item) => `
     <header class="bi-job__header">
       <div>
         <h3>${text(item.title)}</h3>
-        <p class="bi-job__company">${escapeHtml(item.company)}</p>
+        <div class="bi-job__company">
+          <div class="name">${escapeHtml(item.company)}</div>
+        </div>
       </div>
-      <p class="bi-job__meta">${item.meta.map(escapeHtml).join(" / ")}</p>
+      <div class="bi-job__meta">
+        <div>${item.meta.map(escapeHtml).join(" / ")}</div>
+        <div class="links">${(item.links ?? [])
+          .map((link) => `<a href="${escapeHtml(link.href)}">${text(link.label)}</a>`)
+          .join("")}
+        </div>
+      </div>
     </header>
     <ul>
       ${item.bullets.map((bullet) => `<li>${text(bullet, "bi-bullet")}</li>`).join("")}
@@ -109,7 +117,6 @@ export const BilingualResumeMaker = (resume) => `
       <aside class="bi-sidebar">
         ${section(resume.labels.education, resume.education.map(compactEntry).join(""), "bi-education-section")}
         ${section(resume.labels.skills, resume.skillGroups.map(skillGroup).join(""), "bi-skills-section")}
-        ${section(resume.labels.projects, resume.projects.map(compactEntry).join(""))}
         ${section(
           resume.labels.languages,
           `<ul class="bi-plain-list lang">${resume.languages.map(language).join("")}</ul>`,
@@ -118,6 +125,7 @@ export const BilingualResumeMaker = (resume) => `
       <section class="bi-main" aria-label="工作经历">
         <h2>${escapeHtml(resume.labels.experience)}</h2>
         ${resume.experience.map(job).join("")}
+        ${section(resume.labels.projects, resume.projects.map(compactEntry).join(""), "bi-main-projects")}
       </section>
     </div>
   </main>

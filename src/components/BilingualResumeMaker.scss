@@ -29,7 +29,7 @@
 }
 
 .bi-header h1 span {
-  font-family: "SimSun", "Songti SC", serif;
+  font-family: "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", "Songti SC", serif;
   font-size: 10.8mm;
   font-weight: 700;
 }
@@ -84,6 +84,7 @@
   border: 0.35mm solid $rule;
   object-fit: cover;
   width: 18mm;
+  border-radius: 8mm;
 }
 
 .bi-grid {
@@ -104,6 +105,10 @@
 }
 
 .bi-profile-section {
+  margin-top: 4.2mm;
+}
+
+.bi-main-projects {
   margin-top: 4.2mm;
 }
 
@@ -174,6 +179,22 @@
   color: $accent;
 }
 
+.bi-link-row--quiet {
+  margin: 0;
+}
+
+.bi-link-row--quiet a {
+  color: $muted;
+  font-size: 2.25mm;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.bi-link-row--quiet .bi-text__zh,
+.bi-link-row--quiet .bi-text__en {
+  color: $muted;
+}
+
 .bi-education-section .bi-entry p {
   // margin-left: 3mm;
 }
@@ -196,7 +217,7 @@
 }
 
 .bi-plain-list li + li {
-  margin-top: 0.9mm;
+  margin-top: 0mm;
 }
 
 .bi-language {
@@ -247,10 +268,37 @@
 }
 
 .bi-job__company {
+  align-items: baseline;
   color: $accent-dark;
+  display: flex;
+  justify-content: space-between;
   font-size: 2.85mm;
   font-weight: 700;
+  gap: 2mm;
   margin-top: 0.8mm;
+}
+
+.links {
+  margin-top: 2mm;;
+  display: inline-flex;
+  gap: 1mm;
+}
+
+.links a {
+  color: $muted;
+  font-size: 2.25mm;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.links .bi-text {
+  display: flex;
+  gap: 1mm;
+}
+
+.links .bi-text__zh,
+.links .bi-text__en {
+  color: $muted;
 }
 
 .bi-job__meta {
