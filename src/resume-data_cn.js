@@ -42,10 +42,18 @@ export const resume_data_cn = {
       items: [
         "HTML CSS/SCSS Js/Ts",
         "React/RN",
-        "Go Python Node.js",
+        "Docker Go Python Node.js",
         "GraphQl/Firebase REST_API",
         "PostgreSQL/GCloud MongoDB",
       ],
+    },
+    {
+      title: "AI/Dev Tools",
+      items: [
+        // "Agent",
+        "Codex GitHub-Copilot",
+        "ComfyUI"
+      ]
     },
     {
       title: "交互与计算",

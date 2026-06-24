@@ -2,9 +2,9 @@
 
 .resume {
   background: $paper;
-  box-shadow: 0 24px 70px rgba(31, 39, 37, 0.14);
+  box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.14);
   margin: var(--gap-xl) auto;
-  max-width: 980px;
+  max-width: 259.29mm;
   min-height: 11in;
   padding: var(--gap-page);
   position: relative;
@@ -13,16 +13,16 @@
 .resume__grid {
   display: grid;
   gap: var(--gap-xl);
-  grid-template-columns: minmax(210px, 0.82fr) minmax(0, 1.65fr);
+  grid-template-columns: minmax(55.56mm, 0.82fr) minmax(0, 1.65fr);
   padding-top: var(--gap-l);
 }
 
 .resume__sidebar {
-  border-right: 1px solid $rule;
+  border-right: 0.25mm solid $rule;
   padding-right: var(--gap-l);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 201.08mm) {
   .resume {
     margin: 0;
     min-height: 0;

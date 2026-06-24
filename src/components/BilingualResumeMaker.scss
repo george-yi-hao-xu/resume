@@ -1,0 +1,362 @@
+@use "../styles/tokens" as *;
+
+.bi-resume {
+  background: $paper;
+  box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.14);
+  color: $ink;
+  margin: 8.47mm auto;
+  max-width: $print-page-width;
+  min-height: $print-page-height;
+  padding: 11mm 12mm;
+  position: relative;
+}
+
+.bi-header {
+  align-items: center;
+  border-bottom: 0.45mm solid $ink;
+  display: grid;
+  gap: 2mm;
+  grid-template-columns: minmax(0, 1fr) minmax(52mm, auto) 19mm;
+  padding-bottom: 2mm;
+}
+
+.bi-header h1 {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5mm;
+  line-height: 1;
+}
+
+.bi-header h1 span {
+  font-family: "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", "Songti SC", serif;
+  font-size: 10.8mm;
+  font-weight: 700;
+}
+
+.bi-header h1 small {
+  color: $muted;
+  font-size: 4.2mm;
+  font-weight: 600;
+}
+
+.bi-header__identity > p {
+  margin-top: 1.8mm;
+}
+
+.bi-role {
+  color: $accent-dark;
+  display: flex;
+  font-size: 3.5mm;
+  font-weight: 700;
+  gap: 2mm;
+}
+
+.bi-role__en {
+  color: $muted;
+  font-weight: 600;
+}
+
+.bi-contact-list {
+  color: $muted;
+  display: grid;
+  font-size: 2.65mm;
+  gap: 1.1mm;
+  line-height: 1.25;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bi-contact-list li {
+  display: grid;
+  gap: 1.8mm;
+  grid-template-columns: 8mm minmax(0, 1fr);
+}
+
+.bi-contact-list b {
+  color: $china-red;
+  font-weight: 700;
+}
+
+.bi-avatar {
+  aspect-ratio: 1;
+  border: 0.35mm solid $rule;
+  object-fit: cover;
+  width: 18mm;
+  border-radius: 8mm;
+}
+
+.bi-grid {
+  display: grid;
+  gap: 6mm;
+  grid-template-columns: minmax(48mm, 0.5fr) minmax(0, 1fr);
+  padding-top: 4mm;
+}
+
+.bi-sidebar {
+  border-right: 0.25mm solid $rule;
+  padding-right: 5mm;
+}
+
+.bi-section + .bi-section,
+.bi-job + .bi-job {
+  margin-top: 4.2mm;
+}
+
+.bi-profile-section {
+  margin-top: 2mm;
+}
+
+.bi-main-projects {
+  margin-top: 4.2mm;
+}
+
+.bi-section h2,
+.bi-main > h2 {
+  border-bottom: 0.25mm solid $rule;
+  color: $china-red;
+  font-size: 3.2mm;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2.6mm;
+  padding-bottom: 1.3mm;
+}
+
+.bi-entry + .bi-entry,
+.bi-entry .bi-plain-list {
+  margin-top: 2mm;
+}
+
+.bi-entry h3,
+.bi-job h3 {
+  font-size: 3.05mm;
+  line-height: 1.2;
+}
+
+.bi-plain-list {
+  &.lang {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+
+    li + li {
+      margin-top: 0;
+    }
+  }
+}
+
+.bi-entry p,
+.bi-plain-list,
+.bi-profile,
+.bi-job ul {
+  color: $muted;
+  font-size: 2.72mm;
+  line-height: 1.36;
+}
+
+.bi-entry p {
+  margin-top: 0.8mm;
+}
+
+.bi-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm 3mm;
+}
+
+.bi-link-row a {
+  font-size: 2.55mm;
+  font-weight: 700;
+}
+
+.bi-link-row .bi-text {
+  display: flex;
+  gap: 1mm;
+}
+
+.bi-link-row .bi-text__en {
+  color: $accent;
+}
+
+.bi-link-row--quiet {
+  margin: 0;
+}
+
+.bi-link-row--quiet a {
+  color: $muted;
+  font-size: 2.25mm;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.bi-link-row--quiet .bi-text__zh,
+.bi-link-row--quiet .bi-text__en {
+  color: $muted;
+}
+
+.bi-education-section .bi-entry p {
+  // margin-left: 3mm;
+}
+
+.bi-skills-section .bi-plain-list {
+  // margin-left: 3mm;
+}
+
+.bi-plain-list,
+.bi-profile {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bi-profile {
+  display: grid;
+  gap: 1.8mm;
+  grid-template-columns: 1fr;
+}
+
+.bi-plain-list li + li {
+  margin-top: 0mm;
+}
+
+.bi-language {
+  align-items: start;
+  display: grid;
+  gap: 2mm;
+  grid-template-columns: minmax(0, 1fr) minmax(15mm, auto);
+}
+
+.bi-language__level {
+  display: block;
+  text-align: right;
+}
+
+.bi-language__level .bi-text {
+  justify-items: end;
+}
+
+.bi-language__level .bi-text__zh {
+  color: $muted;
+  font-weight: 600;
+}
+
+.bi-text,
+.bi-bullet {
+  display: grid;
+  gap: 0.45mm;
+}
+
+.bi-text__zh,
+.bi-bullet__zh {
+  color: $ink;
+  // font-weight: 700;
+}
+
+.bi-text__en,
+.bi-bullet__en {
+  color: $muted;
+  font-size: 2.4mm;
+  font-weight: 500;
+}
+
+.bi-job__header {
+  align-items: start;
+  display: grid;
+  gap: 3mm;
+  grid-template-columns: minmax(0, 1fr) minmax(33mm, auto);
+}
+
+.bi-job__company {
+  align-items: baseline;
+  color: $accent-dark;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.85mm;
+  font-weight: 700;
+  gap: 2mm;
+  margin-top: 0.8mm;
+}
+
+.links {
+  margin-top: 2mm;;
+  display: inline-flex;
+  gap: 1mm;
+}
+
+.links a {
+  color: $muted;
+  font-size: 2.25mm;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.links .bi-text {
+  display: flex;
+  gap: 1mm;
+}
+
+.links .bi-text__zh,
+.links .bi-text__en {
+  color: $muted;
+}
+
+.bi-job__meta {
+  color: $muted;
+  font-size: 2.55mm;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.bi-job ul {
+  color: $ink;
+  margin: 2mm 0 0;
+  padding-left: 3.8mm;
+}
+
+.bi-job li + li {
+  margin-top: 1.5mm;
+}
+
+@media (max-width: 201.08mm) {
+  .bi-resume {
+    margin: 0;
+    min-height: 0;
+    padding: 8mm;
+  }
+
+  .bi-header,
+  .bi-grid,
+  .bi-job__header {
+    grid-template-columns: 1fr;
+  }
+
+  .bi-avatar {
+    grid-row: 1;
+    width: 18mm;
+  }
+
+  .bi-sidebar {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .bi-job__meta {
+    text-align: left;
+  }
+}
+
+@media print {
+  .bi-resume {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .bi-section,
+  .bi-job {
+    break-inside: avoid;
+  }
+}

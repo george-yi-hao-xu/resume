@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "export:boss": "node --no-warnings scripts/export-boss-markdown.mjs",
+    "export:boss:bilingual": "node --no-warnings scripts/export-boss-markdown.mjs --lang=bilingual"
   },
   "devDependencies": {
     "sass": "^1.77.0",
