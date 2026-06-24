@@ -25,13 +25,17 @@ export const resume_data_bilingual = {
     experience: "职业经历 Job Experience",
     education: "教育背景 Education",
     skills: "技能 Skills",
-    projects: "独立项目 Indie Projects",
+    projects: "学术项目 Academic Projects",
     languages: "语言 Languages",
   },
   profile: [
     {
-      zh: "拥有设计背景与国际工作经验的软件工程师，熟悉 Web 开发生态、前后端协作流程与数据可视化实践，并持续探索深度学习在产品与设计工具中的应用。具备较强的自驱学习能力，沟通清晰，能够在跨职能团队中稳定推进复杂任务。",
-      en: "Software engineer with a design background and international work experience, familiar with the Web development ecosystem, frontend-backend collaboration, and data visualization. Actively exploring deep learning applications in products and design tools, with strong self-driven learning, clear communication, and the ability to move complex tasks forward in cross-functional teams.",
+      zh: `就职于世界顶尖规划公司SASAKI波士顿分部研发部门，担当主力软件工程师，承担Web前后端生态架构开发与维护、优化数据结构与算法。
+      先前,毕业国内985211 同济大学 王牌专业建筑学 与 世界顶尖设计学院 美国罗德岛设计学院，并于美国常春藤 布朗大学 进修计算机课程。
+      在校期间结合设计背景，深耕其与计算机交叉内容，包括人机交互、计算设计、动力学模拟等。成绩优异，与国内外斩获学科奖项。
+      有极强的好奇心与学习自驱力，做事谨慎仔细，为人和善耐心，在校和职场深得合作同学、同事信任。`,
+      en: `Software engineer on Sasaki's Boston R&D team, focused on web architecture, data structures, and algorithmic optimization.
+      Trained in architecture and design at Tongji University and RISD, with CS coursework at Brown University; self-driven, detail-oriented, and trusted in cross-disciplinary collaboration.`,
     },
     // {
     //   zh: "todo",
@@ -41,7 +45,7 @@ export const resume_data_bilingual = {
   experience: [
     {
       title: { zh: "软件工程师", en: "Software Engineer" },
-      company: "Sasaki Associates, Inc.",
+      company: "美国SASAKI规划 Sasaki Associates, Inc.",
       meta: ["2023.11 - 至今", "波士顿 / 远程"],
       links: [
         { label: { zh: "员工信息", en: "Employee Info" }, href: "https://www.sasaki.com/people/george-xu/" },
@@ -49,43 +53,25 @@ export const resume_data_bilingual = {
       bullets: [
         {
           zh: "主导基于 Adobe React Aria 无样式组件库重构 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，同时支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代。",
-          en: "Led a UI design system refactor with Adobe React Aria, centralized design tokens, Node.js build scripts, SCSS/TypeScript output, and Lerna/Changesets versioning.",
+          en: "Refactored the UI design system with React Aria, design tokens, SCSS/TS output, and Lerna/Changesets releases.",
         },
         {
-          zh: "参与将主力项目 Dashi 从 1.0 前端静态网站，升级为基于 GraphQL、Google Data Connect 和云函数的 2.0 Web 前后端项目。"
-            + "借助 Changesets 完善核心库的迭代维护，增强 Monorepo 的健壮性，并大幅提升新客户网站的部署速度。",
-          en: "Helped upgrade Dashi from a static 1.0 frontend into a full 2.0 web app using GraphQL, Google Data Connect, and cloud functions; improved package maintenance and client-site deployment speed with Changesets.",
+          zh: `参与将主力项目 Dashi 从 1.0 前端静态网站，升级为基于 GraphQL、Google Data Connect 和云函数的 2.0 Web 前后端项目。
+            借助 Changesets 完善核心库的迭代维护，增强 Monorepo 的健壮性，并大幅提升新客户网站的部署速度。`,
+          en: "Upgraded Dashi from a static site to a GraphQL/Data Connect app; improved monorepo releases and client-site deployment.",
         },
         {
           zh: "通过浏览器 Profile 工具定位前端计算瓶颈并优化 JavaScript 数组计算；在后端参与计算结果快照，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。",
-          en: "Used browser profiling to find frontend bottlenecks, optimized JavaScript array processing, reduced client computation through backend result snapshots, and supported Google Analytics-based user behavior analysis.",
+          en: "Profiled frontend bottlenecks, optimized JS array logic, moved heavy results to backend snapshots, and supported GA analysis.",
         },
         {
           zh: "主导基于 d3.js 的图表库开发，解耦数据与缓存逻辑，统一数据结构，简化多种带动画与 Tooltip 解释浮层的图表实现。",
-          en: "Led a d3.js charting library, decoupling data/cache logic and standardizing data structures for animated charts and tooltip overlays.",
+          en: "Built a d3.js chart library with cleaner data/cache logic, shared data models, animations, and tooltips.",
         },
         {
           zh: "多次编写 Rhino Python 脚本，帮助建筑师根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注，助力城市规划设计项目推进。",
-          en: "Wrote Rhino Python scripts to generate AutoCAD DWG point clouds from CSV data, annotate CAD geometry, and support urban planning workflows."
+          en: "Wrote Rhino Python scripts for CSV-to-DWG point clouds, CAD annotations, and planning workflows."
         }
-      ],
-    },
-    {
-      title: { zh: "HoloLens XR 开发工程师", en: "Hololens XR Developer" },
-      company: "罗德岛设计学院 月球车社团 RISD Rover Club",
-      meta: ["2022.10 - 2023.06", "罗德岛", "学术项目"],
-      bullets: [
-        {
-          zh: "全流程深度参与基于微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#。完善模拟采样抓取、地图打点引导、宇航员定位等功能。",
-          en: "Built Microsoft HoloLens UI features in Unity and C# for a NASA competition project, including sample collection, waypoint guidance, and astronaut positioning;"
-        },
-        // {
-        //   zh: "todo",
-        //   en: "todo",
-        // },
-      ],
-      links: [
-        { label: { zh: "具体信息", en: "Detailed Timeline"}, href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },
       ],
     },
     {
@@ -95,7 +81,7 @@ export const resume_data_bilingual = {
       bullets: [
         {
           zh: "参与大型机场项目室内设计，运用 Rhino Grasshopper 参数化工具，对中庭等核心公共空间进行建模与设计。并使用InDesign等工具完成文本编排工作。",
-          en: "Contributed to interior design for a large-scale airport project, using Rhino Grasshopper parametric tools to model and design core public spaces such as atriums.",
+          en: "Modeled airport interior spaces with Rhino Grasshopper and produced layouts in InDesign.",
         },
       ],
     },
@@ -116,7 +102,7 @@ export const resume_data_bilingual = {
       title: { zh: "同济大学", en: "Tongji University" },
       meta: {
         zh: "建筑学学士 德强班 2020.06 毕业",
-        en: "Bachelor of Architecture, Deutschintensivkurs, graduated Jun 2020",
+        en: "BArch, Deutschintensivkurs, Jun 2020",
       },
     },
   ],
@@ -151,10 +137,14 @@ export const resume_data_bilingual = {
   ],
   projects: [
     {
-      title: { zh: "Mesh3d", en: "Web WASM & Native C++ App" },
+      title: { 
+        zh: "基于动力学的空间找形设计", 
+        en: "Physics-Based Form-Finding" 
+      },
       meta: { 
-        zh: "基于力学模拟，辅助设计师进行空间找形设计，并分别部署于 Windows 客户端和网页前端。在 Windows 端，使用 C++ 与 CUDA 技术，配合 Raylib 实现计算可视化；同时借助 WASM 技术在 GitHub Pages 部署 1.0 版本。目前，包含存储与管理、基于 PyTorch 的深度学习功能的 2.0 版本仍在本地 Docker 环境中开发。", 
-        en: "A mechanics-simulation tool that helps designers explore spatial form-finding, deployed as both a Windows client and a web frontend. The Windows version uses C++ and CUDA with Raylib for computational visualization, while version 1.0 is deployed to GitHub Pages through WASM. Version 2.0, with storage, management, and PyTorch-based deep learning features, is currently under development in a local Docker environment." },
+        zh: `在校期间，着力于计算设计。借力于 CUDA C++ 技术，对点云进行动力学模拟，以实现空间找形。并基于 Raylib 库实现计算可视化；
+        同时借 WASM 技术于 GitHub Pages 部署 web demo 版本。`, 
+        en: "Used CUDA C++ and Raylib for point-cloud physics simulation and visualization; deployed a WASM web demo on GitHub Pages." },
       links: [
         {
           label: { zh: "在线演示", en: "Live Demo" },
@@ -166,6 +156,16 @@ export const resume_data_bilingual = {
         },
       ],
     },
+    {
+      title: { zh: "美国宇航局月球车竞赛", en: "NASA Rover Challenge" },
+      meta: {
+        zh: `在校期间，全流程深度参与基于北美微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#进行开发。与设计师紧密合作、专业交流，完善模拟采样抓取、地图打点引导、宇航员定位等功能。`,
+        en: "Built HoloLens features in Unity/C#, including sample collection, waypoint guidance, and astronaut positioning.",
+      },
+      links: [
+        { label: { zh: "具体信息", en: "Detailed Timeline"}, href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },
+      ],
+    }
     // {
     //   title: { zh: "Shekon", en: "Oculus VR Development" },
     //   meta: { zh: "TODO", en: "Oculus VR project with demo video and source code." },
