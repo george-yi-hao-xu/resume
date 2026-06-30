@@ -1,10 +1,15 @@
 @use "../styles/tokens" as *;
 
+.bi-document {
+  display: grid;
+  gap: 8.47mm;
+}
+
 .bi-resume {
   background: $paper;
   box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.14);
   color: $ink;
-  margin: 8.47mm auto;
+  margin: 0 auto;
   max-width: $print-page-width;
   min-height: $print-page-height;
   padding: 11mm 12mm;
@@ -46,13 +51,17 @@
 
 .bi-role {
   color: $accent-dark;
-  display: flex;
+  display: block;
   font-size: 3.5mm;
   font-weight: 700;
+}
+
+.bi-resume--mixed .bi-role {
+  display: flex;
   gap: 2mm;
 }
 
-.bi-role__en {
+.bi-resume--mixed .bi-role__en {
   color: $muted;
   font-weight: 600;
 }
@@ -175,7 +184,7 @@
   gap: 1mm;
 }
 
-.bi-link-row .bi-text__en {
+.bi-resume--mixed .bi-link-row .bi-text__en {
   color: $accent;
 }
 
@@ -190,8 +199,8 @@
   text-decoration: none;
 }
 
-.bi-link-row--quiet .bi-text__zh,
-.bi-link-row--quiet .bi-text__en {
+.bi-resume--mixed .bi-link-row--quiet .bi-text__zh,
+.bi-resume--mixed .bi-link-row--quiet .bi-text__en {
   color: $muted;
 }
 
@@ -243,18 +252,27 @@
 
 .bi-text,
 .bi-bullet {
+  display: block;
+}
+
+.bi-text,
+.bi-bullet {
+  color: $ink;
+}
+
+.bi-resume--mixed .bi-text,
+.bi-resume--mixed .bi-bullet {
   display: grid;
   gap: 0.45mm;
 }
 
-.bi-text__zh,
-.bi-bullet__zh {
+.bi-resume--mixed .bi-text__zh,
+.bi-resume--mixed .bi-bullet__zh {
   color: $ink;
-  // font-weight: 700;
 }
 
-.bi-text__en,
-.bi-bullet__en {
+.bi-resume--mixed .bi-text__en,
+.bi-resume--mixed .bi-bullet__en {
   color: $muted;
   font-size: 2.4mm;
   font-weight: 500;
@@ -296,8 +314,8 @@
   gap: 1mm;
 }
 
-.links .bi-text__zh,
-.links .bi-text__en {
+.bi-resume--mixed .links .bi-text__zh,
+.bi-resume--mixed .links .bi-text__en {
   color: $muted;
 }
 
@@ -347,12 +365,23 @@
 }
 
 @media print {
+  .bi-document {
+    display: block;
+  }
+
   .bi-resume {
     box-shadow: none;
     margin: 0;
     max-width: none;
-    min-height: 0;
+    min-height: $print-page-height - 2 * $print-page-margin;
     padding: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .bi-resume:last-child {
+    page-break-after: auto;
+    break-after: auto;
   }
 
   .bi-section,

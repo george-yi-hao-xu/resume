@@ -1,9 +1,65 @@
 import { escapeHtml } from "./utils.js";
 import "./BilingualResumeMaker.scss";
 
-const text = (item, className = "bi-text") => {
+const labels = {
+  zh: {
+    profile: "个人简介",
+    experience: "职业经历",
+    education: "教育背景",
+    skills: "技能",
+    projects: "学术项目",
+    languages: "语言",
+    phone: "电话",
+    location: "所在地",
+    email: "邮箱",
+    name: "许易豪",
+    role: "软件工程师",
+    contactAria: "联系信息",
+  },
+  en: {
+    profile: "Profile",
+    experience: "Job Experience",
+    education: "Education",
+    skills: "Skills",
+    projects: "Academic Projects",
+    languages: "Languages",
+    phone: "Phone",
+    location: "Location",
+    email: "Email",
+    name: "George Yihao Xu",
+    role: "Software Engineer",
+    contactAria: "Contact",
+  },
+};
+
+const contactLabelKeys = {
+  电话: "phone",
+  所在地: "location",
+  邮箱: "email",
+};
+
+const localizedText = (item, lang) => {
   if (!item) {
     return "";
+  }
+
+  if (typeof item === "string") {
+    return item;
+  }
+
+  return item[lang] ?? item.zh ?? item.en ?? "";
+};
+
+const span = (item, lang, className = "bi-text") =>
+  `<span class="${className}">${escapeHtml(localizedText(item, lang))}</span>`;
+
+const mixedText = (item, className = "bi-text") => {
+  if (!item) {
+    return "";
+  }
+
+  if (typeof item === "string") {
+    return `<span class="${className}">${escapeHtml(item)}</span>`;
   }
 
   const english = item.en ? `<span class="${className}__en">${escapeHtml(item.en)}</span>` : "";
@@ -11,7 +67,68 @@ const text = (item, className = "bi-text") => {
   return `<span class="${className}"><span class="${className}__zh">${escapeHtml(item.zh)}</span>${english}</span>`;
 };
 
-const contact = (item) => {
+const localizedContactLabel = (label, lang) => {
+  if (lang === "zh") {
+    return label;
+  }
+
+  return labels.en[contactLabelKeys[label]] ?? label;
+};
+
+const localizedContactValue = (item, lang) => {
+  if (lang === "en" && contactLabelKeys[item.label] === "location") {
+    return "Shanghai, China";
+  }
+
+  return item.value;
+};
+
+const localizedCompany = (company, lang) => {
+  if (lang === "zh") {
+    return company.replace(/\s+(Sasaki Associates, Inc\.|ECADI)$/u, "");
+  }
+
+  if (company.includes("Sasaki Associates")) {
+    return "Sasaki Associates, Inc.";
+  }
+
+  if (company.includes("ECADI")) {
+    return "ECADI";
+  }
+
+  return company;
+};
+
+const localizedMeta = (items = [], lang) =>
+  items
+    .map((item) => {
+      if (lang === "en") {
+        return item
+          .replace("至今", "Present")
+          .replace("波士顿", "Boston")
+          .replace("远程", "Remote")
+          .replace("上海", "Shanghai")
+          .replace("全职", "Full-time");
+      }
+
+      return item;
+    })
+    .join(" / ");
+
+const contact = (item, lang) => {
+  if (!item.value) {
+    return "";
+  }
+
+  const displayValue = localizedContactValue(item, lang);
+  const value = item.href
+    ? `<a href="${escapeHtml(item.href)}">${escapeHtml(displayValue)}</a>`
+    : `<span>${escapeHtml(displayValue)}</span>`;
+
+  return `<li><b>${escapeHtml(localizedContactLabel(item.label, lang))}</b>${value}</li>`;
+};
+
+const mixedContact = (item) => {
   if (!item.value) {
     return "";
   }
@@ -30,7 +147,7 @@ const section = (title, children, className = "") => `
   </section>
 `;
 
-const entryLinks = (items = [], className = "") => {
+const entryLinks = (items = [], lang, className = "") => {
   if (!items.length) {
     return "";
   }
@@ -38,44 +155,101 @@ const entryLinks = (items = [], className = "") => {
   return `
     <p class="bi-link-row ${escapeHtml(className)}">
       ${items
-        .map(
-          (item) =>
-            `<a href="${escapeHtml(item.href)}">${text(item.label)}</a>`,
-        )
+        .map((item) => `<a href="${escapeHtml(item.href)}">${span(item.label, lang)}</a>`)
         .join("")}
     </p>
   `;
 };
 
-const compactEntry = (item) => `
+const mixedEntryLinks = (items = [], className = "") => {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <p class="bi-link-row ${escapeHtml(className)}">
+      ${items
+        .map((item) => `<a href="${escapeHtml(item.href)}">${mixedText(item.label)}</a>`)
+        .join("")}
+    </p>
+  `;
+};
+
+const compactEntry = (item, lang) => `
   <article class="bi-entry">
-    <h3>${text(item.title)}</h3>
-    ${item.meta ? `<p>${text(item.meta)}</p>` : ""}
-    ${entryLinks(item.links)}
+    <h3>${span(item.title, lang)}</h3>
+    ${item.meta ? `<p>${span(item.meta, lang)}</p>` : ""}
+    ${entryLinks(item.links, lang)}
   </article>
 `;
 
-const skillGroup = (group) => `
+const mixedCompactEntry = (item) => `
   <article class="bi-entry">
-    <h3>${text(group.title)}</h3>
+    <h3>${mixedText(item.title)}</h3>
+    ${item.meta ? `<p>${mixedText(item.meta)}</p>` : ""}
+    ${mixedEntryLinks(item.links)}
+  </article>
+`;
+
+const skillGroup = (group, lang) => `
+  <article class="bi-entry">
+    <h3>${span(group.title, lang)}</h3>
     <ul class="bi-plain-list">
-      ${group.items.map((item) => `<li>${text(item)}</li>`).join("")}
+      ${group.items.map((item) => `<li>${span(item, lang)}</li>`).join("")}
     </ul>
   </article>
 `;
 
-const language = (item) => `
+const mixedSkillGroup = (group) => `
+  <article class="bi-entry">
+    <h3>${mixedText(group.title)}</h3>
+    <ul class="bi-plain-list">
+      ${group.items.map((item) => `<li>${mixedText(item)}</li>`).join("")}
+    </ul>
+  </article>
+`;
+
+const language = (item, lang) => `
   <li class="bi-language">
-    ${text(item.name)}
-    <span class="bi-language__level">${text(item.level)}</span>
+    ${span(item.name, lang)}
+    <span class="bi-language__level">${span(item.level, lang)}</span>
   </li>
 `;
 
-const job = (item) => `
+const mixedLanguage = (item) => `
+  <li class="bi-language">
+    ${mixedText(item.name)}
+    <span class="bi-language__level">${mixedText(item.level)}</span>
+  </li>
+`;
+
+const job = (item, lang) => `
   <article class="bi-job">
     <header class="bi-job__header">
       <div>
-        <h3>${text(item.title)}</h3>
+        <h3>${span(item.title, lang)}</h3>
+        <div class="bi-job__company">
+          <div class="name">${escapeHtml(localizedCompany(item.company, lang))}</div>
+        </div>
+      </div>
+      <div class="bi-job__meta">
+        <div>${escapeHtml(localizedMeta(item.meta, lang))}</div>
+        <div class="links">${(item.links ?? [])
+          .map((link) => `<a href="${escapeHtml(link.href)}">${span(link.label, lang)}</a>`)
+          .join("")}</div>
+      </div>
+    </header>
+    <ul>
+      ${item.bullets.map((bullet) => `<li>${span(bullet, lang, "bi-bullet")}</li>`).join("")}
+    </ul>
+  </article>
+`;
+
+const mixedJob = (item) => `
+  <article class="bi-job">
+    <header class="bi-job__header">
+      <div>
+        <h3>${mixedText(item.title)}</h3>
         <div class="bi-job__company">
           <div class="name">${escapeHtml(item.company)}</div>
         </div>
@@ -83,50 +257,116 @@ const job = (item) => `
       <div class="bi-job__meta">
         <div>${item.meta.map(escapeHtml).join(" / ")}</div>
         <div class="links">${(item.links ?? [])
-          .map((link) => `<a href="${escapeHtml(link.href)}">${text(link.label)}</a>`)
-          .join("")}
-        </div>
+          .map((link) => `<a href="${escapeHtml(link.href)}">${mixedText(link.label)}</a>`)
+          .join("")}</div>
       </div>
     </header>
     <ul>
-      ${item.bullets.map((bullet) => `<li>${text(bullet, "bi-bullet")}</li>`).join("")}
+      ${item.bullets.map((bullet) => `<li>${mixedText(bullet, "bi-bullet")}</li>`).join("")}
     </ul>
   </article>
 `;
 
-export const BilingualResumeMaker = (resume) => `
-  <main class="bi-resume">
+const resumePage = (resume, lang) => {
+  const pageLabels = labels[lang];
+
+  return `
+    <main class="bi-resume bi-resume--${lang}" lang="${lang}">
+      <header class="bi-header">
+        <div class="bi-header__identity">
+          <h1><span>${escapeHtml(pageLabels.name)}</span></h1>
+          <p><span class="bi-role">${escapeHtml(pageLabels.role)}</span></p>
+        </div>
+        <ul class="bi-contact-list" aria-label="${escapeHtml(pageLabels.contactAria)}">
+          ${resume.contacts.map((item) => contact(item, lang)).join("")}
+        </ul>
+        <img class="bi-avatar" src="${escapeHtml(resume.avatar)}" alt="${escapeHtml(pageLabels.name)}" />
+      </header>
+
+      ${section(
+        pageLabels.profile,
+        `<ul class="bi-profile">${resume.profile
+          .map((item) => `<li>${span(item, lang, "bi-bullet")}</li>`)
+          .join("")}</ul>`,
+        "bi-profile-section",
+      )}
+
+      <div class="bi-grid">
+        <aside class="bi-sidebar">
+          ${section(
+            pageLabels.education,
+            resume.education.map((item) => compactEntry(item, lang)).join(""),
+            "bi-education-section",
+          )}
+          ${section(
+            pageLabels.skills,
+            resume.skillGroups.map((item) => skillGroup(item, lang)).join(""),
+            "bi-skills-section",
+          )}
+          ${section(
+            pageLabels.languages,
+            `<ul class="bi-plain-list lang">${resume.languages
+              .map((item) => language(item, lang))
+              .join("")}</ul>`,
+          )}
+        </aside>
+        <section class="bi-main" aria-label="${escapeHtml(pageLabels.experience)}">
+          <h2>${escapeHtml(pageLabels.experience)}</h2>
+          ${resume.experience.map((item) => job(item, lang)).join("")}
+          ${section(
+            pageLabels.projects,
+            resume.projects.map((item) => compactEntry(item, lang)).join(""),
+            "bi-main-projects",
+          )}
+        </section>
+      </div>
+    </main>
+  `;
+};
+
+const mixedResumePage = (resume) => `
+  <main class="bi-resume bi-resume--mixed" lang="zh-Hans">
     <header class="bi-header">
       <div class="bi-header__identity">
         <h1><span>${escapeHtml(resume.name.zh)}</span><small>${escapeHtml(resume.name.en)}</small></h1>
-        <p>${text(resume.role, "bi-role")}</p>
+        <p>${mixedText(resume.role, "bi-role")}</p>
       </div>
       <ul class="bi-contact-list" aria-label="联系信息">
-        ${resume.contacts.map(contact).join("")}
+        ${resume.contacts.map(mixedContact).join("")}
       </ul>
       <img class="bi-avatar" src="${escapeHtml(resume.avatar)}" alt="许易豪头像" />
     </header>
 
     ${section(
       resume.labels.profile,
-      `<ul class="bi-profile">${resume.profile.map((item) => `<li>${text(item, "bi-bullet")}</li>`).join("")}</ul>`,
+      `<ul class="bi-profile">${resume.profile
+        .map((item) => `<li>${mixedText(item, "bi-bullet")}</li>`)
+        .join("")}</ul>`,
       "bi-profile-section",
     )}
 
     <div class="bi-grid">
       <aside class="bi-sidebar">
-        ${section(resume.labels.education, resume.education.map(compactEntry).join(""), "bi-education-section")}
-        ${section(resume.labels.skills, resume.skillGroups.map(skillGroup).join(""), "bi-skills-section")}
+        ${section(resume.labels.education, resume.education.map(mixedCompactEntry).join(""), "bi-education-section")}
+        ${section(resume.labels.skills, resume.skillGroups.map(mixedSkillGroup).join(""), "bi-skills-section")}
         ${section(
           resume.labels.languages,
-          `<ul class="bi-plain-list lang">${resume.languages.map(language).join("")}</ul>`,
+          `<ul class="bi-plain-list lang">${resume.languages.map(mixedLanguage).join("")}</ul>`,
         )}
       </aside>
       <section class="bi-main" aria-label="工作经历">
         <h2>${escapeHtml(resume.labels.experience)}</h2>
-        ${resume.experience.map(job).join("")}
-        ${section(resume.labels.projects, resume.projects.map(compactEntry).join(""), "bi-main-projects")}
+        ${resume.experience.map(mixedJob).join("")}
+        ${section(resume.labels.projects, resume.projects.map(mixedCompactEntry).join(""), "bi-main-projects")}
       </section>
     </div>
   </main>
+`;
+
+export const BilingualResumeMaker = (resume) => `
+  <div class="bi-document">
+    ${resumePage(resume, "zh")}
+    ${resumePage(resume, "en")}
+    ${mixedResumePage(resume)}
+  </div>
 `;
