@@ -38,12 +38,17 @@ export const resume_data_bilingual = {
     //   Trained in architecture and design at Tongji University and RISD, with CS coursework at Brown University; self-driven, detail-oriented, and trusted in cross-disciplinary collaboration.`,
     // },
     {
-      zh: `毕业于同济大学建筑学专业，后赴美国罗德岛设计学院深造，并于布朗大学学习
+      zh: `毕业于同济大学，后赴美国罗德岛设计学院深造，并于布朗大学学习
 计算机相关课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外
 获得多项学科奖项。现就职于世界顶尖规划设计公司 Sasaki 波士顿总部研发部
 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力，
 做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事领导信任。`,
-      en: `Graduated in Architecture from Tongji University, continued design studies at Rhode Island School of Design, and completed computer science coursework at Brown University. During school, explored cross-disciplinary work across human-computer interaction, computational design, and physics-based simulation, earning strong academic results and multiple awards. Currently works on Sasaki's Boston R&D team as a software engineer, focusing on web frontend and backend architecture, data structures, and algorithmic optimization. Self-driven, detail-oriented, patient in communication, and trusted by colleagues and collaborators.`,
+      en: `Graduated in Architecture from Tongji University, continued design studies at Rhode Island School of Design, 
+      and completed computer science coursework at Brown University. During school, 
+      explored cross-disciplinary work across human-computer interaction, computational design, 
+      and physics-based simulation, earning strong academic results and multiple awards. 
+      Currently works on Sasaki's Boston R&D team as a software engineer, focusing on web frontend and backend architecture, 
+      data structures, and algorithmic optimization. Self-driven, detail-oriented, patient in communication, and trusted by colleagues and collaborators.`,
     },
     // {
     //   zh: "todo",

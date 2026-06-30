@@ -336,6 +336,80 @@
   margin-top: 1.5mm;
 }
 
+.bi-resume--zh {
+  .bi-grid {
+    gap: 6.8mm;
+    padding-top: 5.2mm;
+  }
+
+  .bi-section + .bi-section,
+  .bi-job + .bi-job {
+    margin-top: 5.7mm;
+  }
+
+  .bi-profile-section {
+    margin-top: 3.2mm;
+  }
+
+  .bi-main-projects {
+    margin-top: 5.6mm;
+  }
+
+  .bi-section h2,
+  .bi-main > h2 {
+    font-size: 3.35mm;
+    margin-bottom: 3.1mm;
+    padding-bottom: 1.5mm;
+  }
+
+  .bi-entry + .bi-entry,
+  .bi-entry .bi-plain-list {
+    margin-top: 2.8mm;
+  }
+
+  .bi-entry h3,
+  .bi-job h3 {
+    font-size: 3.2mm;
+  }
+
+  .bi-entry p,
+  .bi-plain-list,
+  .bi-profile,
+  .bi-job ul {
+    font-size: 2.95mm;
+    line-height: 1.62;
+  }
+
+  .bi-entry p {
+    margin-top: 1.15mm;
+  }
+
+  .bi-profile {
+    gap: 2.4mm;
+  }
+
+  .bi-job__company {
+    font-size: 3mm;
+    margin-top: 1mm;
+  }
+
+  .bi-job ul {
+    margin-top: 2.7mm;
+  }
+
+  .bi-job li + li {
+    margin-top: 2.35mm;
+  }
+
+  .bi-link-row {
+    margin-top: 1mm;
+  }
+
+  .bi-language {
+    gap: 2.4mm;
+  }
+}
+
 @media (max-width: 201.08mm) {
   .bi-resume {
     margin: 0;
