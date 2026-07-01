@@ -5,15 +5,15 @@
 }
 
 .section + .section--languages {
-  margin-top: var(--bi-languages-margin-top);
+  margin-top: var(--gap-m);
 }
 
 h2 {
   border-bottom: 0.25mm solid $rule;
   color: $accent-dark;
-  font-size: 3.47mm;
+  font-size: var(--font-size-lg);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
   margin-bottom: var(--gap-m);
   padding-bottom: var(--gap-s);
   text-transform: uppercase;

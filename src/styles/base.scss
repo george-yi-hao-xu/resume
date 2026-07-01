@@ -7,10 +7,8 @@
 html {
   background: $page;
   color: $ink;
-  font-family:
-    "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", Inter, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
-  font-size: 4.23mm;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
 }
 
 body {
@@ -38,9 +36,9 @@ h3 {
 }
 
 h3 {
-  font-size: 3.81mm;
+  font-size: var(--font-size-lg);
   font-weight: 750;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
 }
 
 // only in cn version, it has a selfie
