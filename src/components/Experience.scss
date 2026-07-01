@@ -32,8 +32,8 @@
   color: #393735;
   font-size: 3.39mm;
   line-height: 1.45;
-  margin: var(--gap-sm) 0 0;
-  padding-left: 4.45mm;
+  margin: var(--gap-sm) var(--space-none) var(--space-none);
+  padding-left: var(--list-indent);
 }
 
 .job li + li {

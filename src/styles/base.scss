@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: var(--space-none);
 }
 
 a {
@@ -34,7 +34,7 @@ ul,
 h1,
 h2,
 h3 {
-  margin: 0;
+  margin: var(--space-none);
 }
 
 h3 {
@@ -56,8 +56,8 @@ h3 {
 
 @media print {
   #selfie {
-    top: 0;
-    right: 0;
+    top: var(--space-none);
+    right: var(--space-none);
     height: 15mm;
     width: 15mm;
   }

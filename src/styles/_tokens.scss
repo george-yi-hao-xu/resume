@@ -4,8 +4,10 @@ $rule: #d9d4cb;
 $paper: #fffdf8;
 $page: #f3f5f2;
 $accent: #22645a;
-$accent-dark: #163f39;
-$china-red: #9d1f1e;
+$accent-dark: #22645a;
+
+// no red color
+$china-red: #22645a;
 
 $print-page-width: 210mm;
 $print-page-height: 297mm;
@@ -14,6 +16,7 @@ $print-page-height: 297mm;
 $print-page-margin: 8mm;
 
 :root {
+  --space-none: 0;
   --gap-2xs: 0.53mm;
   --gap-s: 1.06mm;
   --gap-sm: 2.12mm;
@@ -22,10 +25,42 @@ $print-page-margin: 8mm;
   --gap-l: 6.35mm;
   --gap-xl: 8.47mm;
   --gap-page: 12.7mm;
+  --list-indent: 4.45mm;
+  --bi-document-gap: 8.47mm;
+  --bi-page-padding: 11mm 12mm;
+  --bi-page-padding-expanded: 13mm 14mm;
+  --bi-page-padding-compact: 8mm;
+  --bi-header-gap: 2mm;
+  --bi-header-title-gap: 2.5mm;
+  --bi-header-padding-bottom: 2mm;
+  --bi-role-margin-top: 1.8mm;
+  --bi-contact-gap: 1.1mm;
+  --bi-contact-item-gap: 1.8mm;
+  --bi-grid-gap: 6mm;
+  --bi-grid-padding-top: 4mm;
+  --bi-sidebar-padding-right: 5mm;
+  --bi-section-gap: 4.2mm;
+  --bi-profile-margin-top: 2mm;
+  --bi-languages-margin-top: 3mm;
+  --bi-heading-margin-bottom: 2.6mm;
+  --bi-heading-padding-bottom: 1.3mm;
+  --bi-entry-gap: 2mm;
+  --bi-entry-meta-margin-top: 0.8mm;
+  --bi-link-row-gap-y: 1.5mm;
+  --bi-link-row-gap-x: 3mm;
+  --bi-inline-gap: 1mm;
+  --bi-mixed-text-gap: 0.45mm;
+  --bi-job-header-gap: 3mm;
+  --bi-job-company-gap: 2mm;
+  --bi-job-list-gap: 2mm;
+  --bi-job-item-gap: 1.5mm;
+  --bi-language-level-margin-left: 1mm;
+  --bi-language-level-margin-right: 3mm;
 }
 
 @media print {
   :root {
+    --space-none: 0;
     --gap-2xs: 0.26mm;
     --gap-s: 0.53mm;
     --gap-sm: 1.06mm;
@@ -34,5 +69,6 @@ $print-page-margin: 8mm;
     --gap-l: 3.18mm;
     --gap-xl: 4.23mm;
     --gap-page: 6.35mm;
+    --list-indent: 4.45mm;
   }
 }

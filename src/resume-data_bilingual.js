@@ -1,7 +1,7 @@
 /**
  * @typedef {{ zh: string, en?: string }} BilingualText
  * @typedef {{ label: BilingualText, href: string }} BilingualLink
- * @typedef {{ label: string, value?: string, href?: string }} BilingualContact
+ * @typedef {{ label: string, localizedLabel?: BilingualText, value?: string, localizedValue?: BilingualText, href?: string }} BilingualContact
  * @typedef {{ title: BilingualText, meta?: BilingualText, details?: BilingualText[], note?: BilingualText, links?: BilingualLink[] }} BilingualEntry
  * @typedef {{ title: BilingualText, items: BilingualText[] }} BilingualSkillGroup
  * @typedef {{ title: BilingualText, company: string, meta: string[], bullets: BilingualText[], links?: BilingualLink[] }} BilingualJob
@@ -9,17 +9,52 @@
 
 export const resume_data_bilingual = {
   name: { zh: "许易豪", en: "George Yihao Xu" },
-  role: { zh: "软件工程师", en: "Software Engineer" },
+  role: { zh: "软件工程师 UI/UX设计 XR开发", en: "Software Engineer" },
   pageTitle: "许易豪 / George Yihao Xu 双语简历",
   description: "许易豪 / George Yihao Xu 中英双语简历",
   contacts: [
-    { label: "电话", value: "18701928010" },
-    // { label: "微信", value: "xu3yi4hao2" },
-    { label: "所在地", value: "中国 上海" },
-    { label: "邮箱", value: "xuyihao342@outlook.com", href: "mailto:xuyihao342@outlook.com" },
-    { label: "GitHub", value: "github.com/george-yi-hao-xu", href: "https://github.com/george-yi-hao-xu" },
+    { label: "电话", localizedLabel: { zh: "电话", en: "Phone" }, value: "18701928010" },
+    { label: "出生", localizedLabel: { zh: "出生", en: "" }, value: "1996.04" },
+    {
+      label: "所在地",
+      localizedLabel: { zh: "所在地", en: "Location" },
+      value: "中国 上海",
+      localizedValue: { zh: "中国 上海", en: "Shanghai, China" },
+    },
+    {
+      label: "邮箱",
+      localizedLabel: { zh: "邮箱", en: "Email" },
+      value: "xuyihao342@outlook.com",
+      href: "mailto:xuyihao342@outlook.com",
+    },
+    {
+      label: "GitHub",
+      localizedLabel: { zh: "GitHub", en: "" },
+      value: "github.com/george-yi-hao-xu",
+      href: "https://github.com/george-yi-hao-xu",
+    },
     // { label: "LinkedIn", value: "linkedin.com/in/george-xu", href: "https://www.linkedin.com/" },
   ],
+  localizedLabels: {
+    zh: {
+      profile: "自我介绍",
+      experience: "职业经历",
+      education: "教育背景",
+      skills: "技能",
+      projects: "学术项目",
+      languages: "语言",
+      contactAria: "联系信息",
+    },
+    en: {
+      profile: "Profile",
+      experience: "Job Experience",
+      education: "Education",
+      skills: "Skills",
+      projects: "Academic Projects",
+      languages: "Languages",
+      contactAria: "Contact",
+    },
+  },
   labels: {
     profile: "个人优势 Profile",
     experience: "职业经历 Job Experience",
@@ -58,7 +93,7 @@ export const resume_data_bilingual = {
   experience: [
     {
       title: { zh: "软件工程师", en: "Software Engineer" },
-      company: "美国SASAKI联合设计事务所 Sasaki Associates, Inc.",
+      company: "美国SASAKI规划事务所 Sasaki Associates, Inc.",
       meta: ["2023.11 - 至今", "波士顿 / 远程"],
       links: [
         { label: { zh: "员工信息", en: "Employee Info" }, href: "https://www.sasaki.com/people/george-xu/" },
@@ -102,20 +137,27 @@ export const resume_data_bilingual = {
   education: [
     {
       title: { zh: "罗德岛设计学院", en: "Rhode Island School of Design" },
-      meta: { zh: "设计学硕士 2021.07 - 2023.06 ", en: "Master of Design" },
+      meta: { zh: "设计学硕士 罗德岛 美国 2021.07 - 2023.06 ", en: "Master of Design 2021.07 - 2023.06" },
     },
     {
       title: { zh: "布朗大学", en: "Brown University" },
       meta: {
-        zh: "计算机科学 跨校选课",
+        zh: "计算机科学 跨校选课 罗德岛 美国",
         en: "Computer Science cross-registration",
       },
     },
     {
       title: { zh: "同济大学", en: "Tongji University" },
       meta: {
-        zh: "建筑学学士 德强班 2014.09 - 2020.06",
-        en: "B.Arch, Deutschintensivkurs",
+        zh: "建筑学学士 德语强化班 上海 2014.09 - 2020.06",
+        en: "B.Arch, Deutschintensivkurs 2014.09 - 2020.06",
+      },
+    },
+    {
+      title: { zh: "上海七宝中学", en: "Qibao High School" },
+      meta: {
+        zh: "高中 上海 2011.09 - 2014.06",
+        en: "High School 2011.09 - 2014.06",
       },
     },
   ],
@@ -155,7 +197,7 @@ export const resume_data_bilingual = {
         en: "Physics-Based Form-Finding" 
       },
       meta: { 
-        zh: `在校期间，着力于计算设计。借力于 CUDA C++ 技术，对点云进行动力学模拟，以实现空间找形。并基于 Raylib 库实现计算可视化；
+        zh: `同济学习期间，着力于计算设计。借力于 CUDA C++ 技术，对点云进行动力学模拟，以实现空间找形。并基于 Raylib 库实现计算可视化；
         同时借 WASM 技术于 GitHub Pages 部署 web demo 版本。`, 
         en: "Used CUDA C++ and Raylib for point-cloud physics simulation and visualization; deployed a WASM web demo on GitHub Pages." },
       links: [
@@ -172,7 +214,7 @@ export const resume_data_bilingual = {
     {
       title: { zh: "美国宇航局月球车竞赛", en: "NASA Rover Challenge" },
       meta: {
-        zh: `在校期间，全流程深度参与基于北美微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#进行开发。与设计师紧密合作、专业交流，完善模拟采样抓取、地图打点引导、宇航员定位等功能。`,
+        zh: `在罗德岛设计学院学习期间，全流程深度参与基于北美微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#进行开发。与设计师紧密合作、专业交流，完善模拟采样抓取、地图打点引导、宇航员定位等功能。`,
         en: "Built HoloLens features in Unity/C#, including sample collection, waypoint guidance, and astronaut positioning.",
       },
       links: [
@@ -201,7 +243,7 @@ export const resume_data_bilingual = {
     },
     {
       name: { zh: "英语", en: "English" },
-      level: { zh: "专业", en: "Professional" },
+      level: { zh: "流利", en: "Professional" },
     },
     {
       name: { zh: "德语", en: "Deutsch" },

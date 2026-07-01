@@ -2,34 +2,39 @@
 
 .bi-document {
   display: grid;
-  gap: 8.47mm;
+  gap: var(--bi-document-gap);
 }
 
 .bi-resume {
   background: $paper;
   box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.14);
   color: $ink;
-  margin: 0 auto;
+  margin: var(--space-none) auto;
   max-width: $print-page-width;
   min-height: $print-page-height;
-  padding: 11mm 12mm;
+  padding: var(--bi-page-padding);
   position: relative;
+}
+
+.bi-resume--zh,
+.bi-resume--en {
+  padding: var(--bi-page-padding-expanded);
 }
 
 .bi-header {
   align-items: center;
   border-bottom: 0.45mm solid $ink;
   display: grid;
-  gap: 2mm;
+  gap: var(--bi-header-gap);
   grid-template-columns: minmax(0, 1fr) minmax(52mm, auto) 19mm;
-  padding-bottom: 2mm;
+  padding-bottom: var(--bi-header-padding-bottom);
 }
 
 .bi-header h1 {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5mm;
+  gap: var(--bi-header-title-gap);
   line-height: 1;
 }
 
@@ -46,7 +51,7 @@
 }
 
 .bi-header__identity > p {
-  margin-top: 1.8mm;
+  margin-top: var(--bi-role-margin-top);
 }
 
 .bi-role {
@@ -58,7 +63,7 @@
 
 .bi-resume--mixed .bi-role {
   display: flex;
-  gap: 2mm;
+  gap: var(--bi-header-gap);
 }
 
 .bi-resume--mixed .bi-role__en {
@@ -70,17 +75,17 @@
   color: $muted;
   display: grid;
   font-size: 2.65mm;
-  gap: 1.1mm;
+  gap: var(--bi-contact-gap);
   line-height: 1.25;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: var(--space-none);
+  padding: var(--space-none);
 }
 
 .bi-contact-list li {
   display: grid;
-  gap: 1.8mm;
-  grid-template-columns: 8mm minmax(0, 1fr);
+  gap: var(--bi-contact-item-gap);
+  grid-template-columns: 12mm minmax(0, 1fr);
 }
 
 .bi-contact-list b {
@@ -96,29 +101,34 @@
   border-radius: 8mm;
 }
 
+// 主框架分割 main frame
 .bi-grid {
   display: grid;
-  gap: 6mm;
-  grid-template-columns: minmax(48mm, 0.5fr) minmax(0, 1fr);
-  padding-top: 4mm;
+  gap: var(--bi-grid-gap);
+  grid-template-columns: minmax(48mm, 1fr) minmax(0, 1fr);
+  padding-top: var(--bi-grid-padding-top);
 }
 
 .bi-sidebar {
-  border-right: 0.25mm solid $rule;
-  padding-right: 5mm;
+  // border-right: 0.25mm solid $rule;
+  padding-right: var(--bi-sidebar-padding-right);
 }
 
 .bi-section + .bi-section,
 .bi-job + .bi-job {
-  margin-top: 4.2mm;
+  margin-top: var(--bi-section-gap);
 }
 
 .bi-profile-section {
-  margin-top: 2mm;
+  margin-top: var(--bi-profile-margin-top);
+}
+
+.bi-languages-section {
+  margin-top: var(--bi-languages-margin-top);
 }
 
 .bi-main-projects {
-  margin-top: 4.2mm;
+  margin-top: var(--bi-section-gap);
 }
 
 .bi-section h2,
@@ -128,13 +138,13 @@
   font-size: 3.2mm;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 2.6mm;
-  padding-bottom: 1.3mm;
+  margin-bottom: var(--bi-heading-margin-bottom);
+  padding-bottom: var(--bi-heading-padding-bottom);
 }
 
 .bi-entry + .bi-entry,
 .bi-entry .bi-plain-list {
-  margin-top: 2mm;
+  margin-top: var(--bi-entry-gap);
 }
 
 .bi-entry h3,
@@ -143,14 +153,14 @@
   line-height: 1.2;
 }
 
+// 语言栏
 .bi-plain-list {
   &.lang {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2mm;
+    display: flex;
+    flex-wrap: wrap;
 
     li + li {
-      margin-top: 0;
+      margin-top: var(--space-none);
     }
   }
 }
@@ -162,16 +172,19 @@
   color: $muted;
   font-size: 2.72mm;
   line-height: 1.36;
+
+  // 不在详情里面加点
+  list-style: none;
 }
 
 .bi-entry p {
-  margin-top: 0.8mm;
+  margin-top: var(--bi-entry-meta-margin-top);
 }
 
 .bi-link-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5mm 3mm;
+  gap: var(--bi-link-row-gap-y) var(--bi-link-row-gap-x);
 }
 
 .bi-link-row a {
@@ -181,7 +194,7 @@
 
 .bi-link-row .bi-text {
   display: flex;
-  gap: 1mm;
+  gap: var(--bi-inline-gap);
 }
 
 .bi-resume--mixed .bi-link-row .bi-text__en {
@@ -189,7 +202,7 @@
 }
 
 .bi-link-row--quiet {
-  margin: 0;
+  margin: var(--space-none);
 }
 
 .bi-link-row--quiet a {
@@ -204,50 +217,21 @@
   color: $muted;
 }
 
-.bi-education-section .bi-entry p {
-  // margin-left: 3mm;
-}
-
-.bi-skills-section .bi-plain-list {
-  // margin-left: 3mm;
-}
-
 .bi-plain-list,
 .bi-profile {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: var(--space-none);
+  padding: var(--space-none);
 }
 
 .bi-profile {
   display: grid;
-  gap: 1.8mm;
+  gap: var(--bi-contact-item-gap);
   grid-template-columns: 1fr;
 }
 
 .bi-plain-list li + li {
-  margin-top: 0mm;
-}
-
-.bi-language {
-  align-items: start;
-  display: grid;
-  gap: 2mm;
-  grid-template-columns: minmax(0, 1fr) minmax(15mm, auto);
-}
-
-.bi-language__level {
-  display: block;
-  text-align: right;
-}
-
-.bi-language__level .bi-text {
-  justify-items: end;
-}
-
-.bi-language__level .bi-text__zh {
-  color: $muted;
-  font-weight: 600;
+  margin-top: var(--space-none);
 }
 
 .bi-text,
@@ -263,7 +247,7 @@
 .bi-resume--mixed .bi-text,
 .bi-resume--mixed .bi-bullet {
   display: grid;
-  gap: 0.45mm;
+  gap: var(--bi-mixed-text-gap);
 }
 
 .bi-resume--mixed .bi-text__zh,
@@ -281,7 +265,7 @@
 .bi-job__header {
   align-items: start;
   display: grid;
-  gap: 3mm;
+  gap: var(--bi-job-header-gap);
   grid-template-columns: minmax(0, 1fr) minmax(33mm, auto);
 }
 
@@ -292,14 +276,14 @@
   justify-content: space-between;
   font-size: 2.85mm;
   font-weight: 700;
-  gap: 2mm;
-  margin-top: 0.8mm;
+  gap: var(--bi-job-company-gap);
+  margin-top: var(--bi-entry-meta-margin-top);
 }
 
 .links {
-  margin-top: 2mm;;
+  margin-top: var(--bi-job-list-gap);
   display: inline-flex;
-  gap: 1mm;
+  gap: var(--bi-inline-gap);
 }
 
 .links a {
@@ -311,7 +295,7 @@
 
 .links .bi-text {
   display: flex;
-  gap: 1mm;
+  gap: var(--bi-inline-gap);
 }
 
 .bi-resume--mixed .links .bi-text__zh,
@@ -328,93 +312,29 @@
 
 .bi-job ul {
   color: $ink;
-  margin: 2mm 0 0;
-  padding-left: 3.8mm;
+  margin: var(--bi-job-list-gap) var(--space-none) var(--space-none);
+  padding-left: var(--space-none);
 }
 
 .bi-job li + li {
-  margin-top: 1.5mm;
+  margin-top: var(--bi-job-item-gap);
 }
 
-.bi-resume--zh {
-  .bi-grid {
-    gap: 6.8mm;
-    padding-top: 5.2mm;
-  }
+.bi-language {
+  display: flex;
 
-  .bi-section + .bi-section,
-  .bi-job + .bi-job {
-    margin-top: 5.7mm;
-  }
-
-  .bi-profile-section {
-    margin-top: 3.2mm;
-  }
-
-  .bi-main-projects {
-    margin-top: 5.6mm;
-  }
-
-  .bi-section h2,
-  .bi-main > h2 {
-    font-size: 3.35mm;
-    margin-bottom: 3.1mm;
-    padding-bottom: 1.5mm;
-  }
-
-  .bi-entry + .bi-entry,
-  .bi-entry .bi-plain-list {
-    margin-top: 2.8mm;
-  }
-
-  .bi-entry h3,
-  .bi-job h3 {
-    font-size: 3.2mm;
-  }
-
-  .bi-entry p,
-  .bi-plain-list,
-  .bi-profile,
-  .bi-job ul {
-    font-size: 2.95mm;
-    line-height: 1.62;
-  }
-
-  .bi-entry p {
-    margin-top: 1.15mm;
-  }
-
-  .bi-profile {
-    gap: 2.4mm;
-  }
-
-  .bi-job__company {
-    font-size: 3mm;
-    margin-top: 1mm;
-  }
-
-  .bi-job ul {
-    margin-top: 2.7mm;
-  }
-
-  .bi-job li + li {
-    margin-top: 2.35mm;
-  }
-
-  .bi-link-row {
-    margin-top: 1mm;
-  }
-
-  .bi-language {
-    gap: 2.4mm;
+  &__level{
+    display: flex;
+    margin-left: var(--bi-language-level-margin-left);
+    margin-right: var(--bi-language-level-margin-right);
   }
 }
 
 @media (max-width: 201.08mm) {
   .bi-resume {
-    margin: 0;
+    margin: var(--space-none);
     min-height: 0;
-    padding: 8mm;
+    padding: var(--bi-page-padding-compact);
   }
 
   .bi-header,
@@ -430,7 +350,7 @@
 
   .bi-sidebar {
     border-right: 0;
-    padding-right: 0;
+    padding-right: var(--space-none);
   }
 
   .bi-job__meta {
@@ -445,10 +365,10 @@
 
   .bi-resume {
     box-shadow: none;
-    margin: 0;
+    margin: var(--space-none);
     max-width: none;
     min-height: $print-page-height - 2 * $print-page-margin;
-    padding: 0;
+    padding: var(--space-none);
     page-break-after: always;
     break-after: page;
   }
