@@ -253,7 +253,7 @@ export const resume_data_bilingual = {
     },
     {
       name: { zh: "英语", en: "English" },
-      level: { zh: "流利", en: "Professional" },
+      level: { zh: "流利 专业交流/文献阅读", en: "Professional" },
     },
     {
       name: { zh: "德语", en: "Deutsch" },
