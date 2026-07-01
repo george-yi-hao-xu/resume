@@ -16,16 +16,17 @@ export const Sidebar = (resume) => `
       children: resume.skillGroups.map(SkillGroup).join(""),
     })}
     ${Section({
-      title: resume.labels.indieProjects,
-      children: resume.indieProjects.map(Entry).join(""),
+      title: resume.labels.languages,
+      children: LanguageList(resume.languages),
+      className: "section--languages",
     })}
     ${Section({
       title: resume.labels.studioProjects,
       children: resume.studioProjects.map(Entry).join(""),
     })}
     ${Section({
-      title: resume.labels.languages,
-      children: LanguageList(resume.languages),
+      title: resume.labels.indieProjects,
+      children: resume.indieProjects.map(Entry).join(""),
     })}
   </aside>
 `;

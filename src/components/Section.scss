@@ -4,6 +4,10 @@
   margin-top: var(--gap-l);
 }
 
+.section + .section--languages {
+  margin-top: var(--bi-languages-margin-top);
+}
+
 h2 {
   border-bottom: 0.25mm solid $rule;
   color: $accent-dark;

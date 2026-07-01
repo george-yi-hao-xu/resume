@@ -36,7 +36,7 @@
   font-size: 3.26mm;
   line-height: 1.45;
   list-style: none;
-  padding: 0;
+  padding: var(--space-none);
 }
 
 .language-list__level {

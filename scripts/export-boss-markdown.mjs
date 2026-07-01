@@ -134,10 +134,10 @@ const sections = [
   formatEducation(),
   h2(labels.skills),
   formatSkills(),
-  h2(labels.projects),
-  formatProjects(),
   h2(labels.languages),
   formatLanguages(),
+  h2(labels.projects),
+  formatProjects(),
 ];
 
 const markdown = `${sections.filter(Boolean).join(blank()).trim()}\n`;
