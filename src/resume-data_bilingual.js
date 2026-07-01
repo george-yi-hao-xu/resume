@@ -73,9 +73,9 @@ export const resume_data_bilingual = {
     //   Trained in architecture and design at Tongji University and RISD, with CS coursework at Brown University; self-driven, detail-oriented, and trusted in cross-disciplinary collaboration.`,
     // },
     {
-      zh: `毕业于同济大学，后赴美国罗德岛设计学院深造，并于布朗大学学习
-计算机相关课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外
-获得多项学科奖项。现就职于世界顶尖规划设计公司 Sasaki 波士顿总部研发部
+      zh: `2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，因着迷计算机，同时于布朗大学学习
+计算机课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外
+获得多项学科奖项。毕业后，顺利就职于顶尖规划设计公司 Sasaki规划事务所 波士顿总部研发部
 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力，
 做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事领导信任。`,
       en: `Graduated in Architecture from Tongji University, continued design studies at Rhode Island School of Design, 
@@ -92,7 +92,7 @@ export const resume_data_bilingual = {
   ],
   experience: [
     {
-      title: { zh: "软件工程师", en: "Software Engineer" },
+      title: { zh: "软件工程师 Web全栈", en: "Software Engineer" },
       company: "美国SASAKI规划事务所 Sasaki Associates, Inc.",
       meta: ["2023.11 - 至今", "波士顿 全职 远程"],
       links: [
@@ -101,27 +101,28 @@ export const resume_data_bilingual = {
       bullets: [
 
         {
-          zh: `参与主力项目 Dashi 升级迭代，开发维护以 GraphQL、Google Data Connect 和云函数为技术栈的 Web工程管理 多客户网站
-            借助 Changesets 和 Jest 测试工具 完善核心库的迭代维护，增强基于 pnpm 项目 Monorepo 的健壮性，通过bash脚本大幅提升新客户网站的部署速度。
-            通过浏览器 Profile 工具定位前端计算瓶颈并优化计算；优化后端存储逻辑，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。
-            `,
-          en: `Upgraded Dashi from a static site to a GraphQL/Data Connect app; improved monorepo releases and client-site deployment. 
-          Profiled frontend bottlenecks, optimized JS array logic, moved heavy results to backend snapshots, and supported GA analysis.
-          `,
+          zh: `在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，将原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加快新客户站点上线。`,
+          en: `Delivered client data integration, site configuration, and cloud-backed service modules for the Dashi multi-client website platform, evolving the original static frontend into a reusable full-stack application; improved package maintenance and deployment automation to speed up new client-site launches.`,
         },
         {
-          zh: "",
-          en: "",
+          zh: `针对 Dashi 页面数据加载与计算负担问题，优化前后端数据处理流程，减少页面端重复计算，将首页渲染所需时间从2分钟降低至20秒。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。`,
+          en: `Improved Dashi's frontend and backend data flow to address page-loading and client-side computation issues; identified performance bottlenecks, adjusted data structures and storage logic, and supported user behavior analysis.`,
         },
         {
-          zh: `主导基于 d3.js 的内部图表库开发，优化统一数据结构，实现丰富动画与提示框等功能。并基于 Adobe React Aria 无样式组件库重构内部 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，
-          以支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代 与 npm包发布。`,
-          en: `Built a d3.js chart library with cleaner data/cache logic, shared data models, 
-          animations, and tooltips.Refactored the UI design system with React Aria, design tokens, SCSS/TS output, and Lerna/Changesets releases.`,
+          zh: `优化 Office Shift Pro 自动化建筑平面生成工具，提高居住平面方案生成效率；重构核心贪心算法流程，调整局部搜索与结果评估逻辑，降低无效计算。`,
+          en: `Improved Office Shift Pro, an automated floor-plan generation tool, to generate office layout options more efficiently. Refactored the core greedy-algorithm workflow, local search logic, and result-evaluation steps to reduce unnecessary computation.`,
         },
         {
-          zh: "编写 Rhino Python 脚本，辅助公司其他团队根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注。",
-          en: "Wrote Rhino Python scripts for CSV-to-DWG point clouds, CAD annotations, and planning workflows."
+          zh: `主导开发内部数据可视化图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图，优化地图加载速度。统一数据结构并优化渲染缓存，减少重复计算。`,
+          en: `Led development of an internal data-visualization chart library with reusable animated charts, tooltips, and data-display components; standardized data models and optimized rendering cache behavior to reduce repeated computation.`,
+        },
+        {
+          zh: `落地内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；中心化设计 Token，完善样式与类型输出，并支持版本迭代与包发布流程。`,
+          en: `Delivered an internal UI design-system refactor to support reusable component styling and design standards across projects; centralized design tokens, improved style and type outputs, and supported versioning and package-release workflows.`,
+        },
+        {
+          zh: "开发 Rhino / CAD 自动化数据处理脚本，支持城市规划团队快速生成点云文件并批量标注几何属性；将 CSV 数据转换为 DWG 点云，并为 CAD 几何对象写入属性信息。",
+          en: "Developed Rhino/CAD automation scripts to help urban planning teams generate point-cloud files and batch-annotate geometry attributes; converted CSV data into DWG point clouds and wrote metadata onto CAD geometry."
         }
       ],
     },
@@ -131,9 +132,12 @@ export const resume_data_bilingual = {
       meta: ["2020.08 - 2021.05", "上海", "实习"],
       bullets: [
         {
-          zh: `于华东院国际设计中心参与大型公共建筑室内设计。熟练运用 Rhino GH SubD 等参数化建模工具，撰写Python脚本，对主要公共空间进行曲面建模设计。
-          熟练运用VRay Enscape等3D渲染器，以及Adobe Photoshop Illustrator Indesign整理汇报文本`,
-          en: "Modeled airport interior spaces with Rhino Grasshopper and produced layouts in InDesign.",
+          zh: `参与华东院国际设计中心大型公共建筑室内设计工作，负责核心公共空间的空间形态推敲、方案表达与汇报材料整理。`,
+          en: "Contributed to large-scale public-building interior design at ECADI's International Design Center, supporting spatial design studies, design communication, and presentation materials for key public spaces.",
+        },
+        {
+          zh: `使用参数化建模工具与 Python 脚本进行曲面建模和方案迭代，并输出渲染图、分析图与汇报文本。`,
+          en: "Used parametric modeling tools and Python scripts for surface modeling and design iteration, producing renderings, diagrams, and presentation materials.",
         },
       ],
     },
@@ -141,7 +145,8 @@ export const resume_data_bilingual = {
   education: [
     {
       title: { zh: "罗德岛设计学院", en: "Rhode Island School of Design" },
-      meta: { zh: "设计学硕士 罗德岛 美国 2021.07 - 2023.06 ", en: "Master of Design 2021.07 - 2023.06" },
+      meta: { zh: "设计学硕士 罗德岛 美国", en: "Master of Design" },
+      time: { zh: "2021.07 - 2023.06", en: "2021.07 - 2023.06" },
     },
     {
       title: { zh: "布朗大学", en: "Brown University" },
@@ -153,16 +158,18 @@ export const resume_data_bilingual = {
     {
       title: { zh: "同济大学", en: "Tongji University" },
       meta: {
-        zh: "建筑学学士 德语强化班 上海 2014.09 - 2020.06",
-        en: "B.Arch, Deutschintensivkurs 2014.09 - 2020.06",
+        zh: "建筑学学士 德语强化班 上海",
+        en: "B.Arch, Deutschintensivkurs",
       },
+      time: { zh: "2014.09 - 2020.06", en: "2014.09 - 2020.06" },
     },
     {
       title: { zh: "上海七宝中学", en: "Qibao High School" },
       meta: {
-        zh: "高中 上海 2011.09 - 2014.06",
-        en: "High School 2011.09 - 2014.06",
+        zh: "高中 上海",
+        en: "High School",
       },
+      time: { zh: "2011.09 - 2014.06", en: "2011.09 - 2014.06" },
     },
   ],
   skillGroups: [
@@ -201,9 +208,8 @@ export const resume_data_bilingual = {
         en: "Physics-Based Form-Finding" 
       },
       meta: { 
-        zh: `同济学习期间，着力于计算设计。借力于 CUDA C++ 技术，对点云进行动力学模拟，以实现空间找形。并基于 Raylib 库实现计算可视化；
-        同时借 WASM 技术于 GitHub Pages 部署 web demo 版本。`, 
-        en: "Used CUDA C++ and Raylib for point-cloud physics simulation and visualization; deployed a WASM web demo on GitHub Pages." },
+        zh: `基于点云动力学模拟实现空间找形，并用 CUDA C++、Raylib 与 WASM 完成可视化和 Web Demo 部署。`, 
+        en: "Built a point-cloud form-finding simulation with CUDA C++, Raylib, and a WASM web demo." },
       links: [
         {
           label: { zh: "在线演示", en: "Live Demo" },
@@ -218,8 +224,8 @@ export const resume_data_bilingual = {
     {
       title: { zh: "美国宇航局月球车竞赛", en: "NASA Rover Challenge" },
       meta: {
-        zh: `在罗德岛设计学院学习期间，全流程深度参与基于北美微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#进行开发。与设计师紧密合作、专业交流，完善模拟采样抓取、地图打点引导、宇航员定位等功能。`,
-        en: "Built HoloLens features in Unity/C#, including sample collection, waypoint guidance, and astronaut positioning.",
+        zh: `为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样抓取、地图引导与定位功能。`,
+        en: "Built astronaut UI features for a NASA HoloLens project in Unity/C#, including sampling, map guidance, and positioning.",
       },
       links: [
         { label: { zh: "具体信息", en: "Detailed Timeline"}, href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },

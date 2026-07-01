@@ -67,7 +67,8 @@ const localizedMeta = (items = [], lang) =>
           .replace("波士顿", "Boston")
           .replace("远程", "Remote")
           .replace("上海", "Shanghai")
-          .replace("全职", "Full-time");
+          .replace("全职", "Full-time")
+          .replace("实习", "Intern");
       }
 
       return item;
@@ -144,6 +145,7 @@ const compactEntry = (item, lang) => `
   <article class="bi-entry">
     <h3>${span(item.title, lang)}</h3>
     ${item.meta ? `<p>${span(item.meta, lang)}</p>` : ""}
+    ${item.time ? `<p class="bi-entry__time">${span(item.time, lang)}</p>` : ""}
     ${entryLinks(item.links, lang)}
   </article>
 `;
@@ -152,6 +154,7 @@ const mixedCompactEntry = (item) => `
   <article class="bi-entry">
     <h3>${mixedText(item.title)}</h3>
     ${item.meta ? `<p>${mixedText(item.meta)}</p>` : ""}
+    ${item.time ? `<p class="bi-entry__time">${mixedText(item.time)}</p>` : ""}
     ${mixedEntryLinks(item.links)}
   </article>
 `;
@@ -196,12 +199,7 @@ const job = (item, lang) => `
         <div class="bi-job__company">
           <div class="name">${escapeHtml(localizedCompany(item.company, lang))}</div>
         </div>
-      </div>
-      <div class="bi-job__meta">
-        <div>${escapeHtml(localizedMeta(item.meta, lang))}</div>
-        <div class="links">${(item.links ?? [])
-          .map((link) => `<a href="${escapeHtml(link.href)}">${span(link.label, lang)}</a>`)
-          .join("")}</div>
+        <div class="bi-job__meta">${escapeHtml(localizedMeta(item.meta, lang))}</div>
       </div>
     </header>
     <ul>
@@ -218,12 +216,7 @@ const mixedJob = (item) => `
         <div class="bi-job__company">
           <div class="name">${escapeHtml(item.company)}</div>
         </div>
-      </div>
-      <div class="bi-job__meta">
-        <div>${item.meta.map(escapeHtml).join(" / ")}</div>
-        <div class="links">${(item.links ?? [])
-          .map((link) => `<a href="${escapeHtml(link.href)}">${mixedText(link.label)}</a>`)
-          .join("")}</div>
+        <div class="bi-job__meta">${item.meta.map(escapeHtml).join(" / ")}</div>
       </div>
     </header>
     <ul>
@@ -271,20 +264,20 @@ const resumePage = (resume, lang) => {
             "bi-skills-section",
           )}
           ${section(
-            pageLabels.projects,
-            resume.projects.map((item) => compactEntry(item, lang)).join(""),
-            "bi-main-projects",
+            pageLabels.languages,
+            `<div class="bi-plain-list lang">${resume.languages
+              .map((item) => language(item, lang))
+              .join("")}</div>`,
+            "bi-languages-section",
           )}
         </aside>
         <section class="bi-main" aria-label="${escapeHtml(pageLabels.experience)}">
           <h2>${escapeHtml(pageLabels.experience)}</h2>
           ${resume.experience.map((item) => job(item, lang)).join("")}
           ${section(
-            pageLabels.languages,
-            `<div class="bi-plain-list lang">${resume.languages
-              .map((item) => language(item, lang))
-              .join("")}</div>`,
-            "bi-languages-section",
+            pageLabels.projects,
+            resume.projects.map((item) => compactEntry(item, lang)).join(""),
+            "bi-main-projects",
           )}
         </section>
       </div>
@@ -317,16 +310,16 @@ const mixedResumePage = (resume) => `
       <aside class="bi-sidebar">
         ${section(resume.labels.education, resume.education.map(mixedCompactEntry).join(""), "bi-education-section")}
         ${section(resume.labels.skills, resume.skillGroups.map(mixedSkillGroup).join(""), "bi-skills-section")}
-        ${section(resume.labels.projects, resume.projects.map(mixedCompactEntry).join(""), "bi-main-projects")}
-      </aside>
-      <section class="bi-main" aria-label="工作经历">
-        <h2>${escapeHtml(resume.labels.experience)}</h2>
-        ${resume.experience.map(mixedJob).join("")}
         ${section(
           resume.labels.languages,
           `<ul class="bi-plain-list lang">${resume.languages.map(mixedLanguage).join("")}</ul>`,
           "bi-languages-section",
         )}
+      </aside>
+      <section class="bi-main" aria-label="工作经历">
+        <h2>${escapeHtml(resume.labels.experience)}</h2>
+        ${resume.experience.map(mixedJob).join("")}
+        ${section(resume.labels.projects, resume.projects.map(mixedCompactEntry).join(""), "bi-main-projects")}
       </section>
     </div>
   </main>
