@@ -40,13 +40,13 @@
 
 .bi-header h1 span {
   font-family: "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", "Songti SC", serif;
-  font-size: 10.8mm;
+  font-size: var(--bi-name-font-size);
   font-weight: 700;
 }
 
 .bi-header h1 small {
   color: $muted;
-  font-size: 4.2mm;
+  font-size: var(--bi-name-secondary-font-size);
   font-weight: 600;
 }
 
@@ -57,7 +57,7 @@
 .bi-role {
   color: $accent-dark;
   display: block;
-  font-size: 3.5mm;
+  font-size: var(--bi-role-font-size);
   font-weight: 700;
 }
 
@@ -74,7 +74,7 @@
 .bi-contact-list {
   color: $muted;
   display: grid;
-  font-size: 2.65mm;
+  font-size: var(--bi-contact-font-size);
   gap: var(--bi-contact-gap);
   line-height: 1.25;
   list-style: none;
@@ -135,7 +135,7 @@
 .bi-main > h2 {
   border-bottom: 0.25mm solid $rule;
   color: $china-red;
-  font-size: 3.2mm;
+  font-size: var(--bi-heading-font-size);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: var(--bi-heading-margin-bottom);
@@ -149,7 +149,7 @@
 
 .bi-entry h3,
 .bi-job h3 {
-  font-size: 3.05mm;
+  font-size: var(--bi-entry-heading-font-size);
   line-height: 1.2;
 }
 
@@ -170,7 +170,7 @@
 .bi-profile,
 .bi-job ul {
   color: $muted;
-  font-size: 2.72mm;
+  font-size: var(--bi-body-font-size);
   line-height: 1.36;
 
   // 不在详情里面加点
@@ -188,7 +188,7 @@
 }
 
 .bi-link-row a {
-  font-size: 2.55mm;
+  font-size: var(--bi-link-font-size);
   font-weight: 700;
 }
 
@@ -207,7 +207,7 @@
 
 .bi-link-row--quiet a {
   color: $muted;
-  font-size: 2.25mm;
+  font-size: var(--bi-quiet-link-font-size);
   font-weight: 500;
   text-decoration: none;
 }
@@ -258,7 +258,7 @@
 .bi-resume--mixed .bi-text__en,
 .bi-resume--mixed .bi-bullet__en {
   color: $muted;
-  font-size: 2.4mm;
+  font-size: var(--bi-mixed-secondary-font-size);
   font-weight: 500;
 }
 
@@ -274,7 +274,7 @@
   color: $accent-dark;
   display: flex;
   justify-content: space-between;
-  font-size: 2.85mm;
+  font-size: var(--bi-job-company-font-size);
   font-weight: 700;
   gap: var(--bi-job-company-gap);
   margin-top: var(--bi-entry-meta-margin-top);
@@ -288,7 +288,7 @@
 
 .links a {
   color: $muted;
-  font-size: 2.25mm;
+  font-size: var(--bi-quiet-link-font-size);
   font-weight: 500;
   text-decoration: none;
 }
@@ -305,7 +305,7 @@
 
 .bi-job__meta {
   color: $muted;
-  font-size: 2.55mm;
+  font-size: var(--bi-link-font-size);
   line-height: 1.3;
   text-align: right;
 }

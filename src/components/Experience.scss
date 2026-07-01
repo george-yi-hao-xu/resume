@@ -13,7 +13,7 @@
 
 .job__company {
   color: $accent-dark;
-  font-size: 3.47mm;
+  font-size: var(--resume-section-heading-font-size);
   font-weight: 700;
   margin-top: var(--gap-s);
 }
@@ -21,7 +21,7 @@
 .job__meta {
   color: $muted;
   display: grid;
-  font-size: 3.05mm;
+  font-size: var(--resume-entry-meta-font-size);
   gap: var(--gap-2xs);
   justify-items: end;
   line-height: 1.3;
@@ -30,7 +30,7 @@
 
 .job ul {
   color: #393735;
-  font-size: 3.39mm;
+  font-size: var(--resume-job-list-font-size);
   line-height: 1.45;
   margin: var(--gap-sm) var(--space-none) var(--space-none);
   padding-left: var(--list-indent);
@@ -43,7 +43,7 @@
 .link-row {
   display: flex;
   flex-wrap: wrap;
-  font-size: 3.09mm;
+  font-size: var(--resume-link-font-size);
   gap: var(--gap-sm) var(--gap-m);
   line-height: 1.3;
   margin-top: var(--gap-sm);

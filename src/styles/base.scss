@@ -10,7 +10,7 @@ html {
   font-family:
     "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", Inter, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 4.23mm;
+  font-size: var(--font-body);
 }
 
 body {
@@ -38,7 +38,7 @@ h3 {
 }
 
 h3 {
-  font-size: 3.81mm;
+  font-size: var(--font-heading-3);
   font-weight: 750;
   line-height: 1.2;
 }

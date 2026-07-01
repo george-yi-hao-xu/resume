@@ -94,30 +94,33 @@ export const resume_data_bilingual = {
     {
       title: { zh: "软件工程师", en: "Software Engineer" },
       company: "美国SASAKI规划事务所 Sasaki Associates, Inc.",
-      meta: ["2023.11 - 至今", "波士顿 / 远程"],
+      meta: ["2023.11 - 至今", "波士顿 全职 远程"],
       links: [
         { label: { zh: "员工信息", en: "Employee Info" }, href: "https://www.sasaki.com/people/george-xu/" },
       ],
       bullets: [
+
         {
-          zh: "主导基于 Adobe React Aria 无样式组件库重构 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，同时支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代。",
-          en: "Refactored the UI design system with React Aria, design tokens, SCSS/TS output, and Lerna/Changesets releases.",
+          zh: `参与主力项目 Dashi 升级迭代，开发维护以 GraphQL、Google Data Connect 和云函数为技术栈的 Web工程管理 多客户网站
+            借助 Changesets 和 Jest 测试工具 完善核心库的迭代维护，增强基于 pnpm 项目 Monorepo 的健壮性，通过bash脚本大幅提升新客户网站的部署速度。
+            通过浏览器 Profile 工具定位前端计算瓶颈并优化计算；优化后端存储逻辑，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。
+            `,
+          en: `Upgraded Dashi from a static site to a GraphQL/Data Connect app; improved monorepo releases and client-site deployment. 
+          Profiled frontend bottlenecks, optimized JS array logic, moved heavy results to backend snapshots, and supported GA analysis.
+          `,
         },
         {
-          zh: `参与将主力项目 Dashi 从 1.0 前端静态网站，升级为基于 GraphQL、Google Data Connect 和云函数的 2.0 Web 前后端项目。
-            借助 Changesets 完善核心库的迭代维护，增强 Monorepo 的健壮性，并大幅提升新客户网站的部署速度。`,
-          en: "Upgraded Dashi from a static site to a GraphQL/Data Connect app; improved monorepo releases and client-site deployment.",
+          zh: "",
+          en: "",
         },
         {
-          zh: "通过浏览器 Profile 工具定位前端计算瓶颈并优化 JavaScript 数组计算；在后端参与计算结果快照，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。",
-          en: "Profiled frontend bottlenecks, optimized JS array logic, moved heavy results to backend snapshots, and supported GA analysis.",
+          zh: `主导基于 d3.js 的内部图表库开发，优化统一数据结构，实现丰富动画与提示框等功能。并基于 Adobe React Aria 无样式组件库重构内部 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，
+          以支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代 与 npm包发布。`,
+          en: `Built a d3.js chart library with cleaner data/cache logic, shared data models, 
+          animations, and tooltips.Refactored the UI design system with React Aria, design tokens, SCSS/TS output, and Lerna/Changesets releases.`,
         },
         {
-          zh: "主导基于 d3.js 的图表库开发，解耦数据与缓存逻辑，统一数据结构，简化多种带动画与 Tooltip 解释浮层的图表实现。",
-          en: "Built a d3.js chart library with cleaner data/cache logic, shared data models, animations, and tooltips.",
-        },
-        {
-          zh: "多次编写 Rhino Python 脚本，帮助建筑师根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注，助力城市规划设计项目推进。",
+          zh: "编写 Rhino Python 脚本，辅助公司其他团队根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注。",
           en: "Wrote Rhino Python scripts for CSV-to-DWG point clouds, CAD annotations, and planning workflows."
         }
       ],
@@ -125,10 +128,11 @@ export const resume_data_bilingual = {
     {
       title: { zh: "参数化设计师", en: "Computational Designer" },
       company: "华东建筑设计研究院 ECADI",
-      meta: ["2020.08 - 2021.05", "上海", "全职"],
+      meta: ["2020.08 - 2021.05", "上海", "实习"],
       bullets: [
         {
-          zh: "于华东院国际设计中心，参与大型公共建筑室内设计。运用 Rhino GH 参数化工具，对重要公共空间进行曲面建模设计。",
+          zh: `于华东院国际设计中心参与大型公共建筑室内设计。熟练运用 Rhino GH SubD 等参数化建模工具，撰写Python脚本，对主要公共空间进行曲面建模设计。
+          熟练运用VRay Enscape等3D渲染器，以及Adobe Photoshop Illustrator Indesign整理汇报文本`,
           en: "Modeled airport interior spaces with Rhino Grasshopper and produced layouts in InDesign.",
         },
       ],

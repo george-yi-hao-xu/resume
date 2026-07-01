@@ -8,7 +8,7 @@
 .resume__header h1 {
   font-family:
     Georgia, "Times New Roman", serif;
-  font-size: 15mm;
+  font-size: var(--resume-title-font-size);
   font-weight: 500;
   line-height: 0.95;
   text-transform: uppercase;
@@ -18,7 +18,7 @@
   color: $muted;
   display: flex;
   flex-wrap: wrap;
-  font-size: 3.3mm;
+  font-size: var(--resume-contact-font-size);
   gap: var(--gap-sm) var(--gap-m);
   line-height: 1.35;
   margin-top: var(--gap-m);
