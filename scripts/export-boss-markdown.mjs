@@ -82,7 +82,7 @@ const formatProfile = () => resume.profile.map((item) => bullet(text(item))).joi
 const formatExperience = () =>
   resume.experience
     .map((job) => {
-      const title = [text(job.title), job.company].filter(Boolean).join(" | ");
+      const title = [text(job.title), text(job.company)].filter(Boolean).join(" | ");
       const meta = job.meta?.length ? line(job.meta.join(" | ")) : "";
       const links = formatLinks(job.links);
       const bullets = job.bullets.map((item) => bullet(text(item))).join("");

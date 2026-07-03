@@ -4,7 +4,7 @@
  * @typedef {{ label: string, localizedLabel?: BilingualText, value?: string, localizedValue?: BilingualText, href?: string }} BilingualContact
  * @typedef {{ title: BilingualText, meta?: BilingualText, details?: BilingualText[], note?: BilingualText, links?: BilingualLink[] }} BilingualEntry
  * @typedef {{ title: BilingualText, items: BilingualText[] }} BilingualSkillGroup
- * @typedef {{ title: BilingualText, company: string, meta: string[], bullets: BilingualText[], links?: BilingualLink[] }} BilingualJob
+ * @typedef {{ title: BilingualText, company: string | BilingualText, meta: string[], bullets: BilingualText[], links?: BilingualLink[] }} BilingualJob
  */
 
 export const resume_data_bilingual = {
@@ -73,11 +73,11 @@ export const resume_data_bilingual = {
     //   Trained in architecture and design at Tongji University and RISD, with CS coursework at Brown University; self-driven, detail-oriented, and trusted in cross-disciplinary collaboration.`,
     // },
     {
-      zh: `2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，因着迷计算机，同时于布朗大学学习
+      zh: `2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，同时于布朗大学学习
 计算机课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外
 获得多项学科奖项。毕业后，顺利就职于顶尖规划设计公司 Sasaki规划事务所 波士顿总部研发部
 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力，
-做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事领导信任。`,
+做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。`,
       en: `Graduated in Architecture from Tongji University, continued design studies at Rhode Island School of Design, 
       and completed computer science coursework at Brown University. During school, 
       explored cross-disciplinary work across human-computer interaction, computational design, 
@@ -94,7 +94,7 @@ export const resume_data_bilingual = {
     {
       title: { zh: "软件工程师 Web全栈", en: "Software Engineer" },
       company: "美国SASAKI规划事务所 Sasaki Associates, Inc.",
-      meta: ["2023.11 - 至今", "波士顿 全职 远程"],
+      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
       links: [
         { label: { zh: "员工信息", en: "Employee Info" }, href: "https://www.sasaki.com/people/george-xu/" },
       ],
@@ -128,7 +128,7 @@ export const resume_data_bilingual = {
     },
     {
       title: { zh: "参数化设计师", en: "Computational Designer" },
-      company: "华东建筑设计研究院 ECADI",
+      company: {zh: "华东建筑设计研究院", en: "East China Architecture Design and Research Institute"},
       meta: ["2020.08 - 2021.05", "上海", "实习"],
       bullets: [
         {
@@ -145,21 +145,21 @@ export const resume_data_bilingual = {
   education: [
     {
       title: { zh: "罗德岛设计学院", en: "Rhode Island School of Design" },
-      meta: { zh: "设计学硕士 罗德岛 美国", en: "Master of Design" },
+      meta: { zh: "设计学硕士 罗德岛 美国", en: "Master of Design RI,USA" },
       time: { zh: "2021.07 - 2023.06", en: "2021.07 - 2023.06" },
     },
     {
       title: { zh: "布朗大学", en: "Brown University" },
       meta: {
         zh: "计算机科学 跨校选课 罗德岛 美国",
-        en: "Computer Science cross-registration",
+        en: "Computer Science cross-registration RI,USA",
       },
     },
     {
       title: { zh: "同济大学", en: "Tongji University" },
       meta: {
         zh: "建筑学学士 德语强化班 上海",
-        en: "B.Arch, Deutschintensivkurs",
+        en: "B.Arch, Deutschintensivkurs Shanghai,China",
       },
       time: { zh: "2014.09 - 2020.06", en: "2014.09 - 2020.06" },
     },
@@ -167,12 +167,19 @@ export const resume_data_bilingual = {
       title: { zh: "上海七宝中学", en: "Qibao High School" },
       meta: {
         zh: "高中 上海",
-        en: "High School",
+        en: "High School Shanghai, China",
       },
       time: { zh: "2011.09 - 2014.06", en: "2011.09 - 2014.06" },
     },
   ],
   skillGroups: [
+    {
+      title: { zh: "AI 工程", en: "AI Eng" },
+      items: [
+        { zh: "Agent开发(Harness) 提示词工程 RAG", en: "Ai Agent Dev RAG  Prompt Eng" },
+        { zh: "PyTorch LoRA 微调", en: "PyTorch Model Optimization"}
+      ],
+    },
     {
       title: { zh: "Web 前端工程化", en: "Web Frontend" },
       items: [
@@ -184,16 +191,16 @@ export const resume_data_bilingual = {
     {
       title: { zh: "Web 后端与数据库", en: "Web Backend & DB" },
       items: [
-        { zh: "Go Python/Flask GraphQL RESTAPI" },
+        { zh: "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI" },
         { zh: "Firebase  Google_Cloud" },
-        { zh: "PostgreSQL  MongoDB" },
+        { zh: "PostgreSQL  MongoDB Chroma向量", en: "PostgreSQL MongoDB Chroma" },
       ],
     },
     {
       title: { zh: "游戏与 3D 空间设计开发", en: "Design & 3D" },
       items: [
         { zh: "Figma / Adobe XD / PS / AI / ID / PR" },
-        { zh: "Unity C# / RayLib C++ WASM / Rhino Grasshopper" },
+        { zh: "Unity C# / C++ WASM cuda / Rhino GH" },
       ],
     },
     {
@@ -204,11 +211,32 @@ export const resume_data_bilingual = {
   projects: [
     {
       title: { 
+        zh: "简历 Bro", 
+        en: "Resume Bro" 
+      },
+      meta: { 
+        zh: `基于本地部署的 Qwen2.5-Coder 7B，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。
+        采用 Plan-and-Execute 分阶段 LLM 编排，将用户指令拆解为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。
+        集成 Web UI、本地日志、用户状态存储和案例文件 RAG 检索，支持快速迭代并导出 PDF 简历。`, 
+        en: "Built an open-source AI agent for resume rewriting, layout refinement, visual polish, and multilingual conversion, powered by a locally deployed Qwen2.5-Coder 7B model and a CrewAI-inspired multi-agent architecture. It provides a Web UI, local logging, user-state persistence, case-file RAG retrieval, and PDF resume export for fast iteration." },
+      links: [
+        // {
+        //   label: { zh: "在线演示", en: "Live Demo" },
+        //   href: "https://george-yi-hao-xu.github.io/mesh3d",
+        // },
+        {
+          label: { zh: "源代码", en: "Source Code" },
+          href: "https://github.com/george-yi-hao-xu/mesh3d",
+        },
+      ],
+    },
+    {
+      title: { 
         zh: "基于动力学的空间找形设计", 
         en: "Physics-Based Form-Finding" 
       },
       meta: { 
-        zh: `基于点云动力学模拟实现空间找形，并用 CUDA C++、Raylib 与 WASM 完成可视化和 Web Demo 部署。`, 
+        zh: `基于点云动力学模拟实现空间找形的开源客户端软件，并用 CUDA C++、Raylib 与 WASM 完成可视化和 Web Demo 部署。`, 
         en: "Built a point-cloud form-finding simulation with CUDA C++, Raylib, and a WASM web demo." },
       links: [
         {
@@ -224,7 +252,7 @@ export const resume_data_bilingual = {
     {
       title: { zh: "美国宇航局月球车竞赛", en: "NASA Rover Challenge" },
       meta: {
-        zh: `为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样抓取、地图引导与定位功能。`,
+        zh: `为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样、地图引导与定位功能。`,
         en: "Built astronaut UI features for a NASA HoloLens project in Unity/C#, including sampling, map guidance, and positioning.",
       },
       links: [
