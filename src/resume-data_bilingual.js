@@ -247,7 +247,7 @@ export const resume_data_bilingual = {
         // },
         {
           label: { zh: "源代码", en: "Source Code" },
-          href: "https://github.com/george-yi-hao-xu/resume-agent",
+          href: "https://github.com/george-yi-hao-xu/connect_4",
         },
       ],
     },
