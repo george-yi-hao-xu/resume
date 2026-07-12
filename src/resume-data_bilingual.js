@@ -211,14 +211,16 @@ export const resume_data_bilingual = {
   projects: [
     {
       title: { 
-        zh: "简历 Bro", 
-        en: "Resume Bro" 
+        zh: "简历文档 AI Agent 编辑器",
+        en: "Resume AI Agent Editor" 
       },
       meta: { 
-        zh: `基于本地部署的 Qwen2.5-Coder 7B，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。
-        采用 Plan-and-Execute 分阶段 LLM 编排，将用户指令拆解为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。
-        集成 Web UI、本地日志、用户状态存储和案例文件 RAG 检索，支持快速迭代并导出 PDF 简历。`, 
-        en: "Built an open-source AI agent for resume rewriting, layout refinement, visual polish, and multilingual conversion, powered by a locally deployed Qwen2.5-Coder 7B model and a CrewAI-inspired multi-agent architecture. It provides a Web UI, local logging, user-state persistence, case-file RAG retrieval, and PDF resume export for fast iteration." },
+        zh: `基于本地部署的 Qwen 模型，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。
+        采用 Plan-and-Execute 架构编排 LLM 工作流，将用户指令拆分为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。
+        集成 Web UI、本地日志、用户状态持久化与基于案例文件的 RAG 检索，支持快速迭代并导出 PDF。`, 
+        en: `Built an open-source AI agent on top of a locally deployed Qwen model for resume rewriting, layout optimization, visual polish, and multilingual conversion.
+        Implemented a Plan-and-Execute LLM pipeline that decomposes user instructions into intent recognition, context selection, patch generation, rule validation, and failure recovery, improving stability and observability of AI-driven DOM editing.
+        Integrated a Web UI, local logging, user-state persistence, and case-file RAG retrieval, enabling rapid iteration and PDF export.` },
       links: [
         // {
         //   label: { zh: "在线演示", en: "Live Demo" },
@@ -226,7 +228,26 @@ export const resume_data_bilingual = {
         // },
         {
           label: { zh: "源代码", en: "Source Code" },
-          href: "https://github.com/george-yi-hao-xu/mesh3d",
+          href: "https://github.com/george-yi-hao-xu/resume-agent",
+        },
+      ],
+    },
+    {
+      title: { 
+        zh: "在线 AI 对战棋类网站", 
+        en: "AI Board-Game Web App" 
+      },
+      meta: { 
+        zh: `基于 Minimax 算法实现五子棋与屏风四子棋的在线 AI 对弈，使用遗传算法优化评估函数权重，支持本地控制台游玩，并部署为可交互的 Web 应用。`, 
+        en: `Built an AI board-game engine for Gomoku and Connect Four using Minimax search with heuristic evaluation. Optimized evaluation weights via a genetic algorithm, and exposed it through both a local console client and an interactive web application.` },
+      links: [
+        // {
+        //   label: { zh: "在线演示", en: "Live Demo" },
+        //   href: "https://george-yi-hao-xu.github.io/mesh3d",
+        // },
+        {
+          label: { zh: "源代码", en: "Source Code" },
+          href: "https://github.com/george-yi-hao-xu/resume-agent",
         },
       ],
     },

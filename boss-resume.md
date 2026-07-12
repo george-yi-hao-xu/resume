@@ -1,4 +1,4 @@
-# 许易豪 - 软件工程师
+# 许易豪 - 软件工程师 UI/UX设计 XR开发
 
 - 电话：18701928010
 - 出生：1996.04
@@ -8,51 +8,67 @@
 
 ## 个人优势
 
-- 毕业于同济大学，后赴美国罗德岛设计学院深造，并于布朗大学学习 计算机相关课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外 获得多项学科奖项。现就职于世界顶尖规划设计公司 Sasaki 波士顿总部研发部 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力， 做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事领导信任。
+- 2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，同时于布朗大学学习 计算机课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外 获得多项学科奖项。毕业后，顺利就职于顶尖规划设计公司 Sasaki规划事务所 波士顿总部研发部 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力， 做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。
 
 ## 职业经历
 
-### 软件工程师 | 美国SASAKI联合设计事务所 Sasaki Associates, Inc.
-2023.11 - 至今 | 波士顿 / 远程
-- 员工信息：https://www.sasaki.com/people/george-xu/
-- 主导基于 Adobe React Aria 无样式组件库重构 UI 设计系统，中心化设计 Token，通过 Node.js 脚本实现编译，同时支持 SCSS 与 TypeScript，并基于 Lerna / Changesets 实现快速版本迭代。
-- 参与将主力项目 Dashi 从 1.0 前端静态网站，升级为基于 GraphQL、Google Data Connect 和云函数的 2.0 Web 前后端项目。 借助 Changesets 完善核心库的迭代维护，增强 Monorepo 的健壮性，并大幅提升新客户网站的部署速度。
-- 通过浏览器 Profile 工具定位前端计算瓶颈并优化 JavaScript 数组计算；在后端参与计算结果快照，减轻前端计算负担；并基于 Google Analytics 协助设计师分析用户行为。
-- 主导基于 d3.js 的图表库开发，解耦数据与缓存逻辑，统一数据结构，简化多种带动画与 Tooltip 解释浮层的图表实现。
-- 多次编写 Rhino Python 脚本，帮助建筑师根据 CSV 数据生成 AutoCAD DWG 点云文件，并实现 CAD 内几何图形的属性标注，助力城市规划设计项目推进。
+### 软件工程师 Web全栈 | 美国SASAKI规划事务所 Sasaki Associates, Inc.
 
-### 参数化设计师 | 华东建筑设计研究院 ECADI
-2020.08 - 2021.05 | 上海 | 全职
-- 于华东院国际设计中心，参与大型公共建筑室内设计。运用 Rhino GH 参数化工具，对重要公共空间进行曲面建模设计。
+2023.11 - 2025.11 波士顿 全职 | 2026.1 - 至今 远程
+
+- 员工信息：https://www.sasaki.com/people/george-xu/
+- 在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，将原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加快新客户站点上线。
+- 针对 Dashi 页面数据加载与计算负担问题，优化前后端数据处理流程，减少页面端重复计算，将首页渲染所需时间从2分钟降低至20秒。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。
+- 优化 Office Shift Pro 自动化建筑平面生成工具，提高居住平面方案生成效率；重构核心贪心算法流程，调整局部搜索与结果评估逻辑，降低无效计算。
+- 主导开发内部数据可视化图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图，优化地图加载速度。统一数据结构并优化渲染缓存，减少重复计算。
+- 落地内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；中心化设计 Token，完善样式与类型输出，并支持版本迭代与包发布流程。
+- 开发 Rhino / CAD 自动化数据处理脚本，支持城市规划团队快速生成点云文件并批量标注几何属性；将 CSV 数据转换为 DWG 点云，并为 CAD 几何对象写入属性信息。
+
+### 参数化设计师 | 华东建筑设计研究院
+
+2020.08 - 2021.05 | 上海 | 实习
+
+- 参与华东院国际设计中心大型公共建筑室内设计工作，负责核心公共空间的空间形态推敲、方案表达与汇报材料整理。
+- 使用参数化建模工具与 Python 脚本进行曲面建模和方案迭代，并输出渲染图、分析图与汇报文本。
 
 ## 教育背景
 
-- 美国 罗德岛设计学院 | 设计学硕士 2021.07 - 2023.06
-- 美国 布朗大学 | 计算机科学 跨校选课
-- 同济大学 | 建筑学学士 德强班 2014.09 - 2020.06
-- 上海七宝中学 | 高中 2011.09 - 2014.06
+- 罗德岛设计学院 | 设计学硕士 罗德岛 美国
+- 布朗大学 | 计算机科学 跨校选课 罗德岛 美国
+- 同济大学 | 建筑学学士 德语强化班 上海
+- 上海七宝中学 | 高中 上海
 
 ## 技能
 
+- AI 工程：Agent开发(Harness) 提示词工程 RAG；PyTorch LoRA 微调
 - Web 前端工程化：HTML CSS/SCSS JavaScript/TypeScript；React/ReactNative Node.js；Jest / Chromatic / GitHub CI/CD
-- Web 后端与数据库：Go Python/Flask GraphQL RESTAPI；Firebase Google_Cloud；PostgreSQL MongoDB
-- 游戏与 3D 空间设计开发：Figma / Adobe XD / PS / AI / ID / PR；Unity C# / RayLib C++ WASM / Rhino Grasshopper
+- Web 后端与数据库：Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI；Firebase Google_Cloud；PostgreSQL MongoDB Chroma向量
+- 游戏与 3D 空间设计开发：Figma / Adobe XD / PS / AI / ID / PR；Unity C# / C++ WASM cuda / Rhino GH
 - AI 工具：Codex / GitHub Copilot / ComfyUI
 
 ## 语言
 
 - 汉语：母语
-- 英语：专业
+- 英语：流利 专业交流/文献阅读
 - 德语：中级
 - 法语：中级
 
 ## 独立项目
 
+### 简历 Bro
+
+- 基于本地部署的 Qwen2.5-Coder 7B，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。 采用 Plan-and-Execute 分阶段 LLM 编排，将用户指令拆解为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。 集成 Web UI、本地日志、用户状态存储和案例文件 RAG 检索，支持快速迭代并导出 PDF 简历。
+- 源代码：https://github.com/george-yi-hao-xu/resume-agent
+
 ### 基于动力学的空间找形设计
-同济学习期间，着力于计算设计。借力于 CUDA C++ 技术，对点云进行动力学模拟，以实现空间找形。并基于 Raylib 库实现计算可视化； 同时借 WASM 技术于 GitHub Pages 部署 web demo 版本。
+
+基于点云动力学模拟实现空间找形的开源客户端软件，并用 CUDA C++、Raylib 与 WASM 完成可视化和 Web Demo 部署。
+
 - 在线演示：https://george-yi-hao-xu.github.io/mesh3d
 - 源代码：https://github.com/george-yi-hao-xu/mesh3d
 
 ### 美国宇航局月球车竞赛
-在罗德岛设计学院学习期间，全流程深度参与基于北美微软 HoloLens 的 NASA 竞赛项目，熟练使用 Unity 与 C#进行开发。与设计师紧密合作、专业交流，完善模拟采样抓取、地图打点引导、宇航员定位等功能。
+
+为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样、地图引导与定位功能。
+
 - 具体信息：https://www.meijaydesign.com/work/nasa-suits-challenge
