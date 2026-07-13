@@ -78,12 +78,10 @@ export const resume_data_bilingual = {
 获得多项学科奖项。毕业后，顺利就职于顶尖规划设计公司 Sasaki规划事务所 波士顿总部研发部
 门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力，
 做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。`,
-      en: `Graduated in Architecture from Tongji University, continued design studies at Rhode Island School of Design, 
-      and completed computer science coursework at Brown University. During school, 
-      explored cross-disciplinary work across human-computer interaction, computational design, 
-      and physics-based simulation, earning strong academic results and multiple awards. 
-      Currently works on Sasaki's Boston R&D team as a software engineer, focusing on web frontend and backend architecture, 
-      data structures, and algorithmic optimization. Self-driven, detail-oriented, patient in communication, and trusted by colleagues and collaborators.`,
+      en: `Tongji B.Arch graduate with design studies at RISD and CS coursework at Brown. 
+      Explored HCI, computational design, and physics simulation, earning strong results and awards. 
+      Software engineer on Sasaki's Boston R&D team, focused on full-stack web architecture, 
+      data structures, and algorithm optimization. Self-driven, detail-oriented, and trusted in collaboration.`,
     },
     // {
     //   zh: "todo",
@@ -103,28 +101,27 @@ export const resume_data_bilingual = {
         {
           zh: `在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。
           优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。`,
-          en: `Delivered client data integration, site configuration, and cloud-backed service modules for the Dashi multi-client website platform, 
-          evolving the original static frontend into a reusable full-stack application; improved package maintenance and deployment automation to speed up new client-site launches.
-          Improved Dashi's frontend and backend data flow to address page-loading and client-side computation issues; identified performance bottlenecks, adjusted data structures and storage logic, and supported user behavior analysis.
+          en: `Built data integration, site configuration, and cloud service modules for Dashi, turning static client sites into a reusable full-stack platform. 
+          Improved package maintenance, deployment automation, data flow, and storage logic to speed launches, reduce load time, and support user analysis.
           `,
         },
         {
           zh: `优化 Office Shift Pro 自动化建筑平面生成工具，重构核心贪心算法流程，调整局部搜索与结果评估逻辑，提升客户端交付效率。`,
-          en: `Improved Office Shift Pro, an automated floor-plan generation tool, to generate office layout options more efficiently. Refactored the core greedy-algorithm workflow, local search logic, and result-evaluation steps to reduce unnecessary computation.`,
+          en: `Improved Office Shift Pro, an automated floor-plan tool, by refactoring greedy search, local search, and result evaluation to reduce computation and speed delivery.`,
         },
         {
           zh: `主导开发内部数据可视化d3.js图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图，优化Mapbox地图加载速度。
           统一数据结构, 优化渲染缓存。主导内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；完善样式与类型输出、版本迭代与npm包发布流程。`,
-          en: `Led development of an internal data-visualization chart library with reusable animated charts, tooltips, and data-display components; standardized data models and optimized rendering cache behavior to reduce repeated computation.
-          Delivered an internal UI design-system refactor to support reusable component styling and design standards across projects; centralized design tokens, improved style and type outputs, and supported versioning and package-release workflows.`,
+          en: `Led an internal D3 chart library with reusable animated charts, tooltips, and data-display components. 
+          Standardized data models, optimized render caching, and refactored the UI design system with shared tokens, typed outputs, versioning, and npm releases.`,
         },
         {
-          zh: `负责核心组件与 npm 包的自动化测试维护，搭建并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归与跨平台构建验证；协助产品经理制定 QA 流程、编写测试用例并追踪缺陷，推动核心库发布前的质量门禁与版本稳定性，减少线上回归问题。`,
-          en: `Maintained automated tests for core libraries and npm packages, building out Jest, Chromatic, and GitHub Actions CI/CD pipelines covering unit tests, UI regression, and cross-platform build validation. Collaborated with product managers to define QA workflows, author test cases, and triage defects; enforced pre-release quality gates and version stability to reduce production regressions.`,
+          zh: `负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。编写 Python / Node.js 脚本与内部工具优化测试流程，提升团队效率。`,
+          en: `Owned QA automation for core libraries and npm packages. Built Jest, Chromatic, and GitHub Actions pipelines for unit, UI regression, build, and performance checks; triaged failures and added Python/Node tools to streamline testing.`,
         },
         {
           zh: "开发 Rhino / CAD 自动化数据处理脚本，支持城市规划团队快速生成点云文件并批量标注几何属性；将 CSV 数据转换为 DWG 点云，并为 CAD 几何对象写入属性信息。",
-          en: "Developed Rhino/CAD automation scripts to help urban planning teams generate point-cloud files and batch-annotate geometry attributes; converted CSV data into DWG point clouds and wrote metadata onto CAD geometry."
+          en: "Built Rhino/CAD automation scripts for point-cloud generation, geometry annotation, CSV-to-DWG conversion, and CAD metadata writing."
         }
       ],
     },
@@ -135,11 +132,11 @@ export const resume_data_bilingual = {
       bullets: [
         {
           zh: `参与华东院国际设计中心大型公共建筑室内设计工作，负责核心公共空间的空间形态推敲、方案表达与汇报材料整理。`,
-          en: "Contributed to large-scale public-building interior design at ECADI's International Design Center, supporting spatial design studies, design communication, and presentation materials for key public spaces.",
+          en: "Supported large public-building interior design at ECADI, focusing on spatial studies, design communication, and presentation materials.",
         },
         {
           zh: `使用参数化建模工具与 Python 脚本进行曲面建模和方案迭代，并输出渲染图、分析图与汇报文本。`,
-          en: "Used parametric modeling tools and Python scripts for surface modeling and design iteration, producing renderings, diagrams, and presentation materials.",
+          en: "Used parametric modeling and Python for surface modeling, iteration, renderings, diagrams, and presentations.",
         },
       ],
     },
@@ -147,21 +144,21 @@ export const resume_data_bilingual = {
   education: [
     {
       title: { zh: "罗德岛设计学院", en: "Rhode Island School of Design" },
-      meta: { zh: "设计学硕士 罗德岛 美国", en: "Master of Design RI,USA" },
+      meta: { zh: "设计学硕士 罗德岛 美国", en: "M.Des, RI, USA" },
       time: { zh: "2021.07 - 2023.06", en: "2021.07 - 2023.06" },
     },
     {
       title: { zh: "布朗大学", en: "Brown University" },
       meta: {
         zh: "计算机科学 跨校选课 罗德岛 美国",
-        en: "Computer Science cross-registration RI,USA",
+        en: "CS cross-registration, RI, USA",
       },
     },
     {
       title: { zh: "同济大学", en: "Tongji University" },
       meta: {
         zh: "建筑学学士 德语强化班 上海",
-        en: "B.Arch, Deutschintensivkurs Shanghai,China",
+        en: "B.Arch, Shanghai, China",
       },
       time: { zh: "2014.09 - 2020.06", en: "2014.09 - 2020.06" },
     },
@@ -178,8 +175,8 @@ export const resume_data_bilingual = {
     {
       title: { zh: "AI 工程", en: "AI Eng" },
       items: [
-        { zh: "Agent开发(Harness) 提示词工程 RAG", en: "Ai Agent Dev RAG  Prompt Eng" },
-        { zh: "PyTorch LoRA 微调", en: "PyTorch Model Optimization"}
+        { zh: "Agent开发(Harness) 提示词工程 RAG", en: "AI Agents RAG Prompt Eng" },
+        { zh: "PyTorch LoRA 微调", en: "PyTorch LoRA" }
       ],
     },
     {
@@ -196,6 +193,13 @@ export const resume_data_bilingual = {
         { zh: "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI" },
         { zh: "Firebase  Google_Cloud" },
         { zh: "PostgreSQL  MongoDB Chroma向量", en: "PostgreSQL MongoDB Chroma" },
+      ],
+    },
+    {
+      title: { zh: "测试开发", en: "Test Development" },
+      items: [
+        { zh: "Jest / Chromatic / pytest / GitHub Actions CI/CD" },
+        { zh: "CUDA / GPU 性能基准测试与结果分析", en: "CUDA/GPU Benchmarking" },
       ],
     },
     {
@@ -220,9 +224,9 @@ export const resume_data_bilingual = {
         zh: `基于本地部署的 Qwen 模型，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。
         采用 Plan-and-Execute 架构编排 LLM 工作流，将用户指令拆分为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。
         集成 Web UI、本地日志、用户状态持久化与基于案例文件的 RAG 检索，支持快速迭代并导出 PDF。`, 
-        en: `Built an open-source AI agent on top of a locally deployed Qwen model for resume rewriting, layout optimization, visual polish, and multilingual conversion.
-        Implemented a Plan-and-Execute LLM pipeline that decomposes user instructions into intent recognition, context selection, patch generation, rule validation, and failure recovery, improving stability and observability of AI-driven DOM editing.
-        Integrated a Web UI, local logging, user-state persistence, and case-file RAG retrieval, enabling rapid iteration and PDF export.` },
+        en: `Built an open-source local-Qwen AI agent for resume rewriting, layout optimization, visual polish, and multilingual conversion.
+        Implemented a Plan-and-Execute pipeline for intent recognition, context selection, patch generation, validation, and recovery.
+        Added Web UI, logging, state persistence, case-file RAG, rapid iteration, and PDF export.` },
       links: [
         // {
         //   label: { zh: "在线演示", en: "Live Demo" },
@@ -241,7 +245,7 @@ export const resume_data_bilingual = {
       },
       meta: { 
         zh: `基于 Minimax 算法实现五子棋与屏风四子棋的在线 AI 对弈，使用遗传算法优化评估函数权重，支持本地控制台游玩，并部署为可交互的 Web 应用。`, 
-        en: `Built an AI board-game engine for Gomoku and Connect Four using Minimax search with heuristic evaluation. Optimized evaluation weights via a genetic algorithm, and exposed it through both a local console client and an interactive web application.` },
+        en: `Built AI engines for Gomoku and Connect Four with Minimax search and heuristic evaluation. Tuned weights with a genetic algorithm and shipped console and web clients.` },
       links: [
         // {
         //   label: { zh: "在线演示", en: "Live Demo" },
@@ -259,8 +263,8 @@ export const resume_data_bilingual = {
         en: "Physics-Based Form-Finding" 
       },
       meta: { 
-        zh: `基于点云动力学模拟实现空间找形的开源客户端软件，并用 CUDA C++、Raylib 与 WASM 完成可视化和 Web Demo 部署。`, 
-        en: "Built a point-cloud form-finding simulation with CUDA C++, Raylib, and a WASM web demo." },
+        zh: `使用 CUDA C++ 实现基于点云动力学的空间找形开源软件，在 GPU 上完成并行数值模拟与高性能计算；设计基准测试验证 CUDA 内核的正确性与加速比，并通过 Raylib 与 WASM 完成可视化与 Web Demo 部署。`, 
+        en: "Built a CUDA C++ point-cloud form-finding simulator with parallel solvers, benchmark validation, Raylib visualization, and a WASM web demo." },
       links: [
         {
           label: { zh: "在线演示", en: "Live Demo" },
@@ -276,7 +280,7 @@ export const resume_data_bilingual = {
       title: { zh: "美国宇航局月球车竞赛", en: "NASA Rover Challenge" },
       meta: {
         zh: `为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样、地图引导与定位功能。`,
-        en: "Built astronaut UI features for a NASA HoloLens project in Unity/C#, including sampling, map guidance, and positioning.",
+        en: "Built Unity/C# astronaut UI features for NASA HoloLens, including sampling, map guidance, and positioning.",
       },
       links: [
         { label: { zh: "具体信息", en: "Detailed Timeline"}, href: "https://www.meijaydesign.com/work/nasa-suits-challenge" },
