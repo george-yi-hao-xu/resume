@@ -101,24 +101,26 @@ export const resume_data_bilingual = {
       bullets: [
 
         {
-          zh: `在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，将原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加快新客户站点上线。`,
-          en: `Delivered client data integration, site configuration, and cloud-backed service modules for the Dashi multi-client website platform, evolving the original static frontend into a reusable full-stack application; improved package maintenance and deployment automation to speed up new client-site launches.`,
+          zh: `在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。
+          优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。`,
+          en: `Delivered client data integration, site configuration, and cloud-backed service modules for the Dashi multi-client website platform, 
+          evolving the original static frontend into a reusable full-stack application; improved package maintenance and deployment automation to speed up new client-site launches.
+          Improved Dashi's frontend and backend data flow to address page-loading and client-side computation issues; identified performance bottlenecks, adjusted data structures and storage logic, and supported user behavior analysis.
+          `,
         },
         {
-          zh: `针对 Dashi 页面数据加载与计算负担问题，优化前后端数据处理流程，减少页面端重复计算，将首页渲染所需时间从2分钟降低至20秒。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。`,
-          en: `Improved Dashi's frontend and backend data flow to address page-loading and client-side computation issues; identified performance bottlenecks, adjusted data structures and storage logic, and supported user behavior analysis.`,
-        },
-        {
-          zh: `优化 Office Shift Pro 自动化建筑平面生成工具，提高居住平面方案生成效率；重构核心贪心算法流程，调整局部搜索与结果评估逻辑，降低无效计算。`,
+          zh: `优化 Office Shift Pro 自动化建筑平面生成工具，重构核心贪心算法流程，调整局部搜索与结果评估逻辑，提升客户端交付效率。`,
           en: `Improved Office Shift Pro, an automated floor-plan generation tool, to generate office layout options more efficiently. Refactored the core greedy-algorithm workflow, local search logic, and result-evaluation steps to reduce unnecessary computation.`,
         },
         {
-          zh: `主导开发内部数据可视化图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图，优化地图加载速度。统一数据结构并优化渲染缓存，减少重复计算。`,
-          en: `Led development of an internal data-visualization chart library with reusable animated charts, tooltips, and data-display components; standardized data models and optimized rendering cache behavior to reduce repeated computation.`,
+          zh: `主导开发内部数据可视化d3.js图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图，优化Mapbox地图加载速度。
+          统一数据结构, 优化渲染缓存。主导内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；完善样式与类型输出、版本迭代与npm包发布流程。`,
+          en: `Led development of an internal data-visualization chart library with reusable animated charts, tooltips, and data-display components; standardized data models and optimized rendering cache behavior to reduce repeated computation.
+          Delivered an internal UI design-system refactor to support reusable component styling and design standards across projects; centralized design tokens, improved style and type outputs, and supported versioning and package-release workflows.`,
         },
         {
-          zh: `落地内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；中心化设计 Token，完善样式与类型输出，并支持版本迭代与包发布流程。`,
-          en: `Delivered an internal UI design-system refactor to support reusable component styling and design standards across projects; centralized design tokens, improved style and type outputs, and supported versioning and package-release workflows.`,
+          zh: `负责核心组件与 npm 包的自动化测试维护，搭建并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归与跨平台构建验证；协助产品经理制定 QA 流程、编写测试用例并追踪缺陷，推动核心库发布前的质量门禁与版本稳定性，减少线上回归问题。`,
+          en: `Maintained automated tests for core libraries and npm packages, building out Jest, Chromatic, and GitHub Actions CI/CD pipelines covering unit tests, UI regression, and cross-platform build validation. Collaborated with product managers to define QA workflows, author test cases, and triage defects; enforced pre-release quality gates and version stability to reduce production regressions.`,
         },
         {
           zh: "开发 Rhino / CAD 自动化数据处理脚本，支持城市规划团队快速生成点云文件并批量标注几何属性；将 CSV 数据转换为 DWG 点云，并为 CAD 几何对象写入属性信息。",
