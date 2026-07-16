@@ -16,7 +16,7 @@
 
 .cn-header {
   min-height: 34mm;
-  padding: 2mm 30mm 6mm;
+  padding: 2mm 30mm 3.5mm;
   position: relative;
   text-align: center;
 }
@@ -86,6 +86,10 @@
   margin-top: 5.2mm;
 }
 
+.cn-header + .cn-section {
+  margin-top: 2mm;
+}
+
 .cn-section h2 {
   background: #eeeeee;
   border: 0;
@@ -98,6 +102,10 @@
   margin: 0 0 2.8mm;
   padding: 1.25mm 2.5mm;
   text-transform: none;
+}
+
+.cn-section > :not(h2) {
+  margin-left: 3mm;
 }
 
 .cn-profile p + p {
@@ -136,8 +144,9 @@
 
 .cn-entry__meta,
 .cn-compact-entry header p {
-  color: #333;
-  font-size: 3.25mm;
+  color: #444;
+  font-size: 3.15mm;
+  font-weight: 500;
   line-height: 1.35;
   text-align: right;
   white-space: nowrap;
@@ -145,6 +154,10 @@
 
 .cn-entry__body {
   margin-top: 1.8mm;
+}
+
+.cn-entry__body p + p {
+  margin-top: 1mm;
 }
 
 .cn-entry__label {
@@ -173,6 +186,57 @@
   margin-top: 1.2mm;
 }
 
+.cn-entry__inline-links .cn-links {
+  display: inline;
+  margin: 0;
+}
+
+.cn-entry__inline-links a,
+.cn-project__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cn-entry__inline-links::before {
+  color: #5f5f5f;
+  content: "|";
+  font-weight: 400;
+  margin: 0 1.8mm;
+}
+
+.cn-entry__inline-links a:not(:last-child)::after,
+.cn-project__links a:not(:last-child)::after {
+  color: #5f5f5f;
+  content: "|";
+  font-weight: 400;
+  margin: 0 1.8mm;
+}
+
+.cn-project__header {
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-work-project__header {
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-work-project__affiliation {
+  color: #444;
+  font-size: 3.15mm;
+  font-weight: 500;
+  justify-self: end;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cn-project__links {
+  color: #444;
+  font-size: 3.15mm;
+  font-weight: 500;
+  justify-self: end;
+  white-space: nowrap;
+}
+
 .cn-compact-entry > p,
 .cn-skill-group p {
   color: #222;
@@ -186,7 +250,7 @@
   align-items: baseline;
   display: grid;
   gap: 1mm 4mm;
-  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  grid-template-columns: 38mm minmax(0, 1fr) max-content;
 }
 
 .cn-education-entry h3,
@@ -208,7 +272,7 @@
 .cn-skill-group {
   display: grid;
   gap: 1mm;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: 38mm minmax(0, 1fr);
 }
 
 .cn-language-list {

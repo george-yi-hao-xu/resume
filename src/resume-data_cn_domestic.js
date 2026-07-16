@@ -2,7 +2,7 @@ export const resume_data_cn_domestic = {
   pageTitle: "许易豪 - 国内中文简历",
   description: "许易豪面向国内职场的软件工程师中文简历。",
   name: "许易豪",
-  role: "软件工程师 UI/UX设计 XR开发",
+  role: "Web全栈软件工程师",
   labels: {
     contactAria: "联系信息",
     profile: "个人优势",
@@ -41,7 +41,7 @@ export const resume_data_cn_domestic = {
     },
     {
       title: "布朗大学",
-      meta: "计算机科学 跨校选课 罗德岛 美国",
+      meta: "计算机科学 罗德岛 美国",
       time: "",
     },
     {
@@ -69,7 +69,7 @@ export const resume_data_cn_domestic = {
       ],
     },
     {
-      title: "Web 后端与数据库",
+      title: "Web 后端数据库",
       items: [
         "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI",
         "Firebase Google_Cloud",
@@ -79,12 +79,11 @@ export const resume_data_cn_domestic = {
     {
       title: "测试开发",
       items: [
-        "Jest / Chromatic / pytest / GitHub Actions CI/CD",
-        "CUDA / GPU 性能基准测试与结果分析",
+        "Jest / Chromatic / GitHub Actions CI/CD",
       ],
     },
     {
-      title: "游戏与 3D 空间设计开发",
+      title: "游戏3D开发",
       items: [
         "Figma / Adobe XD / PS / AI / ID / PR",
         "Unity C# / C++ WASM cuda / Rhino GH",
@@ -97,7 +96,7 @@ export const resume_data_cn_domestic = {
   ],
   experience: [
     {
-      company: "美国SASAKI规划事务所 Sasaki Associates, Inc.",
+      company: "美国SASAKI规划事务所",
       title: "软件工程师 Web全栈",
       meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
       bullets: [
@@ -124,20 +123,15 @@ export const resume_data_cn_domestic = {
   ],
   workProjects: [
     {
-      title: "Dashi 多客户网站平台与数据可视化系统",
+      title: "Dashi 工程数据可视化平台",
       company: "Sasaki",
       role: "软件工程师 Web全栈",
       meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
-      description:
-        "在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。主导开发内部数据可视化 d3.js 图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图优化 Mapbox 地图加载速度，统一数据结构并优化渲染缓存。主导内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；完善样式与类型输出、版本迭代与 npm 包发布流程。",
-    },
-    {
-      title: "Office Shift Pro 自动化建筑平面生成Web工具",
-      company: "Sasaki",
-      role: "软件工程师 Web全栈",
-      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
-      description:
-        "优化 Office Shift Pro 自动化建筑平面生成工具，重构核心贪心算法流程，调整局部搜索与结果评估逻辑，提升客户端交付效率。",
+      description: [
+        "在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。",
+        "优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。",
+        "主导开发内部数据可视化 d3.js 图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图优化 Mapbox 地图加载速度，统一数据结构并优化渲染缓存。主导内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；完善样式与类型输出、版本迭代与 npm 包发布流程。",
+      ],
     },
     {
       title: "设计系统",
@@ -147,6 +141,15 @@ export const resume_data_cn_domestic = {
       description:
         "负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。编写 Python / Node.js 脚本与内部工具优化测试流程，提升团队效率。",
     },
+    {
+      title: "Office Shift Pro 智能平面生成工具",
+      company: "Sasaki",
+      role: "软件工程师 Web全栈",
+      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
+      description:
+        "优化 Office Shift Pro 自动化建筑平面生成工具，重构核心贪心算法流程，调整局部搜索与结果评估逻辑，提升客户端交付效率。",
+    },
+
     // {
     //   title: "大型公共建筑室内设计项目",
     //   company: "华东建筑设计研究院",

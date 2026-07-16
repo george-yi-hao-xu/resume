@@ -3,6 +3,12 @@ import "./ChinaResumeMaker.scss";
 
 const htmlText = (value) => escapeHtml(value ?? "");
 
+const paragraphs = (value) => {
+  const items = Array.isArray(value) ? value : [value];
+
+  return items.map((item) => `<p>${htmlText(item)}</p>`).join("");
+};
+
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
     <h2>${escapeHtml(title)}</h2>
@@ -24,6 +30,23 @@ const linkRow = (links = []) => {
         )
         .join("")}
     </p>
+  `;
+};
+
+const inlineLinkRow = (links = [], className = "cn-entry__inline-links") => {
+  if (!links.length) {
+    return "";
+  }
+
+  return `
+    <span class="${escapeHtml(className)}">
+      ${links
+        .map(
+          (item) =>
+            `<a href="${escapeHtml(item.href)}">${htmlText(item.label)}</a>`,
+        )
+        .join("")}
+    </span>
   `;
 };
 
@@ -73,7 +96,10 @@ const job = (item, labels) => `
     <header class="cn-entry__header">
       <div>
         <h3>${htmlText(item.company)}</h3>
-        <p class="cn-entry__role">${htmlText(item.title)}</p>
+        <p class="cn-entry__role">
+          <span>${htmlText(item.title)}</span>
+          ${inlineLinkRow(item.links)}
+        </p>
       </div>
       <p class="cn-entry__meta">${jobMeta(item)}</p>
     </header>
@@ -81,7 +107,6 @@ const job = (item, labels) => `
       <ul>
         ${item.bullets.map((bullet) => `<li>${htmlText(bullet)}</li>`).join("")}
       </ul>
-      ${linkRow(item.links)}
     </div>
   </article>
 `;
@@ -91,15 +116,12 @@ const experience = (items = [], labels) =>
 
 const workProject = (item, labels) => `
   <article class="cn-entry cn-work-project">
-    <header class="cn-entry__header">
-      <div>
-        <h3>${htmlText(item.title)}</h3>
-        <p class="cn-entry__role">${htmlText(item.company)} / ${htmlText(item.role)}</p>
-      </div>
-      <p class="cn-entry__meta">${item.meta.map(htmlText).join(" | ")}</p>
+    <header class="cn-entry__header cn-work-project__header">
+      <h3>${htmlText(item.title)}</h3>
+      <p class="cn-work-project__affiliation">${htmlText(item.company)} / ${htmlText(item.role)}</p>
     </header>
     <div class="cn-entry__body">
-      <p>${htmlText(item.description)}</p>
+      ${paragraphs(item.description)}
     </div>
   </article>
 `;
@@ -113,12 +135,12 @@ const workProjects = (items = [], labels) =>
 
 const project = (item, labels) => `
   <article class="cn-entry cn-project">
-    <header class="cn-entry__header">
+    <header class="cn-entry__header cn-project__header">
       <h3>${htmlText(item.title)}</h3>
+      ${inlineLinkRow(item.links, "cn-project__links")}
     </header>
     <div class="cn-entry__body">
-      <p>${htmlText(item.meta)}</p>
-      ${linkRow(item.links)}
+      ${paragraphs(item.meta)}
     </div>
   </article>
 `;
@@ -139,7 +161,7 @@ const education = (items = [], labels) =>
 
 const skillGroup = (group) => `
   <article class="cn-skill-group">
-    <h3>${htmlText(group.title)}：</h3>
+    <h3>${htmlText(group.title)}</h3>
     <p>${group.items.map(htmlText).join("；")}</p>
   </article>
 `;
