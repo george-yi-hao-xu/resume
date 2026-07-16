@@ -25,9 +25,10 @@ const mixedText = (item, className = "bi-text") => {
     return `<span class="${className}">${escapeHtml(item)}</span>`;
   }
 
+  const chinese = item.zh ? `<span class="${className}__zh">${escapeHtml(item.zh)}</span>` : "";
   const english = item.en ? `<span class="${className}__en">${escapeHtml(item.en)}</span>` : "";
 
-  return `<span class="${className}"><span class="${className}__zh">${escapeHtml(item.zh)}</span>${english}</span>`;
+  return `<span class="${className}">${chinese}${english}</span>`;
 };
 
 const localizedContactLabel = (label, lang) => {
@@ -43,19 +44,29 @@ const localizedContactValue = (item, lang) => {
 };
 
 const localizedCompany = (company, lang) => {
-  if (lang === "zh") {
-    return company.replace(/\s+(Sasaki Associates, Inc\.|ECADI)$/u, "");
+  const value = localizedText(company, lang);
+
+  if (!value) {
+    return "";
   }
 
-  if (company.includes("Sasaki Associates")) {
+  if (typeof company !== "string") {
+    return value;
+  }
+
+  if (lang === "zh") {
+    return value.replace(/\s+(Sasaki Associates, Inc\.|ECADI)$/u, "");
+  }
+
+  if (value.includes("Sasaki Associates")) {
     return "Sasaki Associates, Inc.";
   }
 
-  if (company.includes("ECADI")) {
+  if (value.includes("ECADI")) {
     return "ECADI";
   }
 
-  return company;
+  return value;
 };
 
 const localizedMeta = (items = [], lang) =>
@@ -214,7 +225,7 @@ const mixedJob = (item) => `
       <div>
         <h3>${mixedText(item.title)}</h3>
         <div class="bi-job__company">
-          <div class="name">${escapeHtml(item.company)}</div>
+          <div class="name">${mixedText(item.company, "name")}</div>
         </div>
         <div class="bi-job__meta">${item.meta.map(escapeHtml).join(" / ")}</div>
       </div>
