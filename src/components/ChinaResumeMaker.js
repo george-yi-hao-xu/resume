@@ -1,21 +1,7 @@
 import { escapeHtml } from "./utils.js";
 import "./ChinaResumeMaker.scss";
 
-const text = (value) => {
-  if (!value) {
-    return "";
-  }
-
-  if (typeof value === "string") {
-    return value;
-  }
-
-  return value.zh ?? value.en ?? "";
-};
-
-const cleanText = (value) => text(value).replace(/\s+/gu, " ").trim();
-
-const htmlText = (value) => escapeHtml(cleanText(value));
+const htmlText = (value) => escapeHtml(value ?? "");
 
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
@@ -46,18 +32,15 @@ const contactItem = (item) => {
     return "";
   }
 
-  const label = cleanText(item.localizedLabel ?? item.label);
-  const value = cleanText(item.localizedValue ?? item.value);
-
-  if (!label || !value) {
+  if (!item.label) {
     return "";
   }
 
   const content = item.href
-    ? `<a href="${escapeHtml(item.href)}">${escapeHtml(value)}</a>`
-    : `<span>${escapeHtml(value)}</span>`;
+    ? `<a href="${escapeHtml(item.href)}">${htmlText(item.value)}</a>`
+    : `<span>${htmlText(item.value)}</span>`;
 
-  return `<span><b>${escapeHtml(label)}：</b>${content}</span>`;
+  return `<span><b>${htmlText(item.label)}：</b>${content}</span>`;
 };
 
 const header = (resume, avatar) => `
@@ -66,15 +49,17 @@ const header = (resume, avatar) => `
       <h1>${htmlText(resume.name)}</h1>
       <p>${htmlText(resume.role)}</p>
     </div>
-    <div class="cn-contact-list" aria-label="联系信息">
+    <div class="cn-contact-list" aria-label="${htmlText(resume.labels.contactAria)}">
       ${resume.contacts.map(contactItem).join("")}
     </div>
     <img class="cn-avatar" src="${escapeHtml(avatar)}" alt="${htmlText(resume.name)}头像" />
   </header>
 `;
 
-const profile = (items = []) => section(
-  "个人优势",
+const jobMeta = (item) => item.meta.map(htmlText).join(" | ");
+
+const profile = (items = [], labels) => section(
+  labels.profile,
   `
     <div class="cn-profile">
       ${items.map((item) => `<p>${htmlText(item)}</p>`).join("")}
@@ -83,17 +68,16 @@ const profile = (items = []) => section(
   "cn-profile-section",
 );
 
-const job = (item) => `
+const job = (item, labels) => `
   <article class="cn-entry cn-job">
     <header class="cn-entry__header">
       <div>
         <h3>${htmlText(item.company)}</h3>
         <p class="cn-entry__role">${htmlText(item.title)}</p>
       </div>
-      <p class="cn-entry__meta">${item.meta.map(htmlText).join(" | ")}</p>
+      <p class="cn-entry__meta">${jobMeta(item)}</p>
     </header>
     <div class="cn-entry__body">
-      <p class="cn-entry__label">工作内容：</p>
       <ul>
         ${item.bullets.map((bullet) => `<li>${htmlText(bullet)}</li>`).join("")}
       </ul>
@@ -102,37 +86,56 @@ const job = (item) => `
   </article>
 `;
 
-const experience = (items = []) =>
-  section("职业经历", items.map(job).join(""), "cn-experience-section");
+const experience = (items = [], labels) =>
+  section(labels.experience, items.map((item) => job(item, labels)).join(""), "cn-experience-section");
 
-const project = (item) => `
+const workProject = (item, labels) => `
+  <article class="cn-entry cn-work-project">
+    <header class="cn-entry__header">
+      <div>
+        <h3>${htmlText(item.title)}</h3>
+        <p class="cn-entry__role">${htmlText(item.company)} / ${htmlText(item.role)}</p>
+      </div>
+      <p class="cn-entry__meta">${item.meta.map(htmlText).join(" | ")}</p>
+    </header>
+    <div class="cn-entry__body">
+      <p>${htmlText(item.description)}</p>
+    </div>
+  </article>
+`;
+
+const workProjects = (items = [], labels) =>
+  section(
+    labels.workProjects,
+    items.map((item) => workProject(item, labels)).join(""),
+    "cn-work-projects-section",
+  );
+
+const project = (item, labels) => `
   <article class="cn-entry cn-project">
     <header class="cn-entry__header">
       <h3>${htmlText(item.title)}</h3>
     </header>
     <div class="cn-entry__body">
-      <p class="cn-entry__label">项目描述：</p>
       <p>${htmlText(item.meta)}</p>
       ${linkRow(item.links)}
     </div>
   </article>
 `;
 
-const projects = (items = []) =>
-  section("项目经历", items.map(project).join(""), "cn-projects-section");
+const projects = (items = [], labels) =>
+  section(labels.projects, items.map((item) => project(item, labels)).join(""), "cn-projects-section");
 
 const educationItem = (item) => `
-  <article class="cn-compact-entry">
-    <header>
-      <h3>${htmlText(item.title)}</h3>
-      ${item.time ? `<p>${htmlText(item.time)}</p>` : ""}
-    </header>
-    <p>${htmlText(item.meta)}</p>
+  <article class="cn-compact-entry cn-education-entry">
+    <h3>${htmlText(item.title)}</h3>
+    <p class="cn-education-entry__meta">${htmlText(item.meta)}</p>
+    ${item.time ? `<p class="cn-education-entry__time">${htmlText(item.time)}</p>` : ""}
   </article>
 `;
 
-const education = (items = []) =>
-  section("教育背景", items.map(educationItem).join(""), "cn-education-section");
+const education = (items = [], labels) =>
+  section(labels.education, items.map(educationItem).join(""), "cn-education-section");
 
 const skillGroup = (group) => `
   <article class="cn-skill-group">
@@ -141,15 +144,15 @@ const skillGroup = (group) => `
   </article>
 `;
 
-const skills = (items = []) =>
-  section("专业技能", items.map(skillGroup).join(""), "cn-skills-section");
+const skills = (items = [], labels) =>
+  section(labels.skills, items.map(skillGroup).join(""), "cn-skills-section");
 
 const languageItem = (item) => `
   <span>${htmlText(item.name)}${item.level ? `：${htmlText(item.level)}` : ""}</span>
 `;
 
-const languages = (items = []) => section(
-  "语言",
+const languages = (items = [], labels) => section(
+  labels.languages,
   `<div class="cn-language-list">${items.map(languageItem).join("")}</div>`,
   "cn-languages-section",
 );
@@ -157,11 +160,12 @@ const languages = (items = []) => section(
 export const ChinaResumeMaker = (resume, avatar) => `
   <main class="cn-resume">
     ${header(resume, avatar)}
-    ${profile(resume.profile)}
-    ${experience(resume.experience)}
-    ${projects(resume.projects)}
-    ${education(resume.education)}
-    ${skills(resume.skillGroups)}
-    ${languages(resume.languages)}
+    ${profile(resume.profile, resume.labels)}
+    ${education(resume.education, resume.labels)}
+    ${skills(resume.skillGroups, resume.labels)}
+    ${experience(resume.experience, resume.labels)}
+    ${workProjects(resume.workProjects, resume.labels)}
+    ${projects(resume.projects, resume.labels)}
+    ${languages(resume.languages, resume.labels)}
   </main>
 `;
