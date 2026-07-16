@@ -69,8 +69,10 @@ const contactItem = (item) => {
 const header = (resume, avatar) => `
   <header class="cn-header">
     <div class="cn-header__identity">
-      <h1>${htmlText(resume.name)}</h1>
-      <p>${htmlText(resume.role)}</p>
+      <h1>
+        <span>${htmlText(resume.name)}</span>
+        <small>${htmlText(resume.role)}</small>
+      </h1>
     </div>
     <div class="cn-contact-list" aria-label="${htmlText(resume.labels.contactAria)}">
       ${resume.contacts.map(contactItem).join("")}

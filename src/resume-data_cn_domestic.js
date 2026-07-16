@@ -138,8 +138,10 @@ export const resume_data_cn_domestic = {
       company: "Sasaki",
       role: "软件工程师 Web全栈",
       meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
-      description:
-        "负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。编写 Python / Node.js 脚本与内部工具优化测试流程，提升团队效率。",
+      description: [
+        "负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。",
+        "编写 Python / Node.js 脚本与内部工具优化测试流程，提升团队效率。",
+      ],
     },
     {
       title: "Office Shift Pro 智能平面生成工具",

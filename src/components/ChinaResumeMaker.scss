@@ -22,20 +22,23 @@
 }
 
 .cn-header__identity h1 {
+  align-items: baseline;
   color: #111;
+  display: flex;
   font-family: var(--font-family-sans);
   font-size: 8.2mm;
   font-weight: 800;
+  gap: 4mm;
+  justify-content: center;
   letter-spacing: 0;
   line-height: 1.1;
 }
 
-.cn-header__identity p {
+.cn-header__identity small {
   color: #242424;
   font-size: 3.65mm;
   font-weight: 700;
   line-height: 1.35;
-  margin-top: 3mm;
 }
 
 .cn-contact-list {
@@ -63,7 +66,7 @@
 }
 
 .cn-contact-list b {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .cn-contact-list a,
@@ -132,13 +135,13 @@
   color: #111;
   font-family: var(--font-family-sans);
   font-size: 4mm;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.35;
 }
 
 .cn-entry__role {
   color: #333;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 1mm;
 }
 
@@ -162,7 +165,7 @@
 
 .cn-entry__label {
   color: #111;
-  font-weight: 800;
+  font-weight: 500;
   margin-bottom: 1.5mm;
 }
 
@@ -306,6 +309,13 @@
   .cn-header__identity,
   .cn-contact-list {
     padding-right: 23mm;
+  }
+
+  .cn-header__identity h1 {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1mm;
+    justify-content: flex-start;
   }
 
   .cn-contact-list {
