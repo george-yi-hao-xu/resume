@@ -11,7 +11,7 @@ const paragraphs = (value) => {
 
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
-    <h2>${escapeHtml(title)}</h2>
+    <h2><span>${escapeHtml(title)}</span></h2>
     ${children}
   </section>
 `;
@@ -164,7 +164,7 @@ const education = (items = [], labels) =>
 const skillGroup = (group) => `
   <article class="cn-skill-group">
     <h3>${htmlText(group.title)}</h3>
-    <p>${group.items.map(htmlText).join("；")}</p>
+    <p>${group.items.map((item) => htmlText(item).replace(/\s*\/\s*/g, " | ")).join(" | ")}</p>
   </article>
 `;
 

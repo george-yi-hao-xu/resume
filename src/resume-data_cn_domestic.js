@@ -2,7 +2,7 @@ export const resume_data_cn_domestic = {
   pageTitle: "许易豪 - 国内中文简历",
   description: "许易豪面向国内职场的软件工程师中文简历。",
   name: "许易豪",
-  role: "Web全栈软件工程师",
+  role: "Web前后端全栈软件工程师",
   labels: {
     contactAria: "联系信息",
     profile: "个人优势",
@@ -10,14 +10,14 @@ export const resume_data_cn_domestic = {
     skills: "专业技能",
     experience: "职业经历",
     workProjects: "工作项目",
-    projects: "项目经历",
+    projects: "学术项目",
     languages: "语言",
     workContent: "工作内容",
     projectDescription: "项目描述",
   },
   contacts: [
     { label: "电话", value: "18701928010" },
-    { label: "出生", value: "1996.04" },
+    // { label: "出生", value: "1996.04" },
     { label: "所在地", value: "中国 上海" },
     {
       label: "邮箱",
@@ -46,12 +46,12 @@ export const resume_data_cn_domestic = {
     },
     {
       title: "同济大学",
-      meta: "建筑学学士 德语强化班 上海",
+      meta: "建筑学学士(德语强化班) 上海 中国",
       time: "2014.09 - 2020.06",
     },
     {
       title: "上海七宝中学",
-      meta: "高中 上海",
+      meta: "高中 上海 中国",
       time: "2011.09 - 2014.06",
     },
   ],
@@ -96,9 +96,9 @@ export const resume_data_cn_domestic = {
   ],
   experience: [
     {
-      company: "美国SASAKI规划事务所",
+      company: "美国SASAKI规划事务所 研发部门",
       title: "软件工程师 Web全栈",
-      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
+      meta: ["2023.07 - 至今", "波士顿 美国", "远程"],
       bullets: [
         "负责 Web 前后端架构、数据处理、组件库与自动化工程体系建设，支持多客户平台和内部工具交付。",
         "与设计、规划和开发团队协作，将数据可视化、设计系统和云端服务能力落地到实际项目。",
@@ -112,9 +112,9 @@ export const resume_data_cn_domestic = {
       ],
     },
     {
-      company: "华东建筑设计研究院",
+      company: "华东建筑设计研究院 国际设计中心",
       title: "参数化设计师",
-      meta: ["2020.08 - 2021.05", "上海", "实习"],
+      meta: ["2020.08 - 2021.05", "上海 中国", "实习"],
       bullets: [
         "参与大型公共建筑室内设计与方案表达，承担参数化建模、空间形态推敲和汇报材料输出。",
       ],
@@ -126,7 +126,7 @@ export const resume_data_cn_domestic = {
       title: "Dashi 工程数据可视化平台",
       company: "Sasaki",
       role: "软件工程师 Web全栈",
-      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
+      meta: ["2023.11 - 2025.11 波士顿 远程"],
       description: [
         "在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。",
         "优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。",

@@ -1,9 +1,11 @@
 @use "../styles/tokens" as *;
 
+$gap: 2mm;
+
 .cn-resume {
   background: #fff;
   box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.12);
-  color: #202020;
+  color: $china-text;
   font-family: var(--font-family-sans);
   font-size: 3.35mm;
   line-height: 1.48;
@@ -16,14 +18,14 @@
 
 .cn-header {
   min-height: 34mm;
-  padding: 2mm 30mm 3.5mm;
+  padding: $gap 30mm $gap;
   position: relative;
   text-align: center;
 }
 
 .cn-header__identity h1 {
   align-items: baseline;
-  color: #111;
+  color: $china-text-strong;
   display: flex;
   font-family: var(--font-family-sans);
   font-size: 8.2mm;
@@ -35,14 +37,14 @@
 }
 
 .cn-header__identity small {
-  color: #242424;
+  color: $china-text-strong;
   font-size: 3.65mm;
   font-weight: 700;
   line-height: 1.35;
 }
 
 .cn-contact-list {
-  color: #2c2c2c;
+  color: $china-text;
   display: flex;
   flex-wrap: wrap;
   font-size: 3.25mm;
@@ -59,7 +61,7 @@
 .cn-contact-list > span:not(:last-child)::after,
 .cn-links a:not(:last-child)::after,
 .cn-language-list span:not(:last-child)::after {
-  color: #5f5f5f;
+  color: $china-text-muted;
   content: "|";
   font-weight: 400;
   margin: 0 2.4mm;
@@ -86,25 +88,53 @@
 }
 
 .cn-section {
-  margin-top: 5.2mm;
+  margin-top: $gap;
 }
 
 .cn-header + .cn-section {
-  margin-top: 2mm;
+  margin-top: $gap;
 }
 
 .cn-section h2 {
-  background: #eeeeee;
+  align-items: center;
+  justify-content: center;
+  background: none;
   border: 0;
-  color: #111;
+  color: $china-section-rule;
+  display: flex;
   font-family: var(--font-family-sans);
   font-size: 4.5mm;
-  font-weight: 800;
+  gap: 2mm;
   letter-spacing: 0;
   line-height: 1.25;
-  margin: 0 0 2.8mm;
-  padding: 1.25mm 2.5mm;
+  margin: 0 0 $gap;
+  padding: 0.4mm 0;
   text-transform: none;
+}
+
+.cn-section h2 span {
+  align-items: center;
+  background: #fff;
+  // border: 0.2mm solid #111;
+  border-radius: 0.8mm;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  line-height: 1.1;
+  padding: 0.25mm 1.8mm 0.35mm;
+  text-align: center;
+}
+
+// 分割线
+.cn-section h2 {
+  &::after, &::before{
+    border-top: 1px solid $china-section-rule;
+    content: "";
+    flex: 1 1 auto;
+    height: 0;
+    min-width: 12mm;
+    pointer-events: none;
+  }
 }
 
 .cn-section > :not(h2) {
@@ -132,22 +162,22 @@
 .cn-entry h3,
 .cn-compact-entry h3,
 .cn-skill-group h3 {
-  color: #111;
+  color: $china-text-strong;
   font-family: var(--font-family-sans);
-  font-size: 4mm;
+  font-size: 3.3mm;
   font-weight: 600;
   line-height: 1.35;
 }
 
 .cn-entry__role {
-  color: #333;
+  color: $china-text-strong;
   font-weight: 500;
   margin-top: 1mm;
 }
 
 .cn-entry__meta,
 .cn-compact-entry header p {
-  color: #444;
+  color: $china-text-muted;
   font-size: 3.15mm;
   font-weight: 500;
   line-height: 1.35;
@@ -164,7 +194,7 @@
 }
 
 .cn-entry__label {
-  color: #111;
+  color: $china-text-strong;
   font-weight: 500;
   margin-bottom: 1.5mm;
 }
@@ -184,7 +214,7 @@
 }
 
 .cn-links {
-  color: #333;
+  color: $china-text-strong;
   font-size: 3.15mm;
   margin-top: 1.2mm;
 }
@@ -201,7 +231,7 @@
 }
 
 .cn-entry__inline-links::before {
-  color: #5f5f5f;
+  color: $china-text-muted;
   content: "|";
   font-weight: 400;
   margin: 0 1.8mm;
@@ -209,7 +239,7 @@
 
 .cn-entry__inline-links a:not(:last-child)::after,
 .cn-project__links a:not(:last-child)::after {
-  color: #5f5f5f;
+  color: $china-text-muted;
   content: "|";
   font-weight: 400;
   margin: 0 1.8mm;
@@ -224,7 +254,7 @@
 }
 
 .cn-work-project__affiliation {
-  color: #444;
+  color: $china-text-muted;
   font-size: 3.15mm;
   font-weight: 500;
   justify-self: end;
@@ -233,7 +263,7 @@
 }
 
 .cn-project__links {
-  color: #444;
+  color: $china-text-muted;
   font-size: 3.15mm;
   font-weight: 500;
   justify-self: end;
@@ -242,7 +272,7 @@
 
 .cn-compact-entry > p,
 .cn-skill-group p {
-  color: #222;
+  color: $china-text;
 }
 
 .cn-education-section .cn-compact-entry + .cn-compact-entry {
@@ -262,12 +292,14 @@
 }
 
 .cn-education-entry__meta {
-  color: #222;
+  color: $china-text;
 }
 
 .cn-education-entry__time {
-  color: #333;
-  font-size: 3.25mm;
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  line-height: 1.35;
   text-align: right;
   white-space: nowrap;
 }
