@@ -1,0 +1,394 @@
+@use "../styles/tokens" as *;
+
+$gap: 2mm;
+
+.cn-resume {
+  background: #fff;
+  box-shadow: 0 6.35mm 18.52mm rgba(31, 39, 37, 0.12);
+  color: $china-text;
+  font-family: var(--font-family-sans);
+  font-size: 3.35mm;
+  line-height: 1.48;
+  margin: var(--gap-xl) auto;
+  max-width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 16mm 18mm;
+  position: relative;
+}
+
+.cn-header {
+  min-height: 34mm;
+  padding: $gap 30mm $gap;
+  position: relative;
+  text-align: center;
+}
+
+.cn-header__identity h1 {
+  align-items: baseline;
+  color: $china-text-strong;
+  display: flex;
+  font-family: var(--font-family-sans);
+  font-size: 8.2mm;
+  font-weight: 800;
+  gap: 4mm;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.cn-header__identity small {
+  color: $china-text-strong;
+  font-size: 3.65mm;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cn-contact-list {
+  color: $china-text;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3.25mm;
+  gap: 1.2mm 0;
+  justify-content: center;
+  line-height: 1.5;
+  margin-top: 3mm;
+}
+
+.cn-contact-list > span {
+  white-space: nowrap;
+}
+
+.cn-contact-list > span:not(:last-child)::after,
+.cn-links a:not(:last-child)::after,
+.cn-language-list span:not(:last-child)::after {
+  color: $china-text-muted;
+  content: "|";
+  font-weight: 400;
+  margin: 0 2.4mm;
+}
+
+.cn-contact-list b {
+  font-weight: 500;
+}
+
+.cn-contact-list a,
+.cn-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cn-avatar {
+  height: 27mm;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 22mm;
+}
+
+.cn-section {
+  margin-top: $gap;
+}
+
+.cn-header + .cn-section {
+  margin-top: $gap;
+}
+
+.cn-section h2 {
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  color: $china-section-rule;
+  display: flex;
+  font-family: var(--font-family-sans);
+  font-size: 4.5mm;
+  gap: 2mm;
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin: 0 0 $gap;
+  padding: 0.4mm 0;
+  text-transform: none;
+}
+
+.cn-section h2 span {
+  align-items: center;
+  background: #fff;
+  // border: 0.2mm solid #111;
+  border-radius: 0.8mm;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  line-height: 1.1;
+  padding: 0.25mm 1.8mm 0.35mm;
+  text-align: center;
+}
+
+// 分割线
+.cn-section h2 {
+  &::after, &::before{
+    border-top: 1px solid $china-section-rule;
+    content: "";
+    flex: 1 1 auto;
+    height: 0;
+    min-width: 12mm;
+    pointer-events: none;
+  }
+}
+
+.cn-section > :not(h2) {
+  margin-left: 3mm;
+}
+
+.cn-profile p + p {
+  margin-top: 1.2mm;
+}
+
+.cn-entry + .cn-entry,
+.cn-compact-entry + .cn-compact-entry,
+.cn-skill-group + .cn-skill-group {
+  margin-top: 3mm;
+}
+
+.cn-entry__header,
+.cn-compact-entry header {
+  align-items: baseline;
+  display: grid;
+  gap: 6mm;
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-entry h3,
+.cn-compact-entry h3,
+.cn-skill-group h3 {
+  color: $china-text-strong;
+  font-family: var(--font-family-sans);
+  font-size: 3.3mm;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.cn-entry__role {
+  color: $china-text-strong;
+  font-weight: 500;
+  margin-top: 1mm;
+}
+
+.cn-entry__meta,
+.cn-compact-entry header p {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cn-entry__body {
+  margin-top: 1.8mm;
+}
+
+.cn-entry__body p + p {
+  margin-top: 1mm;
+}
+
+.cn-entry__label {
+  color: $china-text-strong;
+  font-weight: 500;
+  margin-bottom: 1.5mm;
+}
+
+.cn-entry ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cn-entry li + li {
+  margin-top: 0.9mm;
+}
+
+.cn-entry li::before {
+  content: "";
+}
+
+.cn-links {
+  color: $china-text-strong;
+  font-size: 3.15mm;
+  margin-top: 1.2mm;
+}
+
+.cn-entry__inline-links .cn-links {
+  display: inline;
+  margin: 0;
+}
+
+.cn-entry__inline-links a,
+.cn-project__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cn-entry__inline-links::before {
+  color: $china-text-muted;
+  content: "|";
+  font-weight: 400;
+  margin: 0 1.8mm;
+}
+
+.cn-entry__inline-links a:not(:last-child)::after,
+.cn-project__links a:not(:last-child)::after {
+  color: $china-text-muted;
+  content: "|";
+  font-weight: 400;
+  margin: 0 1.8mm;
+}
+
+.cn-project__header {
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-work-project__header {
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-work-project__affiliation {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  justify-self: end;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cn-project__links {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.cn-compact-entry > p,
+.cn-skill-group p {
+  color: $china-text;
+}
+
+.cn-education-section .cn-compact-entry + .cn-compact-entry {
+  margin-top: 1mm;
+}
+
+.cn-education-entry {
+  align-items: baseline;
+  display: grid;
+  gap: 1mm 4mm;
+  grid-template-columns: 38mm minmax(0, 1fr) max-content;
+}
+
+.cn-education-entry h3,
+.cn-education-entry p {
+  line-height: 1.35;
+}
+
+.cn-education-entry__meta {
+  color: $china-text;
+}
+
+.cn-education-entry__time {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cn-skill-group {
+  display: grid;
+  gap: 1mm;
+  grid-template-columns: 38mm minmax(0, 1fr);
+}
+
+.cn-language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 0;
+}
+
+.cn-language-list span {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .cn-resume {
+    margin: 0;
+    min-height: 0;
+    padding: 8mm 6mm;
+  }
+
+  .cn-header {
+    padding: 0 0 5mm;
+    text-align: left;
+  }
+
+  .cn-avatar {
+    height: 22mm;
+    right: 0;
+    width: 18mm;
+  }
+
+  .cn-header__identity,
+  .cn-contact-list {
+    padding-right: 23mm;
+  }
+
+  .cn-header__identity h1 {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1mm;
+    justify-content: flex-start;
+  }
+
+  .cn-contact-list {
+    justify-content: flex-start;
+  }
+
+  .cn-entry__header,
+  .cn-compact-entry header,
+  .cn-skill-group,
+  .cn-education-entry {
+    gap: 1mm;
+    grid-template-columns: 1fr;
+  }
+
+  .cn-entry__meta,
+  .cn-compact-entry header p {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+@media print {
+  .cn-resume {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 5mm;
+  }
+
+  .cn-entry,
+  .cn-compact-entry,
+  .cn-skill-group {
+    break-inside: avoid;
+  }
+
+  .cn-section {
+    margin-top: 4mm;
+  }
+
+  .cn-section h2 {
+    margin-bottom: 2.2mm;
+  }
+}

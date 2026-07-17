@@ -10,6 +10,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, "src/index.html"),
+                cn_domestic: resolve(__dirname, "src/cn.html"),
                 cn: resolve(__dirname, "src/index_cn.html"),
                 bilingual: resolve(__dirname, "src/index_bilingual.html"),
             },
@@ -17,6 +18,6 @@ export default defineConfig({
     },
     server: {
         host: true,
-        port: 4000,
+        port: 10000,
     },
 });
