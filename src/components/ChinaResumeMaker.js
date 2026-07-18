@@ -9,6 +9,16 @@ const paragraphs = (value) => {
   return items.map((item) => `<p>${htmlText(item)}</p>`).join("");
 };
 
+const descriptionList = (value) => {
+  const items = Array.isArray(value) ? value : [value];
+
+  return `
+    <ul class="cn-work-project__description-list">
+      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+    </ul>
+  `;
+};
+
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
     <h2><span>${escapeHtml(title)}</span></h2>
@@ -123,7 +133,8 @@ const workProject = (item, labels) => `
       <p class="cn-work-project__affiliation">${htmlText(item.company)} / ${htmlText(item.role)}</p>
     </header>
     <div class="cn-entry__body">
-      ${paragraphs(item.description)}
+      ${item.summary ? `<p class="cn-work-project__summary">${htmlText(item.summary)}</p>` : ""}
+      ${descriptionList(item.description)}
     </div>
   </article>
 `;
@@ -139,7 +150,6 @@ const project = (item, labels) => `
   <article class="cn-entry cn-project">
     <header class="cn-entry__header cn-project__header">
       <h3>${htmlText(item.title)}</h3>
-      ${inlineLinkRow(item.links, "cn-project__links")}
     </header>
     <div class="cn-entry__body">
       ${paragraphs(item.meta)}
@@ -154,6 +164,7 @@ const educationItem = (item) => `
   <article class="cn-compact-entry cn-education-entry">
     <h3>${htmlText(item.title)}</h3>
     <p class="cn-education-entry__meta">${htmlText(item.meta)}</p>
+    ${item.location ? `<p class="cn-education-entry__location">${htmlText(item.location)}</p>` : ""}
     ${item.time ? `<p class="cn-education-entry__time">${htmlText(item.time)}</p>` : ""}
   </article>
 `;
@@ -164,7 +175,7 @@ const education = (items = [], labels) =>
 const skillGroup = (group) => `
   <article class="cn-skill-group">
     <h3>${htmlText(group.title)}</h3>
-    <p>${group.items.map((item) => htmlText(item).replace(/\s*\/\s*/g, " | ")).join(" | ")}</p>
+    <p>${group.items.map(htmlText).join("、")}</p>
   </article>
 `;
 
@@ -187,9 +198,9 @@ export const ChinaResumeMaker = (resume, avatar) => `
     ${profile(resume.profile, resume.labels)}
     ${education(resume.education, resume.labels)}
     ${skills(resume.skillGroups, resume.labels)}
+    ${languages(resume.languages, resume.labels)}
     ${experience(resume.experience, resume.labels)}
     ${workProjects(resume.workProjects, resume.labels)}
     ${projects(resume.projects, resume.labels)}
-    ${languages(resume.languages, resume.labels)}
   </main>
 `;

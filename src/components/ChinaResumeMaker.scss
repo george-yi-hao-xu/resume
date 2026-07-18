@@ -175,6 +175,10 @@ $gap: 2mm;
   margin-top: 1mm;
 }
 
+.cn-job .cn-entry__role > span {
+  color: $china-text-muted;
+}
+
 .cn-entry__meta,
 .cn-compact-entry header p {
   color: $china-text-muted;
@@ -262,6 +266,30 @@ $gap: 2mm;
   white-space: nowrap;
 }
 
+.cn-work-project__summary {
+  color: $china-text-muted;
+  font-weight: 600;
+  margin-bottom: 1.4mm;
+}
+
+.cn-work-project .cn-work-project__description-list {
+  list-style: none;
+  padding-left: 3.8mm;
+}
+
+.cn-work-project .cn-work-project__description-list li {
+  padding-left: 0.5mm;
+  position: relative;
+}
+
+.cn-work-project .cn-work-project__description-list li::before {
+  color: $china-text;
+  content: "•";
+  font-weight: 700;
+  left: -3mm;
+  position: absolute;
+}
+
 .cn-project__links {
   color: $china-text-muted;
   font-size: 3.15mm;
@@ -283,7 +311,7 @@ $gap: 2mm;
   align-items: baseline;
   display: grid;
   gap: 1mm 4mm;
-  grid-template-columns: 38mm minmax(0, 1fr) max-content;
+  grid-template-columns: 38mm minmax(0, 1fr) max-content max-content;
 }
 
 .cn-education-entry h3,
@@ -293,6 +321,15 @@ $gap: 2mm;
 
 .cn-education-entry__meta {
   color: $china-text;
+}
+
+.cn-education-entry__location {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .cn-education-entry__time {
@@ -314,6 +351,11 @@ $gap: 2mm;
   display: flex;
   flex-wrap: wrap;
   gap: 1mm 0;
+}
+
+.cn-languages-section > .cn-language-list {
+  justify-content: center;
+  margin-left: 0;
 }
 
 .cn-language-list span {

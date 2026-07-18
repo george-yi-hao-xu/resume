@@ -2,7 +2,7 @@ export const resume_data_cn_domestic = {
   pageTitle: "许易豪 - 国内中文简历",
   description: "许易豪面向国内职场的软件工程师中文简历。",
   name: "许易豪",
-  role: "Web前后端全栈软件工程师",
+  role: "Web全栈 AI应用 软件工程师",
   labels: {
     contactAria: "联系信息",
     profile: "个人优势",
@@ -31,78 +31,71 @@ export const resume_data_cn_domestic = {
     },
   ],
   profile: [
-    "2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，同时于布朗大学学习计算机课程。在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外获得多项学科奖项。毕业后，顺利就职于顶尖规划设计公司 Sasaki规划事务所 波士顿总部研发部门，负责 Web 前后端生态架构开发，数据结构与算法优化等。具备极强的学习自驱力与跨学科整合能力，做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。",
+    `2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，同时于布朗大学学习计算机课程。
+    在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外获得多项学科奖项。
+    毕业后，顺利就职于顶尖规划设计公司 Sasaki波士顿总部研发部门，负责 Web 前后端生态架构开发，数据结构与算法优化等。
+    具备极强的学习自驱力与跨学科整合能力，做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。`,
   ],
   education: [
     {
       title: "罗德岛设计学院",
-      meta: "设计学硕士 罗德岛 美国",
+      meta: "设计学硕士",
+      location: "普罗维登斯 罗德岛 美国",
       time: "2021.07 - 2023.06",
     },
     {
       title: "布朗大学",
-      meta: "计算机科学 罗德岛 美国",
-      time: "",
+      meta: "计算机科学 (选修)",
+      location: "普罗维登斯 罗德岛 美国",
+      time: "2022.09 - 2022.12",
     },
     {
       title: "同济大学",
-      meta: "建筑学学士(德语强化班) 上海 中国",
+      meta: "建筑学学士 (德语强化班)",
+      location: "上海 中国",
       time: "2014.09 - 2020.06",
     },
     {
       title: "上海七宝中学",
-      meta: "高中 上海 中国",
+      meta: "高中",
+      location: "上海 中国",
       time: "2011.09 - 2014.06",
     },
   ],
   skillGroups: [
     {
       title: "AI 工程",
-      items: ["Agent开发(Harness) 提示词工程 RAG", "PyTorch LoRA 微调"],
-    },
-    {
-      title: "Web 前端工程化",
-      items: [
-        "HTML CSS/SCSS JavaScript/TypeScript",
-        "React/ReactNative Node.js",
-        "Jest / Chromatic / GitHub CI/CD",
-      ],
-    },
-    {
-      title: "Web 后端数据库",
-      items: [
-        "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI",
-        "Firebase Google_Cloud",
-        "PostgreSQL MongoDB Chroma向量",
-      ],
-    },
-    {
-      title: "测试开发",
-      items: [
-        "Jest / Chromatic / GitHub Actions CI/CD",
-      ],
-    },
-    {
-      title: "游戏3D开发",
-      items: [
-        "Figma / Adobe XD / PS / AI / ID / PR",
-        "Unity C# / C++ WASM cuda / Rhino GH",
-      ],
+      items: ["AI Agent 开发", "Harness", "提示词工程", "RAG", "PyTorch/LoRA 微调"],
     },
     {
       title: "AI 工具",
-      items: ["Codex / GitHub Copilot / ComfyUI"],
+      items: ["Codex", "GitHub Copilot", "ComfyUI"],
+    },
+    {
+      title: "Web 前端 工程化",
+      items: [ "HTML", "CSS/SCSS", "JavaScript/TypeScript", "React/React Native", "Node.js", "Jest", "Chromatic", "GitHub Actions/CI/CD", ],
+    },
+    {
+      title: "Web 后端 数据库",
+      items: [ "Go", "Python/FastAPI", "Node.js/Nest.js", "GraphQL", "REST API", "Firebase", "Google Cloud", "PostgreSQL", "MongoDB", "Chroma 向量数据库", ],
+    },
+    {
+      title: "3D 开发",
+      items: [ "Unity/C#", "C++/WASM/CUDA" ],
+    },
+    {
+      title: "设计工具",
+      items: ["Rhino/Grasshopper", "Figma", "Photoshop", "Illustrator", "InDesign", "Premiere",]
     },
   ],
   experience: [
     {
-      company: "美国SASAKI规划事务所 研发部门",
+      company: "美国Sasaki联合设计事务所 研发部门",
       title: "软件工程师 Web全栈",
-      meta: ["2023.07 - 至今", "波士顿 美国", "远程"],
+      meta: ["2023.11 - 至今", "美国麻州波士顿", "全职"],
       bullets: [
-        "负责 Web 前后端架构、数据处理、组件库与自动化工程体系建设，支持多客户平台和内部工具交付。",
+        "核心网站开发与维护: 负责 Web 前后端网站架构维护开发、数据处理、AI Agent功能、组件库与自动化工程体系建设，支持多客户平台和内部工具交付。包括政府工程数据管理平台、智能建筑改造平台等",
         "与设计、规划和开发团队协作，将数据可视化、设计系统和云端服务能力落地到实际项目。",
-        "开发 Rhino / CAD 自动化脚本，支持点云生成、批量属性标注与 CSV 到 DWG 数据转换。",
       ],
       links: [
         {
@@ -110,6 +103,14 @@ export const resume_data_cn_domestic = {
           href: "https://www.sasaki.com/people/george-xu/",
         },
       ],
+    },
+    {
+      company: "ActEarn Inc",
+      title: "AI 客户端工程师",
+      meta: ["2023.08 - 2023.11", "美国加州旧金山", "实习"],
+      bullets : [
+        "使用 React Native 开发 AI 手机端社区分析应用，与后端工程师协作接入基于 GPT 大模型的内容分析服务，实现聊天室及论坛热点话题、观点和趋势分析结果的结构化展示，并完成 AI 对话、消息交互、语音输入、异步数据处理及移动端体验优化。"
+      ]
     },
     {
       company: "华东建筑设计研究院 国际设计中心",
@@ -123,51 +124,44 @@ export const resume_data_cn_domestic = {
   ],
   workProjects: [
     {
-      title: "Dashi 工程数据可视化平台",
+      title: "Dashi 市政数据管理平台",
       company: "Sasaki",
       role: "软件工程师 Web全栈",
       meta: ["2023.11 - 2025.11 波士顿 远程"],
+      summary: "大型交互式协作式市政数据管理平台，包含图表、地图、收益统计，以及存储、用户权限、多场景版本等功能。",
       description: [
-        "在 Dashi 多客户网站平台升级中，落地客户数据接入、站点配置与云端服务相关模块，升级原静态前端站点迭代为可复用的全栈应用；完善核心库维护与自动化部署流程，加速新客户站点上线。",
-        "优化数据加载与计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。定位性能瓶颈，调整数据结构与存储逻辑，并支持设计师分析用户行为。",
-        "主导开发内部数据可视化 d3.js 图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图优化 Mapbox 地图加载速度，统一数据结构并优化渲染缓存。主导内部 UI 设计系统重构，支持跨项目复用组件样式与设计规范；完善样式与类型输出、版本迭代与 npm 包发布流程。",
+        "Web前端开发：熟练使用前端React.js框架与MobX状态管理，升级原静态前端站点迭代为可复用的全栈应用；",
+        "Web后端开发：熟悉Node.js与Google云服务云端数据库生态。",
+        "项目管理：熟悉pnpm monorepo架构，引入Changeset完善核心库版本迭代管理与GitHub Workflow自动化部署流程，加速新客户站点上线。",
+        "优化数据加载与js计算负担问题、前后端数据处理流程，大幅降低首页渲染耗时。",
+        "主导开发内部数据可视化 d3.js 图表库，为项目提供可复用的动态图表、Tooltip 与数据展示组件；根据火焰图优化 Mapbox 地图加载速度，统一数据结构并优化渲染缓存。",
+        "与政府部门对接，深入理解市政地产行业诉求，根据客户需求，完善整体产品逻辑"
       ],
     },
     {
-      title: "设计系统",
+      title: "Office Shift Pro AI智能建筑改造系统",
       company: "Sasaki",
       role: "软件工程师 Web全栈",
-      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
+      meta: ["2023.11 - 2025.11 波士顿 全职"],
+      summary: "利用人工智能技术，基于建筑参数等约束条件，全自动生成建筑改造平面，计算工程、金融指标，将办公空间改变为居住场所",
       description: [
-        "负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。",
-        "编写 Python / Node.js 脚本与内部工具优化测试流程，提升团队效率。",
-      ],
+        "算法开发：重构核心算法流程，优化贪心算法，通过剪枝等优化手段，调整局部搜索与结果评估逻辑，稳定生成结果。",
+        "采用函数式编程思想，重构项目结构，实现Web Worker多线程并发，提升计算速度。",
+        "深入理解公司内部各部门需求，结合公司业务，搭建符合公司需求的智能产品。"
+      ]
     },
     {
-      title: "Office Shift Pro 智能平面生成工具",
+      title: "Strategies UI和tokens组件库",
       company: "Sasaki",
       role: "软件工程师 Web全栈",
-      meta: ["2023.11 - 2025.11 波士顿 全职", "2026.1 - 至今 远程"],
-      description:
-        "优化 Office Shift Pro 自动化建筑平面生成工具，重构核心贪心算法流程，调整局部搜索与结果评估逻辑，提升客户端交付效率。",
+      meta: ["2023.11 - 2025.11 波士顿 全职"],
+      summary: "搭建团队核心的样式、组件库，以保证公司产品的统一设计语言以及稳定的交互形式",
+      description: [
+        "主导内部 UI 设计系统重构，熟悉pnpm monorepo多npm包管理 与 lerna 快速版本发布迭代。熟练掌握TypeScript特性，维护优质的React组件库与样式Token库。",
+        `负责核心组件与 npm 包的自动化测试与质量保障工作，设计并完善基于 Jest、Chromatic 与 GitHub Actions 的 CI/CD 测试流水线，
+          覆盖单元测试、UI 回归、跨平台构建与性能回归验证；对测试失败进行根因分析、缺陷追踪与修复验证，推动发布前质量门禁，降低回归风险。`,
+      ],
     },
-
-    // {
-    //   title: "大型公共建筑室内设计项目",
-    //   company: "华东建筑设计研究院",
-    //   role: "参数化设计师",
-    //   meta: ["2020.08 - 2021.05", "上海", "实习"],
-    //   description:
-    //     "参与华东院国际设计中心大型公共建筑室内设计工作，负责核心公共空间的空间形态推敲、方案表达与汇报材料整理。",
-    // },
-    // {
-    //   title: "参数化建模与 Python 方案迭代",
-    //   company: "华东建筑设计研究院",
-    //   role: "参数化设计师",
-    //   meta: ["2020.08 - 2021.05", "上海", "实习"],
-    //   description:
-    //     "使用参数化建模工具与 Python 脚本进行曲面建模和方案迭代，并输出渲染图、分析图与汇报文本。",
-    // },
   ],
   projects: [
     {
@@ -205,8 +199,8 @@ export const resume_data_cn_domestic = {
       ],
     },
     {
-      title: "美国宇航局月球车竞赛",
-      meta: "为 NASA HoloLens 竞赛项目开发宇航员 UI，使用 Unity / C# 实现采样、地图引导与定位功能。",
+      title: "美国 NASA 宇航局月球车竞赛",
+      meta: "与罗德岛设计学院工业设计系、布朗大学计算机系学术合作，基于微软HoloLens平台，开发宇航员 UI。使用 Unity 平台 通过开发C#， 实现月球表面采样、地图引导、路径规划等功能。",
       links: [
         {
           label: "具体信息",
