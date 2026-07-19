@@ -19,6 +19,16 @@ const descriptionList = (value) => {
   `;
 };
 
+const projectList = (value) => {
+  const items = Array.isArray(value) ? value : [value];
+
+  return `
+    <ul class="cn-project__description-list">
+      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+    </ul>
+  `;
+};
+
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
     <h2><span>${escapeHtml(title)}</span></h2>
@@ -152,7 +162,7 @@ const project = (item, labels) => `
       <h3>${htmlText(item.title)}</h3>
     </header>
     <div class="cn-entry__body">
-      ${paragraphs(item.meta)}
+      ${projectList(item.meta)}
     </div>
   </article>
 `;

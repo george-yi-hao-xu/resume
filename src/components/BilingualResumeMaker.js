@@ -170,6 +170,22 @@ const mixedCompactEntry = (item) => `
   </article>
 `;
 
+const projectEntry = (item, lang) => `
+  <article class="bi-entry bi-project">
+    <h3>${span(item.title, lang)}</h3>
+    ${item.meta ? `<ul class="bi-project-list"><li>${span(item.meta, lang, "bi-bullet")}</li></ul>` : ""}
+    ${entryLinks(item.links, lang)}
+  </article>
+`;
+
+const mixedProjectEntry = (item) => `
+  <article class="bi-entry bi-project">
+    <h3>${mixedText(item.title)}</h3>
+    ${item.meta ? `<ul class="bi-project-list"><li>${mixedText(item.meta, "bi-bullet")}</li></ul>` : ""}
+    ${mixedEntryLinks(item.links)}
+  </article>
+`;
+
 const skillGroup = (group, lang) => `
   <article class="bi-entry">
     <h3>${span(group.title, lang)}</h3>
@@ -287,7 +303,7 @@ const resumePage = (resume, lang) => {
           ${resume.experience.map((item) => job(item, lang)).join("")}
           ${section(
             pageLabels.projects,
-            resume.projects.map((item) => compactEntry(item, lang)).join(""),
+            resume.projects.map((item) => projectEntry(item, lang)).join(""),
             "bi-main-projects",
           )}
         </section>
@@ -330,7 +346,7 @@ const mixedResumePage = (resume) => `
       <section class="bi-main" aria-label="工作经历">
         <h2>${escapeHtml(resume.labels.experience)}</h2>
         ${resume.experience.map(mixedJob).join("")}
-        ${section(resume.labels.projects, resume.projects.map(mixedCompactEntry).join(""), "bi-main-projects")}
+        ${section(resume.labels.projects, resume.projects.map(mixedProjectEntry).join(""), "bi-main-projects")}
       </section>
     </div>
   </main>

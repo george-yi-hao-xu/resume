@@ -217,6 +217,15 @@ $gap: 2mm;
   content: "";
 }
 
+.cn-job .cn-entry__body ul {
+  list-style: disc;
+  padding-left: 3.8mm;
+}
+
+.cn-job .cn-entry__body li {
+  padding-left: 0.5mm;
+}
+
 .cn-links {
   color: $china-text-strong;
   font-size: 3.15mm;
@@ -251,6 +260,15 @@ $gap: 2mm;
 
 .cn-project__header {
   grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.cn-project .cn-project__description-list {
+  list-style: disc;
+  padding-left: 3.8mm;
+}
+
+.cn-project .cn-project__description-list li {
+  padding-left: 0.5mm;
 }
 
 .cn-work-project__header {

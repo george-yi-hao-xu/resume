@@ -235,6 +235,19 @@
   padding: var(--space-none);
 }
 
+.bi-project-list {
+  color: $ink;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  list-style: disc;
+  margin: var(--gap-s) var(--space-none) var(--space-none);
+  padding-left: var(--gap-m);
+}
+
+.bi-project-list li + li {
+  margin-top: var(--gap-sm);
+}
+
 .bi-profile {
   display: grid;
   gap: var(--gap-sm);
@@ -298,8 +311,9 @@
 
 .bi-job ul {
   color: $ink;
+  list-style: disc;
   margin: var(--gap-sm) var(--space-none) var(--space-none);
-  padding-left: var(--space-none);
+  padding-left: var(--gap-m);
 }
 
 .bi-job li + li {
