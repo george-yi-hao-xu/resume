@@ -265,11 +265,21 @@ $gap-s: 1mm;
   grid-template-columns: minmax(0, 1fr) max-content;
 }
 
+.cn-work-project + .cn-work-project,
+.cn-project + .cn-project {
+  margin-top: 4mm;
+}
+
+.cn-work-project .cn-entry__body,
+.cn-project .cn-entry__body {
+  margin-top: 1.2mm;
+}
+
 .cn-project__summary,
 .cn-work-project__summary {
   color: $china-text-muted;
   font-weight: 600;
-  margin-bottom: 1.4mm;
+  margin-bottom: 0.8mm;
 }
 
 .cn-project .cn-project__description-list {
@@ -288,6 +298,11 @@ $gap-s: 1mm;
   font-weight: 700;
   left: -3mm;
   position: absolute;
+}
+
+.cn-project .cn-project__description-list li + li,
+.cn-work-project .cn-work-project__description-list li + li {
+  margin-top: 0.7mm;
 }
 
 .cn-work-project__header {
