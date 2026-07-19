@@ -1,5 +1,7 @@
 @use "../styles/tokens" as *;
 
+$gap-xl:8mm;
+$gap-l: 4mm;
 $gap: 2mm;
 $gap-s: 1mm;
 
@@ -91,8 +93,9 @@ $gap-s: 1mm;
   margin-top: $gap;
 }
 
+// 分隔主名字和个人优势
 .cn-header + .cn-section {
-  margin-top: $gap;
+  margin-top: $gap-l;
 }
 
 .cn-section h2 {
@@ -444,7 +447,27 @@ $gap-s: 1mm;
     margin-top: 4mm;
   }
 
+  .cn-work-projects-section {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 4mm;
+  }
+
   .cn-section h2 {
+    break-after: avoid;
     margin-bottom: 2.2mm;
+    page-break-after: avoid;
+  }
+
+  .cn-entry__header,
+  .cn-work-project__summary,
+  .cn-project__summary {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cn-entry__body {
+    break-before: avoid;
+    page-break-before: avoid;
   }
 }
