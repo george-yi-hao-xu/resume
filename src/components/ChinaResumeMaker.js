@@ -160,9 +160,13 @@ const project = (item, labels) => `
   <article class="cn-entry cn-project">
     <header class="cn-entry__header cn-project__header">
       <h3>${htmlText(item.title)}</h3>
+      ${item.links?.length ? `<p class="cn-project__links">${item.links
+        .map((link) => `<a href="${escapeHtml(link.href)}">${htmlText(link.label)}</a>`)
+        .join("")}</p>` : ""}
     </header>
     <div class="cn-entry__body">
-      ${projectList(item.meta)}
+      ${item.summary ? `<p class="cn-project__summary">${htmlText(item.summary)}</p>` : ""}
+      ${projectList(item.description ?? item.meta)}
     </div>
   </article>
 `;
@@ -189,26 +193,33 @@ const skillGroup = (group) => `
   </article>
 `;
 
-const skills = (items = [], labels) =>
-  section(labels.skills, items.map(skillGroup).join(""), "cn-skills-section");
+const languageSkillText = (item) => `${item.name}${item.level ? ` (${item.level})` : ""}`;
 
-const languageItem = (item) => `
-  <span>${htmlText(item.name)}${item.level ? `：${htmlText(item.level)}` : ""}</span>
-`;
+const skillGroupsWithLanguages = (items = [], labels, languageItems = []) => [
+  ...items,
+  ...(languageItems.length
+    ? [
+        {
+          title: labels.languages,
+          items: [languageItems.map(languageSkillText).join(" / ")],
+        },
+      ]
+    : []),
+];
 
-const languages = (items = [], labels) => section(
-  labels.languages,
-  `<div class="cn-language-list">${items.map(languageItem).join("")}</div>`,
-  "cn-languages-section",
-);
+const skillsWithLanguages = (items = [], labels, languageItems = []) =>
+  section(
+    labels.skills,
+    skillGroupsWithLanguages(items, labels, languageItems).map(skillGroup).join(""),
+    "cn-skills-section",
+  );
 
 export const ChinaResumeMaker = (resume, avatar) => `
   <main class="cn-resume">
     ${header(resume, avatar)}
     ${profile(resume.profile, resume.labels)}
     ${education(resume.education, resume.labels)}
-    ${skills(resume.skillGroups, resume.labels)}
-    ${languages(resume.languages, resume.labels)}
+    ${skillsWithLanguages(resume.skillGroups, resume.labels, resume.languages)}
     ${experience(resume.experience, resume.labels)}
     ${workProjects(resume.workProjects, resume.labels)}
     ${projects(resume.projects, resume.labels)}

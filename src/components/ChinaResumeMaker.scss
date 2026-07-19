@@ -1,6 +1,7 @@
 @use "../styles/tokens" as *;
 
 $gap: 2mm;
+$gap-s: 1mm;
 
 .cn-resume {
   background: #fff;
@@ -17,7 +18,7 @@ $gap: 2mm;
 }
 
 .cn-header {
-  min-height: 34mm;
+  // min-height: 34mm;
   padding: $gap 30mm $gap;
   position: relative;
   text-align: center;
@@ -59,8 +60,7 @@ $gap: 2mm;
 }
 
 .cn-contact-list > span:not(:last-child)::after,
-.cn-links a:not(:last-child)::after,
-.cn-language-list span:not(:last-child)::after {
+.cn-links a:not(:last-child)::after {
   color: $china-text-muted;
   content: "|";
   font-weight: 400;
@@ -148,7 +148,7 @@ $gap: 2mm;
 .cn-entry + .cn-entry,
 .cn-compact-entry + .cn-compact-entry,
 .cn-skill-group + .cn-skill-group {
-  margin-top: 3mm;
+  margin-top: $gap-s;
 }
 
 .cn-entry__header,
@@ -262,13 +262,29 @@ $gap: 2mm;
   grid-template-columns: minmax(0, 1fr) max-content;
 }
 
+.cn-project__summary,
+.cn-work-project__summary {
+  color: $china-text-muted;
+  font-weight: 600;
+  margin-bottom: 1.4mm;
+}
+
 .cn-project .cn-project__description-list {
-  list-style: disc;
+  list-style: none;
   padding-left: 3.8mm;
 }
 
 .cn-project .cn-project__description-list li {
   padding-left: 0.5mm;
+  position: relative;
+}
+
+.cn-project .cn-project__description-list li::before {
+  color: $china-text;
+  content: "•";
+  font-weight: 700;
+  left: -3mm;
+  position: absolute;
 }
 
 .cn-work-project__header {
@@ -282,12 +298,6 @@ $gap: 2mm;
   justify-self: end;
   line-height: 1.35;
   white-space: nowrap;
-}
-
-.cn-work-project__summary {
-  color: $china-text-muted;
-  font-weight: 600;
-  margin-bottom: 1.4mm;
 }
 
 .cn-work-project .cn-work-project__description-list {
@@ -359,25 +369,11 @@ $gap: 2mm;
   white-space: nowrap;
 }
 
+// 分割 专业技能
 .cn-skill-group {
   display: grid;
   gap: 1mm;
-  grid-template-columns: 38mm minmax(0, 1fr);
-}
-
-.cn-language-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1mm 0;
-}
-
-.cn-languages-section > .cn-language-list {
-  justify-content: center;
-  margin-left: 0;
-}
-
-.cn-language-list span {
-  white-space: nowrap;
+  grid-template-columns: 25mm minmax(0, 1fr);
 }
 
 @media (max-width: 760px) {

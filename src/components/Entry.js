@@ -26,34 +26,3 @@ export const SkillGroup = ({ title, items }) => `
   </div>
 `;
 
-/**
- * @param {string[]} items
- * @returns {string}
- */
-export const PlainList = (items) => `
-  <ul class="plain-list">
-    ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-  </ul>
-`;
-
-/**
- * @param {import("../resume-data.js").Language} item
- * @returns {string}
- */
-const LanguageItem = (item) => {
-  const level = item.level
-    ? `<span class="language-list__level">${escapeHtml(item.level)}</span>`
-    : "";
-
-  return `<li>${escapeHtml(item.name)}${level}</li>`;
-};
-
-/**
- * @param {import("../resume-data.js").Language[]} items
- * @returns {string}
- */
-export const LanguageList = (items) => `
-  <ul class="plain-list language-list">
-    ${items.map(LanguageItem).join("")}
-  </ul>
-`;

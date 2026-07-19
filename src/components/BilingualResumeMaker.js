@@ -204,19 +204,41 @@ const mixedSkillGroup = (group) => `
   </article>
 `;
 
-const language = (item, lang) => `
-  <span class="bi-language">
-    ${span(item.name, lang)}
-    <span class="bi-language__level">(${span(item.level, lang)})</span>
-  </span>
-`;
+const languageSkillText = (item, lang) => {
+  const name = localizedText(item.name, lang);
+  const level = localizedText(item.level, lang);
 
-const mixedLanguage = (item) => `
-  <li class="bi-language">
-    ${mixedText(item.name)}
-    <span class="bi-language__level">${mixedText(item.level)}</span>
-  </li>
-`;
+  return `${name}${level ? ` (${level})` : ""}`;
+};
+
+const skillGroupsWithLanguages = (resume, lang) => [
+  ...resume.skillGroups,
+  ...(resume.languages?.length
+    ? [
+        {
+          title: resume.localizedLabels[lang].languages,
+          items: [resume.languages.map((item) => languageSkillText(item, lang)).join(" / ")],
+        },
+      ]
+    : []),
+];
+
+const mixedSkillGroupsWithLanguages = (resume) => [
+  ...resume.skillGroups,
+  ...(resume.languages?.length
+    ? [
+        {
+          title: resume.labels.languages,
+          items: [
+            {
+              zh: resume.languages.map((item) => languageSkillText(item, "zh")).join(" / "),
+              en: resume.languages.map((item) => languageSkillText(item, "en")).join(" / "),
+            },
+          ],
+        },
+      ]
+    : []),
+];
 
 const job = (item, lang) => `
   <article class="bi-job">
@@ -287,15 +309,8 @@ const resumePage = (resume, lang) => {
           )}
           ${section(
             pageLabels.skills,
-            resume.skillGroups.map((item) => skillGroup(item, lang)).join(""),
+            skillGroupsWithLanguages(resume, lang).map((item) => skillGroup(item, lang)).join(""),
             "bi-skills-section",
-          )}
-          ${section(
-            pageLabels.languages,
-            `<div class="bi-plain-list lang">${resume.languages
-              .map((item) => language(item, lang))
-              .join("")}</div>`,
-            "bi-languages-section",
           )}
         </aside>
         <section class="bi-main" aria-label="${escapeHtml(pageLabels.experience)}">
@@ -336,12 +351,7 @@ const mixedResumePage = (resume) => `
     <div class="bi-grid">
       <aside class="bi-sidebar">
         ${section(resume.labels.education, resume.education.map(mixedCompactEntry).join(""), "bi-education-section")}
-        ${section(resume.labels.skills, resume.skillGroups.map(mixedSkillGroup).join(""), "bi-skills-section")}
-        ${section(
-          resume.labels.languages,
-          `<ul class="bi-plain-list lang">${resume.languages.map(mixedLanguage).join("")}</ul>`,
-          "bi-languages-section",
-        )}
+        ${section(resume.labels.skills, mixedSkillGroupsWithLanguages(resume).map(mixedSkillGroup).join(""), "bi-skills-section")}
       </aside>
       <section class="bi-main" aria-label="工作经历">
         <h2>${escapeHtml(resume.labels.experience)}</h2>

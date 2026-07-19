@@ -2,7 +2,7 @@ export const resume_data_cn_domestic = {
   pageTitle: "许易豪 - 国内中文简历",
   description: "许易豪面向国内职场的软件工程师中文简历。",
   name: "许易豪",
-  role: "Web全栈 AI应用 软件工程师",
+  role: "软件工程师 - Web全栈 AI应用",
   labels: {
     contactAria: "联系信息",
     profile: "个人优势",
@@ -32,9 +32,9 @@ export const resume_data_cn_domestic = {
   ],
   profile: [
     `2020年毕业于同济大学，后赴美国罗德岛设计学院攻读硕士学位，同时于布朗大学学习计算机课程。
-    在校期间，探索人机交互、计算设计、动力学模拟等方向，成绩优异，并在国内外获得多项学科奖项。
-    毕业后，顺利就职于顶尖规划设计公司 Sasaki波士顿总部研发部门，负责 Web 前后端生态架构开发，数据结构与算法优化等。
-    具备极强的学习自驱力与跨学科整合能力，做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。`,
+    在校期间，探索人工智能、人机交互等方向，成绩优异，并在国内外获得多项学科奖项。
+    毕业后，顺利就职于顶尖规划设计公司 Sasaki波士顿总部研发部门，负责AI应用开发、 Web 前后端开发、算法优化等。
+    具备极强的学习自驱力、自学能力与跨学科整合能力，做事谨慎细致，沟通耐心友善，在学习和工作中均深受同事信任。`,
   ],
   education: [
     {
@@ -47,7 +47,7 @@ export const resume_data_cn_domestic = {
       title: "布朗大学",
       meta: "计算机科学 (选修)",
       location: "普罗维登斯 罗德岛 美国",
-      time: "2022.09 - 2022.12",
+      time: "2022.09 - 2023.06",
     },
     {
       title: "同济大学",
@@ -64,7 +64,7 @@ export const resume_data_cn_domestic = {
   ],
   skillGroups: [
     {
-      title: "AI 工程",
+      title: "AI 应用开发",
       items: ["AI Agent 开发", "Harness", "提示词工程", "RAG", "PyTorch/LoRA 微调"],
     },
     {
@@ -72,12 +72,12 @@ export const resume_data_cn_domestic = {
       items: ["Codex", "GitHub Copilot", "ComfyUI"],
     },
     {
-      title: "Web 前端 工程化",
-      items: [ "HTML", "CSS/SCSS", "JavaScript/TypeScript", "React/React Native", "Node.js", "Jest", "Chromatic", "GitHub Actions/CI/CD", ],
+      title: "Web 前端",
+      items: [ "HTML", "CSS/SCSS", "JavaScript/TypeScript", "React/React Native", "Jest", "GitHub Actions/CI/CD", ],
     },
     {
-      title: "Web 后端 数据库",
-      items: [ "Go", "Python/FastAPI", "Node.js/Nest.js", "GraphQL", "REST API", "Firebase", "Google Cloud", "PostgreSQL", "MongoDB", "Chroma 向量数据库", ],
+      title: "Web 后端",
+      items: [ "Python", "Node.js", "Go", "GraphQL", "REST API", "G Cloud", "PostgreSQL", "MongoDB", "Chroma", ],
     },
     {
       title: "3D 开发",
@@ -166,7 +166,8 @@ export const resume_data_cn_domestic = {
   projects: [
     {
       title: "简历文档 AI Agent 编辑器",
-      meta: "基于本地部署的 Qwen 模型，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。采用 Plan-and-Execute 架构编排 LLM 工作流，将用户指令拆分为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。集成 Web UI、本地日志、用户状态持久化与基于案例文件的 RAG 检索，支持快速迭代并导出 PDF。",
+      summary: "面向简历内容改写、排版优化与多语言转换的本地 AI Agent 工具。",
+      meta: "基于本地部署的 Qwen 大语言模型，构建面向简历改写、排版优化、视觉美化与多语言转换的开源 AI Agent。采用 Plan-and-Execute 架构编排 LLM 工作流，将用户指令拆分为意图识别、上下文选择、Patch 生成、规则校验与失败修复，提升 AI DOM 编辑的稳定性与可观测性。集成 Web UI、本地日志、用户状态持久化与基于案例文件的 RAG 检索，支持快速迭代并导出 PDF。",
       links: [
         {
           label: "源代码",
@@ -176,6 +177,7 @@ export const resume_data_cn_domestic = {
     },
     {
       title: "在线 AI 对战棋类网站",
+      summary: "支持多种棋类 AI 对战与 Web 部署的算法实践项目。",
       meta: "基于 Minimax 算法实现五子棋与屏风四子棋的在线 AI 对弈，使用遗传算法优化评估函数权重，支持本地控制台游玩，并部署为可交互的 Web 应用。",
       links: [
         {
@@ -186,6 +188,7 @@ export const resume_data_cn_domestic = {
     },
     {
       title: "基于动力学的空间找形设计",
+      summary: "面向空间结构形态生成的 GPU 并行数值模拟与可视化工具。",
       meta: "使用 CUDA C++ 实现基于点云动力学的空间找形开源软件，在 GPU 上完成并行数值模拟与高性能计算；设计基准测试验证 CUDA 内核的正确性与加速比，并通过 Raylib 与 WASM 完成可视化与 Web Demo 部署。",
       links: [
         {
@@ -200,6 +203,7 @@ export const resume_data_cn_domestic = {
     },
     {
       title: "美国 NASA 宇航局月球车竞赛",
+      summary: "基于 HoloLens 的宇航员交互界面与月球任务辅助系统。",
       meta: "与罗德岛设计学院工业设计系、布朗大学计算机系学术合作，基于微软HoloLens平台，开发宇航员 UI。使用 Unity 平台 通过开发C#， 实现月球表面采样、地图引导、路径规划等功能。",
       links: [
         {
