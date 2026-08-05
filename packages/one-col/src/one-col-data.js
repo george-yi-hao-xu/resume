@@ -1,4 +1,4 @@
-export const resume_data_cn_domestic = {
+export const one_col_data = {
   pageTitle: "许易豪 - 国内中文简历",
   description: "许易豪面向国内职场的软件工程师中文简历。",
   name: "许易豪",

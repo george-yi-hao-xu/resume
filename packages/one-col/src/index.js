@@ -1,12 +1,12 @@
-import { ChinaResumeMaker } from "./ChinaResumeMaker.js";
-import { resume_data_cn_domestic } from "./resume-data_cn_domestic.js";
+import { OneColMaker } from "./one-col-maker.js";
+import { one_col_data } from "./one-col-data.js";
 
-export { ChinaResumeMaker, resume_data_cn_domestic };
+export { OneColMaker, one_col_data };
 
 export const mountOneColResume = ({
   avatar,
   documentRef = document,
-  resume = resume_data_cn_domestic,
+  resume = one_col_data,
   selector = "#app",
 } = {}) => {
   documentRef.title = resume.pageTitle;
@@ -20,5 +20,5 @@ export const mountOneColResume = ({
     throw new Error(`Cannot mount one-col resume: missing ${selector}`);
   }
 
-  target.innerHTML = ChinaResumeMaker(resume, avatar);
+  target.innerHTML = OneColMaker(resume, avatar);
 };

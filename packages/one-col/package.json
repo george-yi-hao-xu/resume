@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "dependencies": {
+    "@resume/shared": "workspace:*"
+  },
   "exports": {
     ".": "./src/index.js",
-    "./data": "./src/resume-data_cn_domestic.js"
+    "./data": "./src/one-col-data.js"
   }
 }

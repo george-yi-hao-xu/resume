@@ -1,5 +1,5 @@
 import { escapeHtml } from "./utils.js";
-import "./ChinaResumeMaker.scss";
+import "./one-col-maker.scss";
 
 const htmlText = (value) => escapeHtml(value ?? "");
 
@@ -214,7 +214,7 @@ const skillsWithLanguages = (items = [], labels, languageItems = []) =>
     "cn-skills-section",
   );
 
-export const ChinaResumeMaker = (resume, avatar) => `
+export const OneColMaker = (resume, avatar) => `
   <main class="cn-resume">
     ${header(resume, avatar)}
     ${profile(resume.profile, resume.labels)}

@@ -1,9 +1,9 @@
-import "./styles/base.scss";
+import "@resume/shared/styles/base.scss";
 import "./styles/version-picker.scss";
 
 const versions = [
   {
-    href: "./cn.html",
+    href: "./one-col.html",
     label: "国内中文简历",
     meta: "one-col / 国内投递",
   },

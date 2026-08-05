@@ -1,0 +1,14 @@
+{
+  "name": "@resume/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./avatar": "./src/avatar.js",
+    "./print-preview-guides": "./src/print-preview-guides.js",
+    "./styles/base.scss": "./src/styles/base.scss",
+    "./styles/page-preview.scss": "./src/styles/page-preview.scss",
+    "./styles/print.scss": "./src/styles/print.scss",
+    "./styles/tokens": "./src/styles/_tokens.scss"
+  }
+}

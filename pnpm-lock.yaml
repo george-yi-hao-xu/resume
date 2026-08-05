@@ -11,6 +11,9 @@ importers:
       '@resume/one-col':
         specifier: workspace:*
         version: link:packages/one-col
+      '@resume/shared':
+        specifier: workspace:*
+        version: link:packages/shared
       '@resume/two-cols':
         specifier: workspace:*
         version: link:packages/two-cols
@@ -22,9 +25,19 @@ importers:
         specifier: ^8.0.16
         version: 8.0.16(sass@1.101.0)
 
-  packages/one-col: {}
+  packages/one-col:
+    dependencies:
+      '@resume/shared':
+        specifier: workspace:*
+        version: link:../shared
 
-  packages/two-cols: {}
+  packages/shared: {}
+
+  packages/two-cols:
+    dependencies:
+      '@resume/shared':
+        specifier: workspace:*
+        version: link:../shared
 
 packages:
 

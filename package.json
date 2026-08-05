@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@resume/one-col": "workspace:*",
+    "@resume/shared": "workspace:*",
     "@resume/two-cols": "workspace:*"
   },
   "devDependencies": {
