@@ -1,0 +1,6 @@
+packages:
+  - "packages/*"
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+allowBuilds:
+  "@parcel/watcher": true

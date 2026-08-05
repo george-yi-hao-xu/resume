@@ -1,0 +1,88 @@
+@use "tokens" as *;
+
+.version-picker {
+  display: grid;
+  gap: 12mm;
+  margin: 0 auto;
+  max-width: 190mm;
+  min-height: 100vh;
+  padding: 24mm 10mm;
+}
+
+.version-picker__intro {
+  align-self: end;
+}
+
+.version-picker__eyebrow {
+  color: $accent;
+  font-size: 3.2mm;
+  font-weight: 750;
+  letter-spacing: 0;
+  margin-bottom: 3mm;
+  text-transform: uppercase;
+}
+
+.version-picker h1 {
+  color: $ink;
+  font-size: 12mm;
+  line-height: 1.05;
+}
+
+.version-picker__links {
+  display: grid;
+  gap: 3mm;
+}
+
+.version-picker__link {
+  align-items: center;
+  background: $paper;
+  border: 1px solid $rule;
+  border-radius: 2mm;
+  color: $ink;
+  display: grid;
+  gap: 1mm;
+  min-height: 22mm;
+  padding: 4mm 5mm;
+  text-decoration: none;
+}
+
+.version-picker__link:hover {
+  border-color: $accent;
+  color: $ink;
+  text-decoration: none;
+}
+
+.version-picker__link span {
+  font-size: 5mm;
+  font-weight: 780;
+  line-height: 1.2;
+}
+
+.version-picker__link small {
+  color: $muted;
+  font-size: 3.2mm;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+@media (min-width: 760px) {
+  .version-picker {
+    grid-template-columns: minmax(0, 1fr) 74mm;
+    place-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .version-picker {
+    min-height: 100svh;
+    padding: 14mm 6mm;
+  }
+
+  .version-picker h1 {
+    font-size: 8mm;
+  }
+
+  .version-picker__link span {
+    font-size: 4.2mm;
+  }
+}
