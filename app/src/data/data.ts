@@ -8,9 +8,6 @@ export const resumeData = {
         zh: "软件工程师 - Web全栈 AI应用",
         en: "Software Engineer - Full-Stack Web & AI Applications",
     },
-    avatar: {
-        visible: { en: false },
-    },
     labels: {
         contactAria: { zh: "联系信息", en: "Contact" },
         profile: { zh: "个人优势", en: "Profile" },
@@ -29,11 +26,7 @@ export const resumeData = {
     },
     contacts: [
         { label: { zh: "电话", en: "Phone" }, value: "18701928010" },
-        {
-            label: { zh: "出生年月", en: "Birth" },
-            value: "1996.04",
-            visible: { en: false },
-        },
+        { label: { zh: "出生年月", en: "Birth" }, value: "1996.04" },
         {
             label: { zh: "所在地", en: "Location" },
             value: "中国 上海",

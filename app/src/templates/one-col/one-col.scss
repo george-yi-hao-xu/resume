@@ -16,13 +16,17 @@
     width: 210mm;
 }
 
+.nr-resume--en {
+    font-family: var(--font-family-latin);
+}
+
 .nr-header {
     align-items: center;
     // border-bottom: 0.45mm solid rgba($ink, 0.12);
     display: grid;
     gap: var(--gap-ml);
     grid-template-columns: minmax(0, 1fr) 18mm;
-    padding-bottom: var(--gap-ml);
+    // padding-bottom: var(--gap-ml);
 }
 
 .nr-header--no-avatar {

@@ -123,22 +123,20 @@ const Job = (item: ExperienceItem, lang: LanguageCode) => `
 `;
 
 const projectMeta = (item: WorkProjectItem, lang: LanguageCode) =>
-    [
-        localizedJoin(
-            [item.company, item.role, ...(item.meta ?? [])],
-            lang,
-            lang === "en" ? ", " : " ",
-        ),
-        htmlText(item.summary, lang),
-        ...item.description.map((description) => htmlText(description, lang)),
-    ]
-        .filter(Boolean)
-        .join(lang === "en" ? " " : "");
+    localizedJoin(
+        [item.company, item.role, ...(item.meta ?? [])],
+        lang,
+        lang === "en" ? ", " : " ",
+    );
 
 const ProjectEntry = (item: WorkProjectItem, lang: LanguageCode) => `
   <article class="nt-entry nt-project">
     <h3>${htmlText(item.title, lang)}</h3>
-    <ul class="nt-project-list"><li>${projectMeta(item, lang)}</li></ul>
+    <ul class="nt-project-list">
+      <li class="nt-project-list__meta">${projectMeta(item, lang)}</li>
+      ${item.summary ? `<li>${htmlText(item.summary, lang)}</li>` : ""}
+      ${item.description.map((description) => `<li>${htmlText(description, lang)}</li>`).join("")}
+    </ul>
   </article>
 `;
 

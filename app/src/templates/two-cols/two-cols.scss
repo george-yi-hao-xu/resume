@@ -16,6 +16,10 @@
     width: 210mm;
 }
 
+.nt-resume--en {
+    font-family: var(--font-family-latin);
+}
+
 .nt-header {
     align-items: center;
     // border-bottom: 0.45mm solid rgba($ink, 0.12);
@@ -83,12 +87,12 @@
     display: grid;
     gap: var(--gap-ml);
     grid-template-columns: minmax(42mm, 0.72fr) minmax(0, 1.28fr);
-    padding-top: var(--gap-ml);
+    padding-top: var(--gap-m);
 }
 
 .nt-section + .nt-section,
 .nt-job + .nt-job {
-    margin-top: 3mm;
+    margin-top: var(--gap-s);
 }
 
 .nt-main-projects {
@@ -101,7 +105,7 @@
     color: $resume-blue;
     font-size: 3.8mm;
     font-weight: 800;
-    margin-bottom: 2.5mm;
+    margin-bottom: var(--gap-s);
     padding-bottom: var(--gap-s);
 }
 
@@ -127,12 +131,18 @@
 .nt-profile,
 .nt-job ul,
 .nt-project-list {
-    color: $text-muted;
+    // color: $text-muted;
     font-size: 3mm;
     line-height: 1.38;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.nt-plain-list {
+    li {
+        text-wrap-style: pretty;
+    }
 }
 
 .nt-profile {
@@ -156,7 +166,7 @@
 }
 
 .nt-job__role-meta {
-    margin-top: var(--gap-s);
+    // margin-top: var(--gap-s);
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -177,10 +187,16 @@
 
 .nt-job ul {
     color: $ink;
-    line-height: 1.35;
+    line-height: normal;
     list-style: disc;
     margin: var(--gap-s) 0 0;
-    padding-left: var(--gap-ml);
+    padding-left: var(--gap-m);
+}
+
+.nt-job li::marker,
+.nt-project-list li::marker {
+    color: rgba($text-muted, 0.12);
+    font-size: 0.65em;
 }
 
 .nt-job li + li {
@@ -189,8 +205,14 @@
 
 .nt-project-list {
     list-style: disc;
-    margin-top: 1mm;
-    padding-left: var(--gap-ml);
+    // margin-top: 1mm;
+    padding-left: var(--gap-m);
+}
+
+.nt-project-list__meta {
+    color: $text-muted;
+    list-style: none;
+    margin-left: calc(-1 * var(--gap-m));
 }
 
 @media print {
