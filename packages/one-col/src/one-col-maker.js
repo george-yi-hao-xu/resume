@@ -18,6 +18,16 @@ const htmlText = (value, lang) => escapeHtml(localizedText(value, lang));
 const localizedJoin = (items = [], lang, separator = " | ") =>
   items.map((item) => htmlText(item, lang)).filter(Boolean).join(separator);
 
+const sectionIsVisible = (resume, key, lang) => {
+  const setting = resume.visibleSections?.[key];
+
+  if (typeof setting === "object") {
+    return setting[lang] !== false;
+  }
+
+  return setting !== false;
+};
+
 const descriptionList = (value, lang) => {
   const items = Array.isArray(value) ? value : [value];
 
@@ -226,12 +236,12 @@ const resumePage = (resume, avatar, lang) => {
   return `
   <main class="cn-resume cn-resume--${escapeHtml(lang)}" lang="${lang === "zh" ? "zh-Hans" : "en"}">
     ${header(resume, avatar, labels, lang)}
-    ${profile(resume.profile, labels, lang)}
+    ${sectionIsVisible(resume, "profile", lang) ? profile(resume.profile, labels, lang) : ""}
     ${education(resume.education, labels, lang)}
     ${skillsWithLanguages(resume.skillGroups, labels, resume.languages, lang)}
     ${experience(resume.experience, labels, lang)}
     ${workProjects(resume.workProjects, labels, lang)}
-    ${projects(resume.projects, labels, lang)}
+    ${sectionIsVisible(resume, "projects", lang) ? projects(resume.projects, labels, lang) : ""}
   </main>
 `;
 };

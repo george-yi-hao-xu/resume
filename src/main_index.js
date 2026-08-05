@@ -4,12 +4,12 @@ import "./styles/version-picker.scss";
 const versions = [
   {
     href: "./one-col.html",
-    label: "国内中文简历",
+    label: "单列风格",
     meta: "one-col / 国内投递",
   },
   {
     href: "./two-cols.html",
-    label: "中英双语简历",
+    label: "双列风格",
     meta: "two-cols / 英文岗位",
   },
 ];

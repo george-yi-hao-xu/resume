@@ -15,8 +15,24 @@ $gap-s: 1mm;
   margin: var(--gap-xl) auto;
   max-width: 210mm;
   min-height: 297mm;
-  padding: 15mm 16mm 18mm;
+  padding: 10mm 16mm 18mm;
   position: relative;
+}
+
+.cn-resume--zh {
+  font-size: 3.1mm;
+  line-height: 1.38;
+  padding: 8mm 12mm 10mm;
+}
+
+.cn-resume--en {
+  font-size: 3.1mm;
+  line-height: 1.34;
+  padding-top: 6mm;
+}
+
+.cn-resume--en .cn-header {
+  padding-top: 0;
 }
 
 .cn-resume + .cn-resume {
@@ -25,7 +41,7 @@ $gap-s: 1mm;
 
 .cn-header {
   // min-height: 34mm;
-  padding: $gap 30mm $gap;
+  padding: 1mm 28mm 1mm;
   position: relative;
   text-align: center;
 }
@@ -58,7 +74,33 @@ $gap-s: 1mm;
 .cn-resume--en .cn-header__identity h1 {
   align-items: center;
   flex-direction: column;
-  gap: 1mm;
+  gap: 0.5mm;
+}
+
+.cn-resume--en .cn-contact-list {
+  line-height: 1.32;
+  margin-top: 1.2mm;
+}
+
+.cn-resume--en .cn-section h2 {
+  margin-bottom: 0.8mm;
+  padding: 0.05mm 0;
+}
+
+.cn-resume--en .cn-entry + .cn-entry,
+.cn-resume--en .cn-compact-entry + .cn-compact-entry,
+.cn-resume--en .cn-skill-group + .cn-skill-group {
+  margin-top: 0.65mm;
+}
+
+.cn-resume--en .cn-entry__body {
+  margin-top: 0.55mm;
+}
+
+.cn-resume--en .cn-job .cn-entry__body li + li,
+.cn-resume--en .cn-project .cn-project__description-list li + li,
+.cn-resume--en .cn-work-project .cn-work-project__description-list li + li {
+  margin-top: 0.25mm;
 }
 
 .cn-contact-list {
@@ -69,7 +111,7 @@ $gap-s: 1mm;
   gap: 1.2mm 0;
   justify-content: center;
   line-height: 1.5;
-  margin-top: 3mm;
+  margin-top: 1.8mm;
 }
 
 .cn-contact-list > span {
@@ -105,12 +147,12 @@ $gap-s: 1mm;
 }
 
 .cn-section {
-  margin-top: $gap;
+  margin-top: 0;
 }
 
 // 分隔主名字和个人优势
 .cn-header + .cn-section {
-  margin-top: $gap-l;
+  margin-top: 0;
 }
 
 .cn-section h2 {
@@ -121,12 +163,12 @@ $gap-s: 1mm;
   color: $china-section-rule;
   display: flex;
   font-family: var(--font-family-sans);
-  font-size: 4.5mm;
+  font-size: 3.5mm;
   gap: 2mm;
   letter-spacing: 0;
   line-height: 1.25;
-  margin: 0 0 $gap;
-  padding: 0.4mm 0;
+  margin: 1.1mm 0 1.1mm;
+  padding: 0.15mm 0;
   text-transform: none;
 }
 
@@ -152,6 +194,7 @@ $gap-s: 1mm;
     height: 0;
     min-width: 12mm;
     pointer-events: none;
+    opacity: 0.05;
   }
 }
 
@@ -161,6 +204,10 @@ $gap-s: 1mm;
 
 .cn-profile p + p {
   margin-top: 1.2mm;
+}
+
+.cn-profile {
+  font-size: 3.15mm;
 }
 
 .cn-entry + .cn-entry,
@@ -190,7 +237,7 @@ $gap-s: 1mm;
 .cn-entry__role {
   color: $china-text-strong;
   font-weight: 500;
-  margin-top: 1mm;
+  margin-top: 0.35mm;
 }
 
 .cn-job .cn-entry__role > span {
@@ -208,7 +255,7 @@ $gap-s: 1mm;
 }
 
 .cn-entry__body {
-  margin-top: 1.8mm;
+  margin-top: 0.9mm;
 }
 
 .cn-entry__body p + p {
@@ -242,6 +289,10 @@ $gap-s: 1mm;
 
 .cn-job .cn-entry__body li {
   padding-left: 0.5mm;
+}
+
+.cn-job .cn-entry__body li + li {
+  margin-top: 0.45mm;
 }
 
 .cn-links {
@@ -282,19 +333,19 @@ $gap-s: 1mm;
 
 .cn-work-project + .cn-work-project,
 .cn-project + .cn-project {
-  margin-top: 4mm;
+  margin-top: 1.4mm;
 }
 
 .cn-work-project .cn-entry__body,
 .cn-project .cn-entry__body {
-  margin-top: 1.2mm;
+  margin-top: 0.7mm;
 }
 
 .cn-project__summary,
 .cn-work-project__summary {
   color: $china-text-muted;
   font-weight: 600;
-  margin-bottom: 0.8mm;
+  margin-bottom: 0.35mm;
 }
 
 .cn-project .cn-project__description-list {
@@ -317,7 +368,7 @@ $gap-s: 1mm;
 
 .cn-project .cn-project__description-list li + li,
 .cn-work-project .cn-work-project__description-list li + li {
-  margin-top: 0.7mm;
+  margin-top: 0.35mm;
 }
 
 .cn-work-project__header {
@@ -473,7 +524,17 @@ $gap-s: 1mm;
     margin: 0;
     max-width: none;
     min-height: 0;
-    padding: 5mm;
+    padding: 4mm 5mm 5mm;
+  }
+
+  .cn-resume--zh {
+    font-size: 2.9mm;
+    line-height: 1.32;
+    padding: 3mm 4mm 4mm;
+  }
+
+  .cn-resume--en {
+    padding-top: 2mm;
   }
 
   .cn-resume + .cn-resume {
@@ -488,18 +549,12 @@ $gap-s: 1mm;
   }
 
   .cn-section {
-    margin-top: 4mm;
-  }
-
-  .cn-work-projects-section {
-    break-before: page;
-    page-break-before: always;
-    padding-top: 4mm;
+    margin-top: 1.2mm;
   }
 
   .cn-section h2 {
     break-after: avoid;
-    margin-bottom: 2.2mm;
+    margin-bottom: 1.4mm;
     page-break-after: avoid;
   }
 
