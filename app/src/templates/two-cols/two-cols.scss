@@ -12,17 +12,21 @@
     margin: 0 auto;
     max-width: 210mm;
     min-height: 297mm;
-    padding: 11mm;
+    padding: var(--gap-page);
     width: 210mm;
 }
 
 .nt-header {
     align-items: center;
-    border-bottom: 0.45mm solid rgba($ink, 0.12);
+    // border-bottom: 0.45mm solid rgba($ink, 0.12);
     display: grid;
-    gap: 4mm;
-    grid-template-columns: minmax(0, 1fr) minmax(54mm, auto) 18mm;
-    padding-bottom: 4mm;
+    gap: var(--gap-ml);
+    grid-template-columns: minmax(0, 1fr) 18mm;
+    padding-bottom: var(--gap-s);
+}
+
+.nt-header--no-avatar {
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .nt-header h1 {
@@ -32,7 +36,7 @@
 }
 
 .nt-header p {
-    color: #17365d;
+    color: $text-muted;
     font-size: 3.5mm;
     font-weight: 700;
     margin-top: 1.5mm;
@@ -46,24 +50,24 @@
 }
 
 .nt-contact-list {
-    color: $china-text-muted;
-    display: grid;
+    color: $text-muted;
+    column-gap: var(--gap-ml);
+    display: flex;
+    flex-wrap: wrap;
     font-size: 3mm;
-    gap: 0.7mm;
     line-height: 1.3;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-top: var(--gap-sm);
+    max-width: 132mm;
+    row-gap: var(--gap-s);
+    text-align: left;
 }
 
-.nt-contact-list li {
-    display: grid;
-    gap: 2mm;
-    grid-template-columns: max-content minmax(0, 1fr);
+.nt-contact-list > span {
+    white-space: nowrap;
 }
 
 .nt-contact-list b {
-    color: #17365d;
+    color: $china-text-strong;
 }
 
 .nt-contact-list a {
@@ -77,9 +81,9 @@
 
 .nt-grid {
     display: grid;
-    gap: 5mm;
+    gap: var(--gap-ml);
     grid-template-columns: minmax(42mm, 0.72fr) minmax(0, 1.28fr);
-    padding-top: 5mm;
+    padding-top: var(--gap-ml);
 }
 
 .nt-section + .nt-section,
@@ -94,31 +98,36 @@
 .nt-section h2,
 .nt-main > h2 {
     border-bottom: 0.25mm solid rgba($ink, 0.12);
-    color: #17365d;
+    color: $resume-blue;
     font-size: 3.8mm;
     font-weight: 800;
     margin-bottom: 2.5mm;
-    padding-bottom: 1.5mm;
+    padding-bottom: var(--gap-s);
 }
 
 .nt-entry + .nt-entry,
 .nt-entry .nt-plain-list {
-    margin-top: 2.4mm;
+    margin-top: var(--gap-s);
 }
 
 .nt-entry h3 {
-    color: #17365d;
     font-size: 3.25mm;
     font-weight: 700;
     line-height: 1.35;
 }
 
+// .nt-edu-meta-loc {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+// }
+
+.nt-edu-meta-loc span,
 .nt-entry p,
 .nt-plain-list,
 .nt-profile,
 .nt-job ul,
 .nt-project-list {
-    color: $china-text-muted;
+    color: $text-muted;
     font-size: 3mm;
     line-height: 1.38;
     list-style: none;
@@ -128,18 +137,11 @@
 
 .nt-profile {
     display: grid;
-    gap: 1mm;
+    gap: var(--gap-s);
 }
 
 .nt-entry p {
     margin-top: 1mm;
-}
-
-.nt-job__header {
-    align-items: baseline;
-    display: grid;
-    gap: 4mm;
-    grid-template-columns: minmax(0, 1fr) max-content;
 }
 
 .nt-job__title {
@@ -149,14 +151,20 @@
     flex-wrap: wrap;
     font-size: 3.3mm;
     font-weight: 700;
-    gap: 0.55mm;
+    gap: var(--gap-2xs);
     line-height: 1.35;
+}
+
+.nt-job__role-meta {
+    margin-top: var(--gap-s);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .nt-job__role,
 .nt-job__separator,
 .nt-job__meta {
-    color: $china-text-muted;
+    color: $text-muted;
     font-size: 3mm;
     font-weight: 500;
 }
@@ -171,8 +179,8 @@
     color: $ink;
     line-height: 1.35;
     list-style: disc;
-    margin: 1.5mm 0 0;
-    padding-left: 4mm;
+    margin: var(--gap-s) 0 0;
+    padding-left: var(--gap-ml);
 }
 
 .nt-job li + li {
@@ -182,7 +190,7 @@
 .nt-project-list {
     list-style: disc;
     margin-top: 1mm;
-    padding-left: 4mm;
+    padding-left: var(--gap-ml);
 }
 
 @media print {

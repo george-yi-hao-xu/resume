@@ -27,6 +27,11 @@ export type ContactItem = {
     value: string;
     localizedValue?: DisplayText;
     href?: string;
+    visible?: SectionVisibility;
+};
+
+export type AvatarConfig = {
+    visible?: SectionVisibility;
 };
 
 export type EducationItem = {
@@ -81,6 +86,7 @@ export type ResumeData = {
     description: string;
     name: DisplayText;
     role: DisplayText;
+    avatar?: AvatarConfig;
     labels: ResumeLabels;
     visibleSections?: Partial<
         Record<

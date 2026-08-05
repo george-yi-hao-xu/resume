@@ -13,7 +13,9 @@ import {
     localizedJoin,
     localizedText,
     sectionIsVisible,
+    visibilitySettingIsVisible,
 } from "../../shared/html";
+import { ContactList } from "../shared/contact";
 import "./two-cols.scss";
 
 const Section = (title: string, children: string, className = "") => `
@@ -23,38 +25,18 @@ const Section = (title: string, children: string, className = "") => `
   </section>
 `;
 
-const Contact = (resume: ResumeData, lang: LanguageCode) => `
-  <ul class="nt-contact-list" aria-label="${htmlText(resume.labels.contactAria, lang)}">
-    ${resume.contacts
-        .map((item) => {
-            const label = localizedText(item.label, lang);
-            const value = item.localizedValue ?? item.value;
-
-            if (!label || !item.value) {
-                return "";
-            }
-
-            const content = item.href
-                ? `<a href="${escapeHtml(item.href)}">${htmlText(value, lang)}</a>`
-                : `<span>${htmlText(value, lang)}</span>`;
-
-            return `<li><b>${escapeHtml(label)}</b>${content}</li>`;
-        })
-        .join("")}
-  </ul>
-`;
-
 const Header = (resume: ResumeData, avatar: string, lang: LanguageCode) => {
     const name = localizedText(resume.name, lang);
+    const avatarIsVisible = visibilitySettingIsVisible(resume.avatar?.visible, lang);
 
     return `
-    <header class="nt-header">
+    <header class="nt-header${avatarIsVisible ? "" : " nt-header--no-avatar"}">
       <div class="nt-header__identity">
         <h1>${escapeHtml(name)}</h1>
         <p>${htmlText(resume.role, lang)}</p>
+        ${ContactList(resume, lang, "nt-contact-list")}
       </div>
-      ${Contact(resume, lang)}
-      <img class="nt-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />
+      ${avatarIsVisible ? `<img class="nt-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />` : ""}
     </header>
   `;
 };
@@ -69,7 +51,10 @@ const Profile = (resume: ResumeData, lang: LanguageCode) =>
 const CompactEntry = (item: EducationItem, lang: LanguageCode) => `
   <article class="nt-entry">
     <h3>${htmlText(item.title, lang)}</h3>
-    <p>${localizedJoin([item.meta, item.location], lang, lang === "en" ? ", " : " ")}</p>
+    <div class="nt-edu-meta-loc">
+      <span>${htmlText(item.meta, lang)} |</span>
+      <span>${htmlText(item.location, lang)}</span>
+    </div>
     ${item.time ? `<p>${htmlText(item.time, lang)}</p>` : ""}
   </article>
 `;
@@ -126,11 +111,12 @@ const Job = (item: ExperienceItem, lang: LanguageCode) => `
       <div>
         <h3 class="nt-job__title">
           <span class="nt-job__company">${htmlText(item.company, lang)}</span>
-          <span class="nt-job__separator">/</span>
-          <span class="nt-job__role">${htmlText(item.title, lang)}</span>
         </h3>
       </div>
-      <p class="nt-job__meta">${localizedJoin(item.meta, lang)}</p>
+      <div class="nt-job__role-meta">
+        <span class="nt-job__role">${htmlText(item.title, lang)}</span>
+        <span class="nt-job__meta">${localizedJoin(item.meta, lang)}</span>
+      </div>
     </header>
     <ul>${item.bullets.map((bullet) => `<li>${htmlText(bullet, lang)}</li>`).join("")}</ul>
   </article>

@@ -1,5 +1,4 @@
 import type {
-    ContactItem,
     EducationItem,
     ExperienceItem,
     LanguageCode,
@@ -15,7 +14,9 @@ import {
     localizedJoin,
     localizedText,
     sectionIsVisible,
+    visibilitySettingIsVisible,
 } from "../../shared/html";
+import { ContactList } from "../shared/contact";
 import "./one-col.scss";
 
 const Section = (title: string, children: string, className = "") => `
@@ -25,37 +26,20 @@ const Section = (title: string, children: string, className = "") => `
   </section>
 `;
 
-const ContactItem = (item: ContactItem, lang: LanguageCode) => {
-    const label = localizedText(item.label, lang);
-    const value = item.localizedValue ?? item.value;
-
-    if (!label || !item.value) {
-        return "";
-    }
-
-    const separator = lang === "en" ? ": " : "：";
-    const content = item.href
-        ? `<a href="${escapeHtml(item.href)}">${htmlText(value, lang)}</a>`
-        : `<span>${htmlText(value, lang)}</span>`;
-
-    return `<span><b>${escapeHtml(label)}${separator}</b>${content}</span>`;
-};
-
 const Header = (resume: ResumeData, avatar: string, lang: LanguageCode) => {
     const name = localizedText(resume.name, lang);
+    const avatarIsVisible = visibilitySettingIsVisible(resume.avatar?.visible, lang);
 
     return `
-    <header class="nr-header">
+    <header class="nr-header${avatarIsVisible ? "" : " nr-header--no-avatar"}">
       <div class="nr-header__identity">
         <h1>
           <span>${escapeHtml(name)}</span>
           <small>${htmlText(resume.role, lang)}</small>
         </h1>
-        <div class="nr-contact-list" aria-label="${htmlText(resume.labels.contactAria, lang)}">
-          ${resume.contacts.map((item) => ContactItem(item, lang)).join("")}
-        </div>
+        ${ContactList(resume, lang, "nr-contact-list")}
       </div>
-      <img class="nr-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />
+      ${avatarIsVisible ? `<img class="nr-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />` : ""}
     </header>
   `;
 };

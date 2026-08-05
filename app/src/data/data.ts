@@ -8,6 +8,9 @@ export const resumeData = {
         zh: "软件工程师 - Web全栈 AI应用",
         en: "Software Engineer - Full-Stack Web & AI Applications",
     },
+    avatar: {
+        visible: { en: false },
+    },
     labels: {
         contactAria: { zh: "联系信息", en: "Contact" },
         profile: { zh: "个人优势", en: "Profile" },
@@ -26,7 +29,11 @@ export const resumeData = {
     },
     contacts: [
         { label: { zh: "电话", en: "Phone" }, value: "18701928010" },
-        { label: { zh: "出生年月", en: "Birth" }, value: "1996.04" },
+        {
+            label: { zh: "出生年月", en: "Birth" },
+            value: "1996.04",
+            visible: { en: false },
+        },
         {
             label: { zh: "所在地", en: "Location" },
             value: "中国 上海",
@@ -58,7 +65,7 @@ export const resumeData = {
         },
         {
             title: { zh: "布朗大学", en: "Brown University" },
-            meta: { zh: "计算机科学 (选修)", en: "Computer Science Coursework" },
+            meta: { zh: "计算机科学 (选修)", en: "Computer Science" },
             location: { zh: "普罗维登斯 罗德岛 美国", en: "Providence, RI, USA" },
             time: { zh: "2022.09 - 2023.06", en: "2022.09 - 2023.06" },
         },
@@ -135,16 +142,16 @@ export const resumeData = {
         {
             company: {
                 zh: "美国Sasaki联合设计事务所 研发部门",
-                en: "Sasaki Associates, Inc., R&D Team",
+                en: "Sasaki Associates, R&D Team",
             },
             title: {
                 zh: "软件工程师 - Web全栈 AI工程",
-                en: "Software Engineer - Full-Stack Web & AI Engineering",
+                en: "Software Engineer - Web Full-Stack, AI",
             },
             meta: [
                 { zh: "2023.11 - 至今", en: "2023.11 - Present" },
                 { zh: "美国麻州波士顿", en: "Boston, MA, USA" },
-                { zh: "全职", en: "Full-time" },
+                { zh: "全职", en: "" },
             ],
             bullets: [
                 {

@@ -12,17 +12,21 @@
     margin: 0 auto;
     max-width: 210mm;
     min-height: 297mm;
-    padding: 12mm;
+    padding: var(--gap-page);
     width: 210mm;
 }
 
 .nr-header {
     align-items: center;
-    border-bottom: 0.45mm solid rgba($ink, 0.12);
+    // border-bottom: 0.45mm solid rgba($ink, 0.12);
     display: grid;
-    gap: 4mm;
+    gap: var(--gap-ml);
     grid-template-columns: minmax(0, 1fr) 18mm;
-    padding-bottom: 5mm;
+    padding-bottom: var(--gap-ml);
+}
+
+.nr-header--no-avatar {
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .nr-header h1 {
@@ -32,7 +36,7 @@
 }
 
 .nr-header h1 small {
-    color: $china-text-muted;
+    color: $text-muted;
     display: block;
     font-size: 3.5mm;
     font-weight: 600;
@@ -47,15 +51,15 @@
 }
 
 .nr-contact-list {
-    color: $china-text-muted;
-    column-gap: 4mm;
+    color: $text-muted;
+    column-gap: var(--gap-ml);
     display: flex;
     flex-wrap: wrap;
     font-size: 3mm;
     line-height: 1.35;
     margin-top: 2.6mm;
     max-width: 132mm;
-    row-gap: 0.8mm;
+    row-gap: var(--gap-s);
     text-align: left;
 }
 
@@ -78,11 +82,11 @@
 
 .nr-section h2 {
     border-bottom: 0.25mm solid rgba($ink, 0.12);
-    color: #17365d;
+    color: $resume-blue;
     font-size: 4mm;
     font-weight: 800;
     margin-bottom: 2.5mm;
-    padding-bottom: 1.5mm;
+    padding-bottom: var(--gap-s);
 }
 
 .nr-section h2 span {
@@ -93,7 +97,7 @@
 .nr-entry__body,
 .nr-compact-entry p,
 .nr-skill-group p {
-    color: $china-text-muted;
+    color: $text-muted;
     font-size: 3.15mm;
     line-height: 1.45;
 }
@@ -113,21 +117,21 @@
 .nr-compact-entry {
     align-items: baseline;
     display: grid;
-    gap: 2.5mm;
+    gap: var(--gap-sm);
     grid-template-columns: 36mm minmax(0, 1fr) max-content;
 }
 
 .nr-skill-group {
     align-items: baseline;
     display: grid;
-    gap: 2.5mm;
+    gap: var(--gap-sm);
     grid-template-columns: 28mm minmax(0, 1fr);
 }
 
 .nr-entry__header {
     align-items: baseline;
     display: grid;
-    gap: 6mm;
+    gap: var(--gap-l);
     grid-template-columns: minmax(0, 1fr) max-content;
 }
 
@@ -160,7 +164,7 @@
 }
 
 .nr-entry__role {
-    color: $china-text-muted;
+    color: $text-muted;
     font-size: 3.15mm;
     font-weight: 500;
     line-height: 1.35;
@@ -168,7 +172,7 @@
 }
 
 .nr-entry__meta {
-    color: $china-text-muted;
+    color: $text-muted;
     font-size: 3.1mm;
     line-height: 1.35;
     text-align: right;
@@ -182,7 +186,7 @@
 .nr-entry__body ul {
     list-style: disc;
     margin: 1mm 0 0;
-    padding-left: 4mm;
+    padding-left: var(--gap-ml);
 }
 
 .nr-entry__body li + li {
@@ -190,7 +194,7 @@
 }
 
 .nr-entry__inline-links::before {
-    color: $china-text-muted;
+    color: $text-muted;
     content: "|";
     margin: 0 1.8mm;
 }

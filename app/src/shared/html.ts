@@ -38,6 +38,17 @@ export const localizedJoin = (
         .filter(Boolean)
         .join(separator);
 
+export const visibilitySettingIsVisible = (
+    setting: SectionVisibility | undefined,
+    lang: LanguageCode,
+): boolean => {
+    if (typeof setting === "object") {
+        return setting[lang] !== false;
+    }
+
+    return setting !== false;
+};
+
 export const sectionIsVisible = (
     resume: ResumeData,
     key: keyof NonNullable<ResumeData["visibleSections"]>,
@@ -45,11 +56,7 @@ export const sectionIsVisible = (
 ): boolean => {
     const setting = resume.visibleSections?.[key] as SectionVisibility | undefined;
 
-    if (typeof setting === "object") {
-        return setting[lang] !== false;
-    }
-
-    return setting !== false;
+    return visibilitySettingIsVisible(setting, lang);
 };
 
 export const mixedText = (value: LocalizedValue | undefined, className = "bi-text"): string => {
