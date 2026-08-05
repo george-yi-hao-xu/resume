@@ -107,15 +107,15 @@
 }
 
 .nr-entry + .nr-entry {
-    margin-top: 2.8mm;
+    margin-top: var(--gap-m);
 }
 
 .nr-skill-group + .nr-skill-group {
-    margin-top: 1.2mm;
+    margin-top: var(--gap-s);
 }
 
 .nr-compact-entry + .nr-compact-entry {
-    margin-top: 1.2mm;
+    margin-top: var(--gap-s);
 }
 
 .nr-compact-entry {
@@ -194,7 +194,7 @@
 }
 
 .nr-entry__body li + li {
-    margin-top: 0.5mm;
+    margin-top: var(--gap-2xs);
 }
 
 .nr-entry__inline-links::before {

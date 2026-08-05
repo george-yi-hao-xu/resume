@@ -168,13 +168,12 @@ const WorkProjects = (resume: ResumeData, lang: LanguageCode) =>
     );
 
 const PersonalProject = (item: PersonalProjectItem, lang: LanguageCode) => `
-  <article class="nr-entry nr-project">
+  <article class="nr-entry nr-project nr-personal-project">
     <header class="nr-entry__header">
       <h3>${htmlText(item.title, lang)}</h3>
     </header>
     <div class="nr-entry__body">
       ${item.summary ? `<p>${htmlText(item.summary, lang)}</p>` : ""}
-      <ul>${item.description.map((description) => `<li>${htmlText(description, lang)}</li>`).join("")}</ul>
     </div>
   </article>
 `;

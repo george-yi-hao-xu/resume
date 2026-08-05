@@ -15,14 +15,14 @@ export const resumeData = {
         skills: { zh: "专业技能", en: "Technical Skills" },
         experience: { zh: "职业经历", en: "Professional Experience" },
         workProjects: { zh: "工作项目", en: "Professional Projects" },
-        personalProjects: { zh: "学术项目", en: "Academic Projects" },
+        personalProjects: { zh: "个人项目", en: "Personal Projects" },
         languages: { zh: "语言", en: "Languages" },
         workContent: { zh: "工作内容", en: "Responsibilities" },
         projectDescription: { zh: "项目描述", en: "Project Description" },
     },
     visibleSections: {
         profile: { en: false },
-        personalProjects: false,
+        personalProjects: true,
     },
     contacts: [
         { label: { zh: "电话", en: "Phone" }, value: "18701928010" },

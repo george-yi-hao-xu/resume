@@ -77,6 +77,16 @@ body {
     display: none;
 }
 
+.nr-resume--zh,
+.nt-resume--zh {
+    --gap-2xs: 0.7mm;
+    --gap-s: 1.35mm;
+    --gap-sm: 2.55mm;
+    --gap-m: 3.75mm;
+    --gap-ml: 4.8mm;
+    --gap-l: 6.9mm;
+}
+
 @media (max-width: 720px) {
     .new-selector {
         margin-bottom: 4mm;
@@ -89,6 +99,16 @@ body {
 }
 
 @media print {
+    .nr-resume--zh,
+    .nt-resume--zh {
+        --gap-2xs: 0.34mm;
+        --gap-s: 0.68mm;
+        --gap-sm: 1.28mm;
+        --gap-m: 1.88mm;
+        --gap-ml: 2.4mm;
+        --gap-l: 3.45mm;
+    }
+
     .new-selector {
         display: none;
     }

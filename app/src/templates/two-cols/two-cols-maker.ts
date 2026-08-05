@@ -3,6 +3,7 @@ import type {
     ExperienceItem,
     LanguageCode,
     LanguageItem,
+    PersonalProjectItem,
     ResumeData,
     SkillGroup,
     WorkProjectItem,
@@ -43,7 +44,8 @@ const Header = (resume: ResumeData, avatar: string, lang: LanguageCode) => {
 
 const Profile = (resume: ResumeData, lang: LanguageCode) =>
     Section(
-        localizedText(resume.labels.profile, lang),
+        // localizedText(resume.labels.profile, lang),
+        '',
         `<ul class="nt-profile">${resume.profile.map((item) => `<li>${htmlText(item, lang)}</li>`).join("")}</ul>`,
         "nt-profile-section",
     );
@@ -105,6 +107,20 @@ const SkillGroup = (group: SkillGroup, lang: LanguageCode) => `
   </article>
 `;
 
+const PersonalProject = (item: PersonalProjectItem, lang: LanguageCode) => `
+  <article class="nt-entry nt-personal-project">
+    <h3>${htmlText(item.title, lang)}</h3>
+    ${item.summary ? `<p>${htmlText(item.summary, lang)}</p>` : ""}
+  </article>
+`;
+
+const PersonalProjects = (resume: ResumeData, lang: LanguageCode) =>
+    Section(
+        localizedText(resume.labels.personalProjects, lang),
+        resume.personalProjects.map((item) => PersonalProject(item, lang)).join(""),
+        "nt-personal-projects-section",
+    );
+
 const Job = (item: ExperienceItem, lang: LanguageCode) => `
   <article class="nt-job">
     <header class="nt-job__header">
@@ -154,6 +170,7 @@ const Page = (resume: ResumeData, avatar: string, lang: LanguageCode) => `
                 .join(""),
             "nt-skills-section",
         )}
+        ${sectionIsVisible(resume, "personalProjects", lang) ? PersonalProjects(resume, lang) : ""}
       </aside>
       <section class="nt-main" aria-label="${htmlText(resume.labels.experience, lang)}">
         <h2>${htmlText(resume.labels.experience, lang)}</h2>
