@@ -8,11 +8,6 @@ const versions = [
     meta: "one-col / 国内投递",
   },
   {
-    href: "./index_cn.html",
-    label: "中文简历",
-    meta: "传统版 / 中文内容",
-  },
-  {
     href: "./index_bilingual.html",
     label: "中英双语简历",
     meta: "bilingual / 英文岗位",

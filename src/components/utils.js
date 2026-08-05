@@ -17,10 +17,7 @@ export const escapeHtml = (value) =>
 export const paragraphs = (items = []) =>
   items.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
 
-/**
- * @param {import("../resume-data.js").Link[]} [items]
- * @returns {string}
- */
+/** @param {{ href: string, label: string }[]} [items] */
 export const links = (items = []) =>
   items
     .map(
