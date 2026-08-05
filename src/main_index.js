@@ -8,9 +8,9 @@ const versions = [
     meta: "one-col / 国内投递",
   },
   {
-    href: "./index_bilingual.html",
+    href: "./two-cols.html",
     label: "中英双语简历",
-    meta: "bilingual / 英文岗位",
+    meta: "two-cols / 英文岗位",
   },
 ];
 

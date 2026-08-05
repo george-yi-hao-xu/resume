@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { resume_data_bilingual as resume } from "../src/resume-data_bilingual.js";
+import { resume_data_two_cols as resume } from "@resume/two-cols/data";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");

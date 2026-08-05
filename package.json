@@ -11,7 +11,8 @@
     "export:boss:bilingual": "node --no-warnings scripts/export-boss-markdown.mjs --lang=bilingual"
   },
   "dependencies": {
-    "@resume/one-col": "workspace:*"
+    "@resume/one-col": "workspace:*",
+    "@resume/two-cols": "workspace:*"
   },
   "devDependencies": {
     "sass": "^1.77.0",

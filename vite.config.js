@@ -11,7 +11,8 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, "src/index.html"),
                 cn_domestic: resolve(__dirname, "src/cn.html"),
-                bilingual: resolve(__dirname, "src/index_bilingual.html"),
+                two_cols: resolve(__dirname, "src/two-cols.html"),
+                bilingual_redirect: resolve(__dirname, "src/index_bilingual.html"),
             },
         },
     },

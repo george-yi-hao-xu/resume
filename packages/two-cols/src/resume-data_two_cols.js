@@ -7,7 +7,7 @@
  * @typedef {{ title: BilingualText, company: string | BilingualText, meta: string[], bullets: BilingualText[], links?: BilingualLink[] }} BilingualJob
  */
 
-export const resume_data_bilingual = {
+export const resume_data_two_cols = {
   name: { zh: "许易豪", en: "George Yihao Xu" },
   role: { zh: "软件工程师 UI/UX设计 XR开发", en: "Software Engineer" },
   pageTitle: "许易豪 / George Yihao Xu 双语简历",

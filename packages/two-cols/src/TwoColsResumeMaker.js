@@ -1,5 +1,5 @@
 import { escapeHtml } from "./utils.js";
-import "./BilingualResumeMaker.scss";
+import "./TwoColsResumeMaker.scss";
 
 const localizedText = (item, lang) => {
   if (!item) {
@@ -362,7 +362,7 @@ const mixedResumePage = (resume) => `
   </main>
 `;
 
-// export const BilingualResumeMaker = (resume) => `
+// export const TwoColsResumeMaker = (resume) => `
 //   <div class="bi-document">
 //     ${resumePage(resume, "zh")}
 //     ${resumePage(resume, "en")}
@@ -370,7 +370,7 @@ const mixedResumePage = (resume) => `
 //   </div>
 // `;
 
-export const BilingualResumeMaker = (resume) => `
+export const TwoColsResumeMaker = (resume) => `
   <div class="bi-document">
     ${resumePage(resume, "zh")}
     ${resumePage(resume, "en")}
