@@ -10,7 +10,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, "src/index.html"),
-                cn_domestic: resolve(__dirname, "src/cn.html"),
+                one_col: resolve(__dirname, "src/cn.html"),
                 two_cols: resolve(__dirname, "src/two-cols.html"),
                 bilingual_redirect: resolve(__dirname, "src/index_bilingual.html"),
             },
