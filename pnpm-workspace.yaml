@@ -1,6 +1,5 @@
 packages:
-  - "packages/*"
-  - "new"
+  - "app"
 onlyBuiltDependencies:
   - "@parcel/watcher"
 allowBuilds:
