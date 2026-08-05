@@ -1,0 +1,217 @@
+@use "../../styles/tokens" as *;
+
+.nr-document--one-col {
+    display: grid;
+    gap: var(--gap-xl);
+}
+
+.nr-resume {
+    background: #fff;
+    box-shadow: 0 8mm 28mm rgba($ink, 0.08);
+    color: $ink;
+    margin: 0 auto;
+    max-width: 210mm;
+    min-height: 297mm;
+    padding: 12mm;
+    width: 210mm;
+}
+
+.nr-header {
+    align-items: center;
+    border-bottom: 0.45mm solid rgba($ink, 0.12);
+    display: grid;
+    gap: 4mm;
+    grid-template-columns: minmax(0, 1fr) 18mm;
+    padding-bottom: 5mm;
+}
+
+.nr-header h1 {
+    color: $china-text-strong;
+    font-size: 8mm;
+    line-height: 1;
+}
+
+.nr-header h1 small {
+    color: $china-text-muted;
+    display: block;
+    font-size: 3.5mm;
+    font-weight: 600;
+    margin-top: 1.8mm;
+}
+
+.nr-avatar {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 18mm;
+}
+
+.nr-contact-list {
+    color: $china-text-muted;
+    column-gap: 4mm;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 3mm;
+    line-height: 1.35;
+    margin-top: 2.6mm;
+    max-width: 132mm;
+    row-gap: 0.8mm;
+    text-align: left;
+}
+
+.nr-contact-list > span {
+    white-space: nowrap;
+}
+
+.nr-contact-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nr-contact-list b {
+    color: $china-text-strong;
+}
+
+.nr-section {
+    margin-top: 4mm;
+}
+
+.nr-section h2 {
+    border-bottom: 0.25mm solid rgba($ink, 0.12);
+    color: #17365d;
+    font-size: 4mm;
+    font-weight: 800;
+    margin-bottom: 2.5mm;
+    padding-bottom: 1.5mm;
+}
+
+.nr-section h2 span {
+    display: inline-block;
+}
+
+.nr-profile p,
+.nr-entry__body,
+.nr-compact-entry p,
+.nr-skill-group p {
+    color: $china-text-muted;
+    font-size: 3.15mm;
+    line-height: 1.45;
+}
+
+.nr-entry + .nr-entry {
+    margin-top: 2.8mm;
+}
+
+.nr-skill-group + .nr-skill-group {
+    margin-top: 1.2mm;
+}
+
+.nr-compact-entry + .nr-compact-entry {
+    margin-top: 1.2mm;
+}
+
+.nr-compact-entry {
+    align-items: baseline;
+    display: grid;
+    gap: 2.5mm;
+    grid-template-columns: 36mm minmax(0, 1fr) max-content;
+}
+
+.nr-skill-group {
+    align-items: baseline;
+    display: grid;
+    gap: 2.5mm;
+    grid-template-columns: 28mm minmax(0, 1fr);
+}
+
+.nr-entry__header {
+    align-items: baseline;
+    display: grid;
+    gap: 6mm;
+    grid-template-columns: minmax(0, 1fr) max-content;
+}
+
+.nr-entry h3,
+.nr-compact-entry h3,
+.nr-skill-group h3 {
+    color: $china-text-strong;
+    font-size: 3.35mm;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.nr-compact-entry h3,
+.nr-compact-entry__meta,
+.nr-compact-entry__time,
+.nr-skill-group h3,
+.nr-skill-group p {
+    margin: 0;
+}
+
+.nr-compact-entry h3,
+.nr-compact-entry__meta,
+.nr-compact-entry__time,
+.nr-skill-group h3 {
+    white-space: nowrap;
+}
+
+.nr-compact-entry__time {
+    text-align: right;
+}
+
+.nr-entry__role {
+    color: $china-text-muted;
+    font-size: 3.15mm;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-top: 0.3mm;
+}
+
+.nr-entry__meta {
+    color: $china-text-muted;
+    font-size: 3.1mm;
+    line-height: 1.35;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.nr-entry__body {
+    margin-top: 1mm;
+}
+
+.nr-entry__body ul {
+    list-style: disc;
+    margin: 1mm 0 0;
+    padding-left: 4mm;
+}
+
+.nr-entry__body li + li {
+    margin-top: 0.5mm;
+}
+
+.nr-entry__inline-links::before {
+    color: $china-text-muted;
+    content: "|";
+    margin: 0 1.8mm;
+}
+
+.nr-entry__inline-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media print {
+    .nr-resume {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+        min-height: 277mm;
+        padding: 0;
+        page-break-after: always;
+        width: auto;
+    }
+
+    .nr-resume:last-child {
+        page-break-after: auto;
+    }
+}
