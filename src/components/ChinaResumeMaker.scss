@@ -1,6 +1,9 @@
 @use "../styles/tokens" as *;
 
+$gap-xl:8mm;
+$gap-l: 4mm;
 $gap: 2mm;
+$gap-s: 1mm;
 
 .cn-resume {
   background: #fff;
@@ -17,7 +20,7 @@ $gap: 2mm;
 }
 
 .cn-header {
-  min-height: 34mm;
+  // min-height: 34mm;
   padding: $gap 30mm $gap;
   position: relative;
   text-align: center;
@@ -59,8 +62,7 @@ $gap: 2mm;
 }
 
 .cn-contact-list > span:not(:last-child)::after,
-.cn-links a:not(:last-child)::after,
-.cn-language-list span:not(:last-child)::after {
+.cn-links a:not(:last-child)::after {
   color: $china-text-muted;
   content: "|";
   font-weight: 400;
@@ -91,8 +93,9 @@ $gap: 2mm;
   margin-top: $gap;
 }
 
+// 分隔主名字和个人优势
 .cn-header + .cn-section {
-  margin-top: $gap;
+  margin-top: $gap-l;
 }
 
 .cn-section h2 {
@@ -148,7 +151,7 @@ $gap: 2mm;
 .cn-entry + .cn-entry,
 .cn-compact-entry + .cn-compact-entry,
 .cn-skill-group + .cn-skill-group {
-  margin-top: 3mm;
+  margin-top: $gap-s;
 }
 
 .cn-entry__header,
@@ -173,6 +176,10 @@ $gap: 2mm;
   color: $china-text-strong;
   font-weight: 500;
   margin-top: 1mm;
+}
+
+.cn-job .cn-entry__role > span {
+  color: $china-text-muted;
 }
 
 .cn-entry__meta,
@@ -213,6 +220,15 @@ $gap: 2mm;
   content: "";
 }
 
+.cn-job .cn-entry__body ul {
+  list-style: disc;
+  padding-left: 3.8mm;
+}
+
+.cn-job .cn-entry__body li {
+  padding-left: 0.5mm;
+}
+
 .cn-links {
   color: $china-text-strong;
   font-size: 3.15mm;
@@ -249,6 +265,46 @@ $gap: 2mm;
   grid-template-columns: minmax(0, 1fr) max-content;
 }
 
+.cn-work-project + .cn-work-project,
+.cn-project + .cn-project {
+  margin-top: 4mm;
+}
+
+.cn-work-project .cn-entry__body,
+.cn-project .cn-entry__body {
+  margin-top: 1.2mm;
+}
+
+.cn-project__summary,
+.cn-work-project__summary {
+  color: $china-text-muted;
+  font-weight: 600;
+  margin-bottom: 0.8mm;
+}
+
+.cn-project .cn-project__description-list {
+  list-style: none;
+  padding-left: 3.8mm;
+}
+
+.cn-project .cn-project__description-list li {
+  padding-left: 0.5mm;
+  position: relative;
+}
+
+.cn-project .cn-project__description-list li::before {
+  color: $china-text;
+  content: "•";
+  font-weight: 700;
+  left: -3mm;
+  position: absolute;
+}
+
+.cn-project .cn-project__description-list li + li,
+.cn-work-project .cn-work-project__description-list li + li {
+  margin-top: 0.7mm;
+}
+
 .cn-work-project__header {
   grid-template-columns: minmax(0, 1fr) max-content;
 }
@@ -260,6 +316,24 @@ $gap: 2mm;
   justify-self: end;
   line-height: 1.35;
   white-space: nowrap;
+}
+
+.cn-work-project .cn-work-project__description-list {
+  list-style: none;
+  padding-left: 3.8mm;
+}
+
+.cn-work-project .cn-work-project__description-list li {
+  padding-left: 0.5mm;
+  position: relative;
+}
+
+.cn-work-project .cn-work-project__description-list li::before {
+  color: $china-text;
+  content: "•";
+  font-weight: 700;
+  left: -3mm;
+  position: absolute;
 }
 
 .cn-project__links {
@@ -283,7 +357,7 @@ $gap: 2mm;
   align-items: baseline;
   display: grid;
   gap: 1mm 4mm;
-  grid-template-columns: 38mm minmax(0, 1fr) max-content;
+  grid-template-columns: 38mm minmax(0, 1fr) max-content max-content;
 }
 
 .cn-education-entry h3,
@@ -295,6 +369,15 @@ $gap: 2mm;
   color: $china-text;
 }
 
+.cn-education-entry__location {
+  color: $china-text-muted;
+  font-size: 3.15mm;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .cn-education-entry__time {
   color: $china-text-muted;
   font-size: 3.15mm;
@@ -304,20 +387,11 @@ $gap: 2mm;
   white-space: nowrap;
 }
 
+// 分割 专业技能
 .cn-skill-group {
   display: grid;
   gap: 1mm;
-  grid-template-columns: 38mm minmax(0, 1fr);
-}
-
-.cn-language-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1mm 0;
-}
-
-.cn-language-list span {
-  white-space: nowrap;
+  grid-template-columns: 25mm minmax(0, 1fr);
 }
 
 @media (max-width: 760px) {
@@ -388,7 +462,27 @@ $gap: 2mm;
     margin-top: 4mm;
   }
 
+  .cn-work-projects-section {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 4mm;
+  }
+
   .cn-section h2 {
+    break-after: avoid;
     margin-bottom: 2.2mm;
+    page-break-after: avoid;
+  }
+
+  .cn-entry__header,
+  .cn-work-project__summary,
+  .cn-project__summary {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cn-entry__body {
+    break-before: avoid;
+    page-break-before: avoid;
   }
 }

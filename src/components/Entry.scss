@@ -31,26 +31,6 @@
   opacity: 0.8;
 }
 
-.plain-list {
-  color: $muted;
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-loose);
-  list-style: none;
-  padding: var(--space-none);
-}
-
-.language-list__level {
-  opacity: 0.68;
-}
-
-.language-list__level::before {
-  content: " (";
-}
-
-.language-list__level::after {
-  content: ")";
-}
-
 @media print {
   .entry {
     break-inside: avoid;

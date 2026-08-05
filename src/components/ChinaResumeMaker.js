@@ -9,6 +9,26 @@ const paragraphs = (value) => {
   return items.map((item) => `<p>${htmlText(item)}</p>`).join("");
 };
 
+const descriptionList = (value) => {
+  const items = Array.isArray(value) ? value : [value];
+
+  return `
+    <ul class="cn-work-project__description-list">
+      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+    </ul>
+  `;
+};
+
+const projectList = (value) => {
+  const items = Array.isArray(value) ? value : [value];
+
+  return `
+    <ul class="cn-project__description-list">
+      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+    </ul>
+  `;
+};
+
 const section = (title, children, className = "") => `
   <section class="cn-section ${escapeHtml(className)}">
     <h2><span>${escapeHtml(title)}</span></h2>
@@ -123,7 +143,8 @@ const workProject = (item, labels) => `
       <p class="cn-work-project__affiliation">${htmlText(item.company)} / ${htmlText(item.role)}</p>
     </header>
     <div class="cn-entry__body">
-      ${paragraphs(item.description)}
+      ${item.summary ? `<p class="cn-work-project__summary">${htmlText(item.summary)}</p>` : ""}
+      ${descriptionList(item.description)}
     </div>
   </article>
 `;
@@ -139,10 +160,13 @@ const project = (item, labels) => `
   <article class="cn-entry cn-project">
     <header class="cn-entry__header cn-project__header">
       <h3>${htmlText(item.title)}</h3>
-      ${inlineLinkRow(item.links, "cn-project__links")}
+      ${item.links?.length ? `<p class="cn-project__links">${item.links
+        .map((link) => `<a href="${escapeHtml(link.href)}">${htmlText(link.label)}</a>`)
+        .join("")}</p>` : ""}
     </header>
     <div class="cn-entry__body">
-      ${paragraphs(item.meta)}
+      ${item.summary ? `<p class="cn-project__summary">${htmlText(item.summary)}</p>` : ""}
+      ${projectList(item.description ?? item.meta)}
     </div>
   </article>
 `;
@@ -154,6 +178,7 @@ const educationItem = (item) => `
   <article class="cn-compact-entry cn-education-entry">
     <h3>${htmlText(item.title)}</h3>
     <p class="cn-education-entry__meta">${htmlText(item.meta)}</p>
+    ${item.location ? `<p class="cn-education-entry__location">${htmlText(item.location)}</p>` : ""}
     ${item.time ? `<p class="cn-education-entry__time">${htmlText(item.time)}</p>` : ""}
   </article>
 `;
@@ -164,32 +189,39 @@ const education = (items = [], labels) =>
 const skillGroup = (group) => `
   <article class="cn-skill-group">
     <h3>${htmlText(group.title)}</h3>
-    <p>${group.items.map((item) => htmlText(item).replace(/\s*\/\s*/g, " | ")).join(" | ")}</p>
+    <p>${group.items.map(htmlText).join("、")}</p>
   </article>
 `;
 
-const skills = (items = [], labels) =>
-  section(labels.skills, items.map(skillGroup).join(""), "cn-skills-section");
+const languageSkillText = (item) => `${item.name}${item.level ? ` (${item.level})` : ""}`;
 
-const languageItem = (item) => `
-  <span>${htmlText(item.name)}${item.level ? `：${htmlText(item.level)}` : ""}</span>
-`;
+const skillGroupsWithLanguages = (items = [], labels, languageItems = []) => [
+  ...items,
+  ...(languageItems.length
+    ? [
+        {
+          title: labels.languages,
+          items: [languageItems.map(languageSkillText).join(" / ")],
+        },
+      ]
+    : []),
+];
 
-const languages = (items = [], labels) => section(
-  labels.languages,
-  `<div class="cn-language-list">${items.map(languageItem).join("")}</div>`,
-  "cn-languages-section",
-);
+const skillsWithLanguages = (items = [], labels, languageItems = []) =>
+  section(
+    labels.skills,
+    skillGroupsWithLanguages(items, labels, languageItems).map(skillGroup).join(""),
+    "cn-skills-section",
+  );
 
 export const ChinaResumeMaker = (resume, avatar) => `
   <main class="cn-resume">
     ${header(resume, avatar)}
     ${profile(resume.profile, resume.labels)}
     ${education(resume.education, resume.labels)}
-    ${skills(resume.skillGroups, resume.labels)}
+    ${skillsWithLanguages(resume.skillGroups, resume.labels, resume.languages)}
     ${experience(resume.experience, resume.labels)}
     ${workProjects(resume.workProjects, resume.labels)}
     ${projects(resume.projects, resume.labels)}
-    ${languages(resume.languages, resume.labels)}
   </main>
 `;

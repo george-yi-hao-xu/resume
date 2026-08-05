@@ -123,10 +123,6 @@
   margin-top: var(--gap-sm);
 }
 
-.bi-languages-section {
-  margin-top: var(--gap-m);
-}
-
 .bi-main-projects {
   margin-top: var(--gap-ml);
 }
@@ -151,18 +147,6 @@
 .bi-job h3 {
   font-size: var(--font-size-md);
   line-height: var(--line-height-tight);
-}
-
-// 语言栏
-.bi-plain-list {
-  &.lang {
-    display: flex;
-    flex-wrap: wrap;
-
-    li + li {
-      margin-top: var(--space-none);
-    }
-  }
 }
 
 .bi-entry p,
@@ -235,6 +219,19 @@
   padding: var(--space-none);
 }
 
+.bi-project-list {
+  color: $ink;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  list-style: disc;
+  margin: var(--gap-s) var(--space-none) var(--space-none);
+  padding-left: var(--gap-m);
+}
+
+.bi-project-list li + li {
+  margin-top: var(--gap-sm);
+}
+
 .bi-profile {
   display: grid;
   gap: var(--gap-sm);
@@ -298,22 +295,13 @@
 
 .bi-job ul {
   color: $ink;
+  list-style: disc;
   margin: var(--gap-sm) var(--space-none) var(--space-none);
-  padding-left: var(--space-none);
+  padding-left: var(--gap-m);
 }
 
 .bi-job li + li {
   margin-top: var(--gap-sm);
-}
-
-.bi-language {
-  display: flex;
-
-  &__level{
-    display: flex;
-    margin-left: var(--gap-s);
-    margin-right: var(--gap-m);
-  }
 }
 
 @media (max-width: 201.08mm) {

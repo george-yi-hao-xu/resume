@@ -1,5 +1,19 @@
-import { Entry, LanguageList, SkillGroup } from "./Entry.js";
+import { Entry, SkillGroup } from "./Entry.js";
 import { Section } from "./Section.js";
+
+const languageText = (item) => `${item.name}${item.level ? ` (${item.level})` : ""}`;
+
+const skillGroupsWithLanguages = (resume) => [
+  ...resume.skillGroups,
+  ...(resume.languages?.length
+    ? [
+        {
+          title: resume.labels.languages,
+          items: [resume.languages.map(languageText).join(" / ")],
+        },
+      ]
+    : []),
+];
 
 /**
  * @param {import("../resume-data.js").ResumeData} resume
@@ -13,12 +27,7 @@ export const Sidebar = (resume) => `
     })}
     ${Section({
       title: resume.labels.skills,
-      children: resume.skillGroups.map(SkillGroup).join(""),
-    })}
-    ${Section({
-      title: resume.labels.languages,
-      children: LanguageList(resume.languages),
-      className: "section--languages",
+      children: skillGroupsWithLanguages(resume).map(SkillGroup).join(""),
     })}
     ${Section({
       title: resume.labels.studioProjects,
