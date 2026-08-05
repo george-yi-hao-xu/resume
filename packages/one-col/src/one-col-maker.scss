@@ -19,6 +19,10 @@ $gap-s: 1mm;
   position: relative;
 }
 
+.cn-resume + .cn-resume {
+  margin-top: var(--gap-xl);
+}
+
 .cn-header {
   // min-height: 34mm;
   padding: $gap 30mm $gap;
@@ -39,11 +43,22 @@ $gap-s: 1mm;
   line-height: 1.1;
 }
 
+.cn-header__identity h1 > span {
+  white-space: nowrap;
+}
+
 .cn-header__identity small {
   color: $china-text-strong;
   font-size: 3.65mm;
   font-weight: 700;
   line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cn-resume--en .cn-header__identity h1 {
+  align-items: center;
+  flex-direction: column;
+  gap: 1mm;
 }
 
 .cn-contact-list {
@@ -365,6 +380,15 @@ $gap-s: 1mm;
   line-height: 1.35;
 }
 
+.cn-resume--en .cn-education-entry h3 {
+  white-space: nowrap;
+}
+
+.cn-resume--en .cn-education-entry {
+  gap: 1mm 3mm;
+  grid-template-columns: 58mm minmax(0, 1fr) max-content max-content;
+}
+
 .cn-education-entry__meta {
   color: $china-text;
 }
@@ -450,6 +474,11 @@ $gap-s: 1mm;
     max-width: none;
     min-height: 0;
     padding: 5mm;
+  }
+
+  .cn-resume + .cn-resume {
+    break-before: page;
+    page-break-before: always;
   }
 
   .cn-entry,

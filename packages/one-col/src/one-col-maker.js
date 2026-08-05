@@ -1,30 +1,39 @@
 import { escapeHtml } from "./utils.js";
 import "./one-col-maker.scss";
 
-const htmlText = (value) => escapeHtml(value ?? "");
+const localizedText = (value, lang) => {
+  if (!value) {
+    return "";
+  }
 
-const paragraphs = (value) => {
-  const items = Array.isArray(value) ? value : [value];
+  if (typeof value === "string") {
+    return value;
+  }
 
-  return items.map((item) => `<p>${htmlText(item)}</p>`).join("");
+  return value[lang] ?? value.zh ?? value.en ?? "";
 };
 
-const descriptionList = (value) => {
+const htmlText = (value, lang) => escapeHtml(localizedText(value, lang));
+
+const localizedJoin = (items = [], lang, separator = " | ") =>
+  items.map((item) => htmlText(item, lang)).filter(Boolean).join(separator);
+
+const descriptionList = (value, lang) => {
   const items = Array.isArray(value) ? value : [value];
 
   return `
     <ul class="cn-work-project__description-list">
-      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+      ${items.map((item) => `<li>${htmlText(item, lang)}</li>`).join("")}
     </ul>
   `;
 };
 
-const projectList = (value) => {
+const projectList = (value, lang) => {
   const items = Array.isArray(value) ? value : [value];
 
   return `
     <ul class="cn-project__description-list">
-      ${items.map((item) => `<li>${htmlText(item)}</li>`).join("")}
+      ${items.map((item) => `<li>${htmlText(item, lang)}</li>`).join("")}
     </ul>
   `;
 };
@@ -36,24 +45,7 @@ const section = (title, children, className = "") => `
   </section>
 `;
 
-const linkRow = (links = []) => {
-  if (!links.length) {
-    return "";
-  }
-
-  return `
-    <p class="cn-links">
-      ${links
-        .map(
-          (item) =>
-            `<a href="${escapeHtml(item.href)}">${htmlText(item.label)}</a>`,
-        )
-        .join("")}
-    </p>
-  `;
-};
-
-const inlineLinkRow = (links = [], className = "cn-entry__inline-links") => {
+const inlineLinkRow = (links = [], lang, className = "cn-entry__inline-links") => {
   if (!links.length) {
     return "";
   }
@@ -63,165 +55,190 @@ const inlineLinkRow = (links = [], className = "cn-entry__inline-links") => {
       ${links
         .map(
           (item) =>
-            `<a href="${escapeHtml(item.href)}">${htmlText(item.label)}</a>`,
+            `<a href="${escapeHtml(item.href)}">${htmlText(item.label, lang)}</a>`,
         )
         .join("")}
     </span>
   `;
 };
 
-const contactItem = (item) => {
+const contactItem = (item, lang) => {
   if (!item.value) {
     return "";
   }
 
-  if (!item.label) {
+  const label = localizedText(item.label, lang);
+
+  if (!label) {
     return "";
   }
 
+  const separator = lang === "en" ? ": " : "：";
+  const value = item.localizedValue ?? item.value;
   const content = item.href
-    ? `<a href="${escapeHtml(item.href)}">${htmlText(item.value)}</a>`
-    : `<span>${htmlText(item.value)}</span>`;
+    ? `<a href="${escapeHtml(item.href)}">${htmlText(value, lang)}</a>`
+    : `<span>${htmlText(value, lang)}</span>`;
 
-  return `<span><b>${htmlText(item.label)}：</b>${content}</span>`;
+  return `<span><b>${escapeHtml(label)}${separator}</b>${content}</span>`;
 };
 
-const header = (resume, avatar) => `
+const header = (resume, avatar, labels, lang) => {
+  const name = localizedText(resume.name, lang);
+  const avatarAlt = lang === "en" ? `${name} avatar` : `${name}头像`;
+
+  return `
   <header class="cn-header">
     <div class="cn-header__identity">
       <h1>
-        <span>${htmlText(resume.name)}</span>
-        <small>${htmlText(resume.role)}</small>
+        <span>${escapeHtml(name)}</span>
+        <small>${htmlText(resume.role, lang)}</small>
       </h1>
     </div>
-    <div class="cn-contact-list" aria-label="${htmlText(resume.labels.contactAria)}">
-      ${resume.contacts.map(contactItem).join("")}
+    <div class="cn-contact-list" aria-label="${htmlText(labels.contactAria, lang)}">
+      ${resume.contacts.map((item) => contactItem(item, lang)).join("")}
     </div>
-    <img class="cn-avatar" src="${escapeHtml(avatar)}" alt="${htmlText(resume.name)}头像" />
+    <img class="cn-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(avatarAlt)}" />
   </header>
 `;
+};
 
-const jobMeta = (item) => item.meta.map(htmlText).join(" | ");
+const jobMeta = (item, lang) => localizedJoin(item.meta, lang);
 
-const profile = (items = [], labels) => section(
-  labels.profile,
+const profile = (items = [], labels, lang) => section(
+  localizedText(labels.profile, lang),
   `
     <div class="cn-profile">
-      ${items.map((item) => `<p>${htmlText(item)}</p>`).join("")}
+      ${items.map((item) => `<p>${htmlText(item, lang)}</p>`).join("")}
     </div>
   `,
   "cn-profile-section",
 );
 
-const job = (item, labels) => `
+const job = (item, lang) => `
   <article class="cn-entry cn-job">
     <header class="cn-entry__header">
       <div>
-        <h3>${htmlText(item.company)}</h3>
+        <h3>${htmlText(item.company, lang)}</h3>
         <p class="cn-entry__role">
-          <span>${htmlText(item.title)}</span>
-          ${inlineLinkRow(item.links)}
+          <span>${htmlText(item.title, lang)}</span>
+          ${inlineLinkRow(item.links, lang)}
         </p>
       </div>
-      <p class="cn-entry__meta">${jobMeta(item)}</p>
+      <p class="cn-entry__meta">${jobMeta(item, lang)}</p>
     </header>
     <div class="cn-entry__body">
       <ul>
-        ${item.bullets.map((bullet) => `<li>${htmlText(bullet)}</li>`).join("")}
+        ${item.bullets.map((bullet) => `<li>${htmlText(bullet, lang)}</li>`).join("")}
       </ul>
     </div>
   </article>
 `;
 
-const experience = (items = [], labels) =>
-  section(labels.experience, items.map((item) => job(item, labels)).join(""), "cn-experience-section");
+const experience = (items = [], labels, lang) =>
+  section(localizedText(labels.experience, lang), items.map((item) => job(item, lang)).join(""), "cn-experience-section");
 
-const workProject = (item, labels) => `
+const workProject = (item, lang) => `
   <article class="cn-entry cn-work-project">
     <header class="cn-entry__header cn-work-project__header">
-      <h3>${htmlText(item.title)}</h3>
-      <p class="cn-work-project__affiliation">${htmlText(item.company)} / ${htmlText(item.role)}</p>
+      <h3>${htmlText(item.title, lang)}</h3>
+      <p class="cn-work-project__affiliation">${localizedJoin([item.company, item.role], lang, " / ")}</p>
     </header>
     <div class="cn-entry__body">
-      ${item.summary ? `<p class="cn-work-project__summary">${htmlText(item.summary)}</p>` : ""}
-      ${descriptionList(item.description)}
+      ${item.summary ? `<p class="cn-work-project__summary">${htmlText(item.summary, lang)}</p>` : ""}
+      ${descriptionList(item.description, lang)}
     </div>
   </article>
 `;
 
-const workProjects = (items = [], labels) =>
+const workProjects = (items = [], labels, lang) =>
   section(
-    labels.workProjects,
-    items.map((item) => workProject(item, labels)).join(""),
+    localizedText(labels.workProjects, lang),
+    items.map((item) => workProject(item, lang)).join(""),
     "cn-work-projects-section",
   );
 
-const project = (item, labels) => `
+const project = (item, lang) => `
   <article class="cn-entry cn-project">
     <header class="cn-entry__header cn-project__header">
-      <h3>${htmlText(item.title)}</h3>
+      <h3>${htmlText(item.title, lang)}</h3>
       ${item.links?.length ? `<p class="cn-project__links">${item.links
-        .map((link) => `<a href="${escapeHtml(link.href)}">${htmlText(link.label)}</a>`)
+        .map((link) => `<a href="${escapeHtml(link.href)}">${htmlText(link.label, lang)}</a>`)
         .join("")}</p>` : ""}
     </header>
     <div class="cn-entry__body">
-      ${item.summary ? `<p class="cn-project__summary">${htmlText(item.summary)}</p>` : ""}
-      ${projectList(item.description ?? item.meta)}
+      ${item.summary ? `<p class="cn-project__summary">${htmlText(item.summary, lang)}</p>` : ""}
+      ${projectList(item.description ?? item.meta, lang)}
     </div>
   </article>
 `;
 
-const projects = (items = [], labels) =>
-  section(labels.projects, items.map((item) => project(item, labels)).join(""), "cn-projects-section");
+const projects = (items = [], labels, lang) =>
+  section(localizedText(labels.projects, lang), items.map((item) => project(item, lang)).join(""), "cn-projects-section");
 
-const educationItem = (item) => `
+const educationItem = (item, lang) => `
   <article class="cn-compact-entry cn-education-entry">
-    <h3>${htmlText(item.title)}</h3>
-    <p class="cn-education-entry__meta">${htmlText(item.meta)}</p>
-    ${item.location ? `<p class="cn-education-entry__location">${htmlText(item.location)}</p>` : ""}
-    ${item.time ? `<p class="cn-education-entry__time">${htmlText(item.time)}</p>` : ""}
+    <h3>${htmlText(item.title, lang)}</h3>
+    <p class="cn-education-entry__meta">${htmlText(item.meta, lang)}</p>
+    ${item.location ? `<p class="cn-education-entry__location">${htmlText(item.location, lang)}</p>` : ""}
+    ${item.time ? `<p class="cn-education-entry__time">${htmlText(item.time, lang)}</p>` : ""}
   </article>
 `;
 
-const education = (items = [], labels) =>
-  section(labels.education, items.map(educationItem).join(""), "cn-education-section");
+const education = (items = [], labels, lang) =>
+  section(localizedText(labels.education, lang), items.map((item) => educationItem(item, lang)).join(""), "cn-education-section");
 
-const skillGroup = (group) => `
+const skillGroup = (group, lang) => `
   <article class="cn-skill-group">
-    <h3>${htmlText(group.title)}</h3>
-    <p>${group.items.map(htmlText).join("、")}</p>
+    <h3>${htmlText(group.title, lang)}</h3>
+    <p>${group.items.map((item) => htmlText(item, lang)).join(lang === "en" ? ", " : "、")}</p>
   </article>
 `;
 
-const languageSkillText = (item) => `${item.name}${item.level ? ` (${item.level})` : ""}`;
+const languageSkillText = (item, lang) => {
+  const name = localizedText(item.name, lang);
+  const level = localizedText(item.level, lang);
 
-const skillGroupsWithLanguages = (items = [], labels, languageItems = []) => [
+  return `${name}${level ? ` (${level})` : ""}`;
+};
+
+const skillGroupsWithLanguages = (items = [], labels, languageItems = [], lang) => [
   ...items,
   ...(languageItems.length
     ? [
         {
-          title: labels.languages,
-          items: [languageItems.map(languageSkillText).join(" / ")],
+          title: localizedText(labels.languages, lang),
+          items: [languageItems.map((item) => languageSkillText(item, lang)).join(lang === "en" ? ", " : "、")],
         },
       ]
     : []),
 ];
 
-const skillsWithLanguages = (items = [], labels, languageItems = []) =>
+const skillsWithLanguages = (items = [], labels, languageItems = [], lang) =>
   section(
-    labels.skills,
-    skillGroupsWithLanguages(items, labels, languageItems).map(skillGroup).join(""),
+    localizedText(labels.skills, lang),
+    skillGroupsWithLanguages(items, labels, languageItems, lang).map((item) => skillGroup(item, lang)).join(""),
     "cn-skills-section",
   );
 
-export const OneColMaker = (resume, avatar) => `
-  <main class="cn-resume">
-    ${header(resume, avatar)}
-    ${profile(resume.profile, resume.labels)}
-    ${education(resume.education, resume.labels)}
-    ${skillsWithLanguages(resume.skillGroups, resume.labels, resume.languages)}
-    ${experience(resume.experience, resume.labels)}
-    ${workProjects(resume.workProjects, resume.labels)}
-    ${projects(resume.projects, resume.labels)}
+const resumePage = (resume, avatar, lang) => {
+  const labels = resume.labels;
+
+  return `
+  <main class="cn-resume cn-resume--${escapeHtml(lang)}" lang="${lang === "zh" ? "zh-Hans" : "en"}">
+    ${header(resume, avatar, labels, lang)}
+    ${profile(resume.profile, labels, lang)}
+    ${education(resume.education, labels, lang)}
+    ${skillsWithLanguages(resume.skillGroups, labels, resume.languages, lang)}
+    ${experience(resume.experience, labels, lang)}
+    ${workProjects(resume.workProjects, labels, lang)}
+    ${projects(resume.projects, labels, lang)}
   </main>
+`;
+};
+
+export const OneColMaker = (resume, avatar) => `
+  <div class="cn-document">
+    ${resumePage(resume, avatar, "zh")}
+    ${resumePage(resume, avatar, "en")}
+  </div>
 `;

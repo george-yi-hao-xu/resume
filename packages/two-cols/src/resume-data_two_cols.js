@@ -182,36 +182,36 @@ export const resume_data_two_cols = {
     {
       title: { zh: "Web 前端工程化", en: "Web Frontend" },
       items: [
-        { zh: "HTML CSS/SCSS JavaScript/TypeScript" },
-        { zh: "React/ReactNative Node.js" },
-        { zh: "Jest / Chromatic / GitHub CI/CD" },
+        { zh: "HTML CSS/SCSS JavaScript/TypeScript", en: "HTML CSS/SCSS JavaScript/TypeScript" },
+        { zh: "React/ReactNative Node.js", en: "React/React Native Node.js" },
+        { zh: "Jest / Chromatic / GitHub CI/CD", en: "Jest / Chromatic / GitHub CI/CD" },
       ],
     },
     {
       title: { zh: "Web 后端与数据库", en: "Web Backend & DB" },
       items: [
-        { zh: "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI" },
-        { zh: "Firebase  Google_Cloud" },
+        { zh: "Go Python/FastAPI Node.js/Nest.js GraphQL RESTAPI", en: "Go Python/FastAPI Node.js/Nest.js GraphQL REST API" },
+        { zh: "Firebase  Google_Cloud", en: "Firebase Google Cloud" },
         { zh: "PostgreSQL  MongoDB Chroma向量", en: "PostgreSQL MongoDB Chroma" },
       ],
     },
     {
       title: { zh: "测试开发", en: "Test Development" },
       items: [
-        { zh: "Jest / Chromatic / pytest / GitHub Actions CI/CD" },
+        { zh: "Jest / Chromatic / pytest / GitHub Actions CI/CD", en: "Jest / Chromatic / pytest / GitHub Actions CI/CD" },
         { zh: "CUDA / GPU 性能基准测试与结果分析", en: "CUDA/GPU Benchmarking" },
       ],
     },
     {
       title: { zh: "游戏与 3D 空间设计开发", en: "Design & 3D" },
       items: [
-        { zh: "Figma / Adobe XD / PS / AI / ID / PR" },
-        { zh: "Unity C# / C++ WASM cuda / Rhino GH" },
+        { zh: "Figma / Adobe XD / PS / AI / ID / PR", en: "Figma / Adobe XD / PS / AI / ID / PR" },
+        { zh: "Unity C# / C++ WASM cuda / Rhino GH", en: "Unity C# / C++ WASM CUDA / Rhino Grasshopper" },
       ],
     },
     {
       title: { zh: "AI 工具", en: "AI Tools" },
-      items: [{ zh: "Codex / GitHub Copilot / ComfyUI" }],
+      items: [{ zh: "Codex / GitHub Copilot / ComfyUI", en: "Codex / GitHub Copilot / ComfyUI" }],
     },
   ],
   projects: [
