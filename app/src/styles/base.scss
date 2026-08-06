@@ -1,0 +1,62 @@
+@use "tokens" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: $page;
+    color: $ink;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-lg);
+}
+
+body {
+    margin: var(--space-none);
+}
+
+a {
+    color: $accent;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $accent-dark;
+    text-decoration: underline;
+    text-underline-offset: 0.76mm;
+}
+
+p,
+ul,
+h1,
+h2,
+h3 {
+    margin: var(--space-none);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 750;
+    line-height: var(--line-height-tight);
+}
+
+// only in cn version, it has a selfie
+#selfie {
+    position: absolute;
+    border-radius: 50%;
+    height: 27.52mm;
+    object-fit: cover;
+    right: var(--gap-page);
+    top: var(--gap-xl);
+    width: 27.52mm;
+}
+
+@media print {
+    #selfie {
+        top: var(--space-none);
+        right: var(--space-none);
+        height: 15mm;
+        width: 15mm;
+    }
+}

@@ -1,17 +1,14 @@
 {
-  "name": "resume",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1",
-    "export:boss": "node --no-warnings scripts/export-boss-markdown.mjs",
-    "export:boss:bilingual": "node --no-warnings scripts/export-boss-markdown.mjs --lang=bilingual"
-  },
-  "devDependencies": {
-    "sass": "^1.77.0",
-    "vite": "^8.0.16"
-  }
+    "name": "resume",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "pnpm --dir app run dev",
+        "build": "pnpm --dir app run build",
+        "preview": "pnpm --dir app run preview",
+        "format": "pnpm --dir app run format",
+        "format:check": "pnpm --dir app run format:check",
+        "typecheck": "pnpm --dir app run typecheck"
+    }
 }
