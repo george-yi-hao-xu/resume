@@ -96,22 +96,22 @@
 }
 
 .nt-main-projects {
-    margin-top: 5mm;
+    margin-top: var(--gap-m);
 }
 
 .nt-section h2,
 .nt-main > h2 {
-    // border-bottom: 0.25mm solid rgba($ink, 0.12);
+    border-bottom: 0.1mm solid rgba($text-muted, 0.1);
     color: $resume-blue;
     font-size: 3.8mm;
     font-weight: 800;
     margin-bottom: var(--gap-s);
-    padding-bottom: var(--gap-s);
+    // padding-bottom: var(--gap-s);
 }
 
 .nt-entry + .nt-entry,
 .nt-entry .nt-plain-list {
-    margin-top: var(--gap-s);
+    margin-top: var(--gap-xs);
 }
 
 .nt-entry h3 {
@@ -142,6 +142,7 @@
 .nt-plain-list {
     li {
         text-wrap-style: pretty;
+        color: $text-muted;
     }
 }
 
@@ -151,7 +152,7 @@
 }
 
 .nt-entry p {
-    margin-top: var(--gap-s);
+    margin-top: var(--gap-xs);
 }
 
 .nt-job__title {
@@ -166,7 +167,7 @@
 }
 
 .nt-job__role-meta {
-    margin-top: var(--gap-s);
+    margin-top: var(--gap-xs);
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -189,7 +190,7 @@
     color: $ink;
     line-height: normal;
     list-style: disc;
-    margin: var(--gap-s) 0 0;
+    margin: var(--gap-xs) 0 0;
     padding-left: var(--gap-m);
 }
 

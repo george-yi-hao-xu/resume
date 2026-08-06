@@ -99,16 +99,16 @@ export const resumeData = {
                 { zh: "HTML", en: "HTML" },
                 { zh: "CSS/SCSS", en: "CSS/SCSS" },
                 { zh: "JavaScript/TypeScript", en: "JavaScript/TypeScript" },
-                { zh: "React/React Native", en: "React/React Native" },
+                { zh: "React/ReactNative", en: "React/ReactNative" },
             ],
         },
         {
             title: { zh: "Web 后端", en: "Web Backend" },
             items: [
                 { zh: "Python", en: "Python" },
+                { zh: "Go", en: "Go" },
                 { zh: "Node.js", en: "Node.js" },
                 { zh: "GraphQL", en: "GraphQL" },
-                { zh: "REST API", en: "REST API" },
                 { zh: "PostgreSQL", en: "PostgreSQL" },
                 { zh: "MongoDB", en: "MongoDB" },
             ],
@@ -119,6 +119,7 @@ export const resumeData = {
                 { zh: "Unity/C#", en: "Unity/C#" },
                 { zh: "C++/WASM/CUDA", en: "C++/WASM/CUDA" },
                 { zh: "Rhino/Grasshopper", en: "Rhino/Grasshopper" },
+                { zh: "AutoCAD Revit ArchiCAD", en: "AutoCAD Revit ArchiCAD" },
             ],
         },
         {
@@ -231,7 +232,7 @@ export const resumeData = {
             company: { zh: "Sasaki", en: "Sasaki" },
             role: { zh: "软件工程师 Web全栈", en: "Full-Stack Web Software Engineer" },
             meta: [
-                { zh: "2023.11 - 2025.11 波士顿 全职", en: "2023.11 - 2025.11, Boston, Full-time" },
+                { zh: "2023.11 -  波士顿 全职", en: "2023.11 - , Boston, Full-time" },
             ],
             summary: {
                 zh: "AI 算法产品: 基于建筑约束自动生成办公转住宅平面，并计算工程与金融指标。",
@@ -276,7 +277,7 @@ export const resumeData = {
             company: { zh: "Sasaki", en: "Sasaki" },
             role: { zh: "软件工程师 Web全栈", en: "Full-Stack Web Software Engineer" },
             meta: [
-                { zh: "2023.11 - 2025.11 波士顿 全职", en: "2023.11 - 2025.11, Boston, Full-time" },
+                { zh: "2023.11 -  波士顿 全职", en: "2023.11 - , Boston, Full-time" },
             ],
             summary: {
                 zh: "前端基建: 搭建团队核心样式与组件库，统一产品设计语言和交互模式。",
@@ -294,7 +295,7 @@ export const resumeData = {
         {
             title: { zh: "简历文档 AI Agent 编辑器", en: "Resume Document AI Agent Editor" },
             summary: {
-                zh: "本地 AI Agent 工具，支持简历改写、排版优化与多语言转换。",
+                zh: "本地 AI Agent 工具，支持简历改写、排版优化与多语言转换",
                 en: "Local AI Agent for resume rewriting, layout optimization, and multilingual conversion.",
             },
             description: [
@@ -307,7 +308,7 @@ export const resumeData = {
         {
             title: { zh: "在线 AI 对战棋类网站", en: "Online AI Board-Game Website" },
             summary: {
-                zh: "支持多种棋类 AI 对战与 Web 部署的经典算法项目。",
+                zh: "基于Minimax算法的在线ai对战平台",
                 en: "Classic AI algorithms project for board-game opponents and web deployment.",
             },
             description: [
@@ -320,7 +321,7 @@ export const resumeData = {
         {
             title: { zh: "基于动力学的空间找形设计", en: "Physics-Based Spatial Form-Finding" },
             summary: {
-                zh: "面向空间结构形态生成的 GPU 并行模拟与三维可视化工具。",
+                zh: "面向空间结构形态生成的 GPU 并行模拟、三维可视化工具",
                 en: "GPU-parallel simulation and 3D visualization tool for spatial form-finding.",
             },
             description: [
@@ -333,7 +334,7 @@ export const resumeData = {
         {
             title: { zh: "美国 NASA 宇航局月球车竞赛", en: "NASA Rover Challenge" },
             summary: {
-                zh: "基于 HoloLens 的宇航员增强现实界面与月球任务辅助系统。",
+                zh: "基于 HoloLens 的宇航员增强现实界面开发",
                 en: "HoloLens AR interface and lunar mission support system for astronauts.",
             },
             description: [
@@ -348,7 +349,7 @@ export const resumeData = {
         { name: { zh: "汉语", en: "Mandarin" }, level: { zh: "母语", en: "Native" } },
         {
             name: { zh: "英语", en: "English" },
-            level: { zh: "流利 专业交流/文献阅读", en: "Professional" },
+            level: { zh: "流利", en: "Professional" },
         },
         { name: { zh: "德语", en: "German" }, level: { zh: "中级", en: "Intermediate" } },
         { name: { zh: "法语", en: "French" }, level: { zh: "中级", en: "Intermediate" } },
