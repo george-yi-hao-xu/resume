@@ -99,16 +99,6 @@ body {
 }
 
 @media print {
-    .nr-resume--zh,
-    .nt-resume--zh {
-        --gap-2xs: 0.34mm;
-        --gap-s: 0.68mm;
-        --gap-sm: 1.28mm;
-        --gap-m: 1.88mm;
-        --gap-ml: 2.4mm;
-        --gap-l: 3.45mm;
-    }
-
     .new-selector {
         display: none;
     }

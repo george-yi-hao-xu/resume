@@ -84,6 +84,7 @@ export const resumeData = {
             items: [
                 { zh: "AI Agent 开发", en: "AI Agent Development" },
                 { zh: "PyTorch/LoRA 微调", en: "PyTorch/LoRA Fine-Tuning" },
+                { zh: "Tensorflow.js", en: "Tensorflow.js" },
             ],
         },
         {
